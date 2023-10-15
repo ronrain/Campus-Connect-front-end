@@ -5,7 +5,6 @@ import * as schoolService from "../../services/schoolService";
 
 import SearchForm from "../../components/SearchForm/SearchForm"
 
-import './SchoolList.css'
 // css
 import styles from './SchoolList.module.css'
 
@@ -42,8 +41,8 @@ const SchoolList = () => {
     <>
       <SearchForm handleSchoolSearch={handleSchoolSearch}/>
       <button onClick={refreshList}>Refresh</button>
-    <div className="school-container">
-      {schools.map(school => (<div className="school-details" key={school.id}> <Link to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
+    <div className={styles.container}>
+      {schools.map(school => (<div className={styles.details} key={school.id}> <Link to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
     </div>
     </>
   );
