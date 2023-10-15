@@ -1,0 +1,94 @@
+:root {
+  --main-text: 'Kanit', sans-serif;
+  --main-text-color: #212121;
+  --theme-pink: #FF7F7F;
+  --theme-green: #81D8D0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  background: #E5E4E2;
+  box-shadow: 0 0.125rem 0.625rem rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+}
+
+li {
+  margin: 0 0.625rem;
+}
+
+li a {
+  text-decoration: none;
+  color: var(--main-text-color);
+  font-family: var(--main-text);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+  font-size: 1.875rem;
+  position: relative;
+}
+
+li a:focus, li a:active {
+  outline: none;
+  box-shadow: 0 0 0.9375rem var(--theme-green);
+}
+
+li a:before { 
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  bottom: 0;
+  left: 0;
+  background-color: var(--theme-pink);
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+li a:hover:before {
+  visibility: visible;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  li a {
+    font-size: 1.5625rem;
+  }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 769px) {
+  ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  li {
+    margin-bottom: 0.625rem;
+  }
+
+  li a {
+    font-size: 1.375rem;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  li a {
+    font-size: 1.125rem;
+  }
+}
