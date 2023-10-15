@@ -1,0 +1,25 @@
+.school-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: white;
+  color: black;
+  width: 85%;
+  align-items: center;
+  height: 50px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.35);
+}
+
+.school-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #52b69a;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 95%;
+  margin: auto;
+  border-radius: 5px;
+}
