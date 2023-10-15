@@ -6,6 +6,8 @@ import * as schoolService from "../../services/schoolService";
 import SearchForm from "../../components/SearchForm/SearchForm"
 
 import './SchoolList.css'
+// css
+import styles from './SchoolList.module.css'
 
 const SchoolList = () => {
   const [schools, setSchools] = useState([]);
