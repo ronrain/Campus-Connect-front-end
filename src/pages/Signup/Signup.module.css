@@ -1,12 +1,3 @@
-:root {
-  --main-text: 'Kanit', sans-serif;
-  --secondary-text: 'Fira Sans', sans-serif; 
-  --main-text-color: #212121;
-  --theme-pink: #FF7F7F;
-  --theme-green: #81D8D0;
-  --background: #E5E4E2;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -16,8 +7,8 @@
   font-family: var(--main-text);
 }
 
-h1 {
-  font-size: 2.5rem;
+.title {
+  font-size: 2.8rem;
   color: var(--main-text-color);
   margin-bottom: 1.5rem;
 }
@@ -72,10 +63,10 @@ button:hover {
   background-color: var(--theme-green);
 }
 
-button:disabled {
+/* button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-}
+} */
 
 .link a {
   text-decoration: none;
