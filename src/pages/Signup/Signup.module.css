@@ -16,8 +16,8 @@
   font-family: var(--main-text);
 }
 
-h1 {
-  font-size: 2.5rem;
+.title {
+  font-size: 2.8rem;
   color: var(--main-text-color);
   margin-bottom: 1.5rem;
 }
@@ -72,10 +72,10 @@ button:hover {
   background-color: var(--theme-green);
 }
 
-button:disabled {
+/* button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
-}
+} */
 
 .link a {
   text-decoration: none;
