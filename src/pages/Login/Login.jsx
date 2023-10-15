@@ -67,7 +67,9 @@ const LoginPage = ({ handleAuthEvt }) => {
           />
         </label>
         <div>
-          <Link to="/">Cancel</Link>
+        <div className={styles.link}>
+            <Link to="/">Cancel</Link>
+          </div>
           <button className={styles.button} disabled={isFormInvalid()}>
             Log In
           </button>
