@@ -8,6 +8,8 @@ import * as tokenService from '../../services/tokenService'
 // css
 import styles from './Profiles.module.css'
 
+import Sidebar from '../../components/SideBar/SideBar'
+
 const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
   const [isOpen, setIsOpen] = useState(false);
@@ -32,14 +34,7 @@ const Profiles = (props) => {
   
   return (
     <>
-      <div className={`sidebar ${isOpen ? 'open' : ''}`}>
-      <button onClick={toggleSidebar}>Toggle Sidebar</button>
-      <ul>
-        <li>Menu Item 1</li>
-        <li>Menu Item 2</li>
-        {/* Add more menu items as needed */}
-      </ul>
-    </div>
+      <Sidebar />
       <main className={styles.container}>
       <p>{profiles.name}</p>
       </main>
