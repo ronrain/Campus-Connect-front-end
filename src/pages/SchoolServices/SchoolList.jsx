@@ -39,13 +39,13 @@ const SchoolList = () => {
   }
 
   return (
-    <>
-      <SearchForm handleSchoolSearch={handleSchoolSearch}/>
-      <button onClick={refreshList}>Refresh</button>
-    <div className={styles.container}>
-      {schools.map(school => <SchoolDetails key={school.id} school={school} />)}
-    </div>
-    </>
+      <>
+          <SearchForm handleSchoolSearch={handleSchoolSearch}/>
+          <button onClick={refreshList}>Refresh</button>
+          <div className={styles.container}>
+              {schools.map(school => <SchoolDetails key={school.id} school={school} />)}
+          </div>
+      </>
   );
 }
 
