@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
+import Sidebar from "../SideBar/SideBar";
+
+import styles from "./ServiceForm.module.css";
+
 const NewService = (props) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -22,7 +26,8 @@ const NewService = (props) => {
 
   return (
     <main>
-      <form action="">
+      <Sidebar />
+      <form className={styles.serviceForm}>
         <label htmlFor="title">Title</label>
         <input
           type="text"
