@@ -52,6 +52,7 @@ const NewService = (props) => {
           <option value="Tutoring">Tutoring</option>
           <option value="HandyWork">HandyWork</option>
           <option value="Cooking">Cooking</option>
+          <option value="DIY">DIY</option>
           <option value="Other">Other</option>
         </select>
         <label htmlFor="price">Price</label>

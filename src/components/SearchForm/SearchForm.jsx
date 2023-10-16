@@ -24,6 +24,7 @@ const SearchForm = (props) => {
         autoComplete="off"
         value={formData.query}
         onChange={handleChange}
+        placeholder="Search by Schools name"
       />
       <button type="submit">Search</button>  
     </form>

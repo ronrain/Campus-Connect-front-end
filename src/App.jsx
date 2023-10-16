@@ -40,7 +40,7 @@ function App() {
 
   const handleAddService = async (serviceFormData, schoolId) => {
     const newService = await serviceService.create(serviceFormData, schoolId)
-
+    console.log(schoolId)
     navigate('/')
   }
 
@@ -53,7 +53,7 @@ function App() {
           path="/profiles"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user} />
             </ProtectedRoute>
           }
         />
@@ -75,7 +75,7 @@ function App() {
         />
         <Route path="/schools" element={<SchoolList />} />
         <Route path="/:schoolId" element={<ServiceList />} />
-        <Route path="/:schoolId/services/new" element={<NewService />} />
+        <Route path="/:schoolId/services/new" element={<NewService handleAddService={handleAddService}/>} />
       </Routes>
     </>
   )
