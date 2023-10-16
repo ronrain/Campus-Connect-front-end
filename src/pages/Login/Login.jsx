@@ -70,7 +70,7 @@ const LoginPage = ({ handleAuthEvt }) => {
         <div className={styles.link}>
             <Link to="/">Cancel</Link>
           </div>
-          <button className={styles.button} disabled={isFormInvalid()}>
+          <button className={styles.button-30} disabled={isFormInvalid()}>
             Log In
           </button>
         </div>
