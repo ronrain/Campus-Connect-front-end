@@ -23,10 +23,9 @@ const SearchForm = (props) => {
         type="text"
         autoComplete="off"
         pattern='.*\S.*' required
-        placeholder='Search...'
         value={formData.query}
         onChange={handleChange}
-        placeholder="Search by Schools name"
+        placeholder="Search..."
       />
         <div className={styles.search}></div>
     </form>
