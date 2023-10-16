@@ -1,0 +1,44 @@
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  left: 0px;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+}
+
+.sidebar-button{
+  background-color: #555;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px 20px;
+  font-size: 18px;
+  width: 250px;
+  text-align: left;
+}
+
+.sidebar.open {
+  left: 0px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+  background-color: #555;
+}
+
+/* Optional: Add a hover effect to the button */
+.sidebar button:hover {
+  background-color: #555;
+}
