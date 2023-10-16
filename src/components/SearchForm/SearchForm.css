@@ -1,4 +1,4 @@
-.search-form {
+.container {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -10,7 +10,7 @@
   margin: 1rem auto;
 }
 
-.search-form input[type="text"] {
+.input {
   flex: 1;
   padding: 0.6rem 1rem;
   border: 1px solid var(--theme-green);
@@ -20,12 +20,12 @@
   transition: border 0.2s, box-shadow 0.2s;
 }
 
-.search-form input[type="text"]:focus {
+.input:focus {
   border-color: var(--theme-pink);
   box-shadow: 0 0 15px var(--theme-green);
 }
 
-.search-form button {
+.button {
   padding: 0.6rem 1.5rem;
   background-color: var(--theme-pink);
   color: var(--main-text-color);
@@ -37,27 +37,27 @@
   transition: background-color 0.2s;
 }
 
-.search-form button:hover {
+.button:hover {
   background-color: var(--theme-green);
 }
 
 @media only screen and (min-width: 1024px) {
-  .search-form input[type="text"], 
-  .search-form button {
+  .input[type="text"], 
+  .button {
     font-size: 1.6rem;
   }
 }
 
 @media only screen and (max-width: 1023px) and (min-width: 769px) {
-  .search-form input[type="text"], 
-  .search-form button {
+  .input[type="text"], 
+  .button {
     font-size: 1.3rem;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .search-form input[type="text"], 
-  .search-form button {
+  .input[type="text"], 
+  .button {
     font-size: 0.9rem;
   }
 }

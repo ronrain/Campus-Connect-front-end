@@ -2,7 +2,7 @@
 import { useState } from 'react'
 
 // css
-import './SearchForm.css'
+import styles from './SearchForm.module.css'
 
 const SearchForm = (props) => {
   const [formData, setFormData] = useState({query: ''})
@@ -17,15 +17,15 @@ const SearchForm = (props) => {
   }
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
-      <input
+    <form className={styles.container} onSubmit={handleSubmit}>
+      <input className={styles.input}
         name="query"
         type="text"
         autoComplete="off"
         value={formData.query}
         onChange={handleChange}
       />
-      <button type="submit">Search</button>  
+      <button className={styles.button} type="submit">Search</button>  
     </form>
   )
 }
