@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react'
 
 // services
 import * as profileService from '../../services/profileService'
-import * as tokenService from '../../services/tokenService'
 
 // css
 import styles from './Profiles.module.css'
@@ -21,8 +20,7 @@ const Profiles = (props) => {
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
-      const profileId = tokenService.getUserFromToken().profile
-      const userProfile = profileData.find((profile) => profile._id === profileId)
+      const userProfile = profileData.find((profile) => profile._id === props.user.profile)
       setProfiles(userProfile)
     }
     fetchProfiles()
@@ -34,7 +32,7 @@ const Profiles = (props) => {
   
   return (
     <>
-      <Sidebar />
+      <Sidebar profile={profiles}/>
       <main className={styles.container}>
       <p>{profiles.name}</p>
       </main>

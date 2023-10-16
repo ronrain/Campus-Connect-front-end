@@ -1,0 +1,10 @@
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 10px;
+}

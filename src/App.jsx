@@ -1,5 +1,5 @@
 // npm modules
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 
 // pages
@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SchoolList from './pages/SchoolServices/SchoolList'
 import ServiceList from './pages/SchoolServices/ServiceList'
+import ProfileListings from './pages/Profiles/ProfileListings'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -19,6 +20,7 @@ import NewService from './components/ServiceForm/ServiceForm'
 // services
 import * as authService from './services/authService'
 import * as serviceService from './services/serviceService'
+import * as schoolService from './services/schoolService'
 
 // styles
 import './App.css'
@@ -27,6 +29,30 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [services, setServices] = useState([])
   const navigate = useNavigate()
+  const [schools, setSchools] = useState([]);
+
+  useEffect(() => {
+    const fetchSchools = async () => {
+      const schools = await schoolService.getAllSchools()
+      setSchools(schools);
+    }
+    fetchSchools()
+  }, [])
+
+  const handleSchoolSearch = formData => {
+    const filteredSchoolResults = schools.filter(school => (
+      school.name.toLowerCase().includes(formData.query.toLowerCase()) 
+    ))
+    setSchools(filteredSchoolResults)
+  }
+
+  const refreshList = () => {
+    const fetchSchools = async () => {
+      const schools = await schoolService.getAllSchools()
+      setSchools(schools);
+    }
+    fetchSchools()
+  }
 
   const handleLogout = () => {
     authService.logout()
@@ -50,12 +76,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
-          path="/profiles"
+          path="/profile"
           element={
             <ProtectedRoute user={user}>
               <Profiles user={user} />
             </ProtectedRoute>
           }
+        />
+        <Route 
+          path='/profile/listings'
+          element={
+            <ProtectedRoute user={user}>
+              <ProfileListings user={user} />
+            </ProtectedRoute>
+          }      
         />
         <Route
           path="/auth/signup"
@@ -73,9 +107,18 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/schools" element={<SchoolList />} />
+        <Route path="/schools" element={
+        <SchoolList 
+        schools={schools}
+        handleSchoolSearch={handleSchoolSearch}
+        refreshList={refreshList}
+        />} />
         <Route path="/:schoolId" element={<ServiceList />} />
-        <Route path="/:schoolId/services/new" element={<NewService handleAddService={handleAddService}/>} />
+        <Route path="service/new" element={
+        <NewService 
+        handleAddService={handleAddService}
+        schools={schools}
+        />} />
       </Routes>
     </>
   )
