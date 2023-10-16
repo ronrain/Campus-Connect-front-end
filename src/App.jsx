@@ -8,20 +8,23 @@ import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import SchoolList from './pages/Listings/SchoolList'
+import SchoolList from './pages/SchoolServices/SchoolList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import NewService from './components/ServiceForm/ServiceForm'
 
 // services
 import * as authService from './services/authService'
+import * as serviceService from './services/serviceService'
 
 // styles
 import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
+  const [services, setServices] = useState([])
   const navigate = useNavigate()
 
   const handleLogout = () => {
@@ -32,6 +35,12 @@ function App() {
 
   const handleAuthEvt = () => {
     setUser(authService.getUser())
+  }
+
+  const handleAddService = async (serviceFormData) => {
+    const newService = await serviceService.create(serviceFormData)
+
+    navigate('/')
   }
 
   return (
@@ -64,6 +73,7 @@ function App() {
           }
         />
         <Route path="/schools" element={<SchoolList />} />
+        <Route path="/service/new" element={<NewService />} />
       </Routes>
     </>
   )
