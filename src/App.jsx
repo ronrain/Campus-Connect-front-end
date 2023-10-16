@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SchoolList from './pages/SchoolServices/SchoolList'
+import ServiceList from './pages/SchoolServices/ServiceList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -37,8 +38,8 @@ function App() {
     setUser(authService.getUser())
   }
 
-  const handleAddService = async (serviceFormData) => {
-    const newService = await serviceService.create(serviceFormData)
+  const handleAddService = async (serviceFormData, schoolId) => {
+    const newService = await serviceService.create(serviceFormData, schoolId)
 
     navigate('/')
   }
@@ -73,7 +74,8 @@ function App() {
           }
         />
         <Route path="/schools" element={<SchoolList />} />
-        <Route path="/service/new" element={<NewService />} />
+        <Route path="/:schoolId" element={<ServiceList />} />
+        <Route path="/:schoolId/services/new" element={<NewService />} />
       </Routes>
     </>
   )

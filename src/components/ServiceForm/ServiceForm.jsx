@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
 const NewService = (props) => {
   const [formData, setFormData] = useState({
@@ -8,13 +9,16 @@ const NewService = (props) => {
     availability: '',
   })
 
+  const {schoolId} = useParams() 
+  const [school, setSchools] = useState(schoolId)
+
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
+    props.handleAddService(formData, school)
   }
 
   return (
