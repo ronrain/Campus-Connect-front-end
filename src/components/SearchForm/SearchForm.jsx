@@ -26,6 +26,7 @@ const SearchForm = (props) => {
         placeholder='Search...'
         value={formData.query}
         onChange={handleChange}
+        placeholder="Search by Schools name"
       />
         <div className={styles.search}></div>
     </form>
