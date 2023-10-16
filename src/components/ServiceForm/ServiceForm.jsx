@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 
 const NewService = (props) => {
   const [formData, setFormData] = useState({
-    type: '', 
+    title: '',
     description: '',
+    type: '', 
     price: 0,
     availability: '',
   })
@@ -24,6 +25,22 @@ const NewService = (props) => {
   return (
     <main>
       <form action="">
+        <label htmlFor="title">Title</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          value={formData.title}
+          onChange={handleChange}
+        />
+        <label htmlFor="description">Description</label>
+        <input
+          required
+          type="text"
+          name="description"
+          value={formData.description}
+          onChange={handleChange}
+        />
         <label htmlFor="type">Type</label>
         <select
           name="type"
@@ -37,14 +54,6 @@ const NewService = (props) => {
           <option value="Cooking">Cooking</option>
           <option value="Other">Other</option>
         </select>
-        <label htmlFor="description">Description</label>
-        <input
-          required
-          type="text"
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-        />
         <label htmlFor="price">Price</label>
         <input
           required
