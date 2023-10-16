@@ -8,18 +8,16 @@ const NewService = (props) => {
     type: '', 
     price: 0,
     availability: '',
+    schoolId: 0,
   })
-
-  const {schoolId} = useParams() 
-  const [school, setSchools] = useState(schoolId)
-
+  
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddService(formData, school)
+    props.handleAddService(formData)
   }
 
   return (
@@ -72,6 +70,12 @@ const NewService = (props) => {
           value={formData.availability}
           onChange={handleChange}
         />
+        <select name="schoolId" value={formData.school} onChange={handleChange}>
+          <option value="">Select School</option>
+          {props.schools.map(school => (
+            <option key={school._id} value={school._id}>{school.name}</option>
+          ))}
+        </select>
         <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>
     </main>

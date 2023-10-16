@@ -10,11 +10,11 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>
-          <li><NavLink to="/profiles">Profiles</NavLink></li>
+          <li><NavLink to="/schools">Schools</NavLink></li>
+          <li><NavLink to="/profile">Profiles</NavLink></li>
           <li><NavLink to="" onClick={handleLogout}>LOG OUT</NavLink></li>
           {/* <li><NavLink to="/auth/change-password">Change Password</NavLink></li> */}
           {/* <li><NavLink to="/service/new">Create Service</NavLink></li> */}
-          <li><NavLink to="/schools">Schools</NavLink></li>
         </ul>
       :
         <ul>

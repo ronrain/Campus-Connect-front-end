@@ -9,41 +9,14 @@ import SchoolDetails from "../../components/Schools/SchoolDetails"
 // css
 import styles from './SchoolList.module.css'
 
-const SchoolList = () => {
-  const [schools, setSchools] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchResults, setSearchResults] = useState([])
-
-  useEffect(() => {
-    const fetchSchools = async () => {
-      const schools = await schoolService.getAllSchools()
-      setSchools(schools);
-    }
-    fetchSchools()
-  }, [])
-
-  const handleSchoolSearch = formData => {
-    const filteredSchoolResults = schools.filter(school => (
-      school.name.toLowerCase().includes(formData.query.toLowerCase()) 
-    ))
-    setSearchResults(filteredSchoolResults)
-    setSchools(filteredSchoolResults)
-  }
-
-  const refreshList = () => {
-    const fetchSchools = async () => {
-      const schools = await schoolService.getAllSchools()
-      setSchools(schools);
-    }
-    fetchSchools()
-  }
+const SchoolList = (props) => {
 
   return (
     <>
-      <SearchForm handleSchoolSearch={handleSchoolSearch}/>
-      <button onClick={refreshList}>Refresh</button>
+      <SearchForm handleSchoolSearch={props.handleSchoolSearch}/>
+      <button onClick={props.refreshList}>Refresh</button>
     <div className={styles.container}>
-      {schools.map(school => <SchoolDetails key={school.id} school={school} />)}
+      {props.schools.map(school => <SchoolDetails key={school.id} school={school} />)}
     </div>
     </>
   );
