@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
+import Sidebar from "../SideBar/SideBar";
+
+import styles from "./ServiceForm.module.css";
+
 const NewService = (props) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -8,23 +12,22 @@ const NewService = (props) => {
     type: '', 
     price: 0,
     availability: '',
+    schoolId: 0,
   })
-
-  const {schoolId} = useParams() 
-  const [school, setSchools] = useState(schoolId)
-
+  
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    props.handleAddService(formData, school)
+    props.handleAddService(formData)
   }
 
   return (
     <main>
-      <form action="">
+      <Sidebar />
+      <form className={styles.serviceForm}>
         <label htmlFor="title">Title</label>
         <input
           type="text"
@@ -52,6 +55,7 @@ const NewService = (props) => {
           <option value="Tutoring">Tutoring</option>
           <option value="HandyWork">HandyWork</option>
           <option value="Cooking">Cooking</option>
+          <option value="DIY">DIY</option>
           <option value="Other">Other</option>
         </select>
         <label htmlFor="price">Price</label>
@@ -71,6 +75,12 @@ const NewService = (props) => {
           value={formData.availability}
           onChange={handleChange}
         />
+        <select name="schoolId" value={formData.school} onChange={handleChange}>
+          <option value="">Select School</option>
+          {props.schools.map(school => (
+            <option key={school._id} value={school._id}>{school.name}</option>
+          ))}
+        </select>
         <button type="submit" onClick={handleSubmit}>Submit</button>
       </form>
     </main>

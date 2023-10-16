@@ -8,6 +8,8 @@ import * as authService from '../../services/authService'
 // css
 import styles from './ChangePassword.module.css'
 
+import Sidebar from '../../components/SideBar/SideBar'
+
 const ChangePassword = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
   const [message, setMessage] = useState('')
@@ -40,6 +42,8 @@ const ChangePassword = ({ handleAuthEvt }) => {
   }
 
   return (
+    <>
+    <Sidebar />
     <main className={styles.container}>
       <h1 className={styles.title}>Change Password</h1>
       <p className={styles.message}>{message}</p>
@@ -81,6 +85,8 @@ const ChangePassword = ({ handleAuthEvt }) => {
         </div>
       </form>
     </main>
+    
+    </>
   )
 }
 

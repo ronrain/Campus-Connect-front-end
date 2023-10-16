@@ -7,28 +7,36 @@ import * as profileService from '../../services/profileService'
 // css
 import styles from './Profiles.module.css'
 
-const Profiles = () => {
+import Sidebar from '../../components/SideBar/SideBar'
+
+const Profiles = (props) => {
   const [profiles, setProfiles] = useState([])
+  const [isOpen, setIsOpen] = useState(false);
+  
+    const toggleSidebar = () => {
+      setIsOpen(!isOpen);
+    };
 
   useEffect(() => {
     const fetchProfiles = async () => {
       const profileData = await profileService.getAllProfiles()
-      setProfiles(profileData)
+      const userProfile = profileData.find((profile) => profile._id === props.user.profile)
+      setProfiles(userProfile)
     }
     fetchProfiles()
   }, [])
 
-  if (!profiles.length) {
+  if (profiles.length === 0) {
     return <main className={styles.container}><h1>Loading...</h1></main>
   }
   
   return (
-    <main className={styles.container}>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
-      ))}
-    </main>
+    <>
+      <Sidebar profile={profiles}/>
+      <main className={styles.container}>
+      <p>{profiles.name}</p>
+      </main>
+    </>
   )
 }
 

@@ -7,10 +7,9 @@ const ServiceList = () => {
   const [school, setSchools] = useState(state);
   return (
     <>
-    <Link to={`/${school._id}/services/new`}>Create Service</Link>
     <h1>hi</h1>
     </>
   );
 }
- 
+
 export default ServiceList;
