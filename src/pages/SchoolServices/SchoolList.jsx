@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import * as schoolService from "../../services/schoolService";
 
 import SearchForm from "../../components/SearchForm/SearchForm"
+import SchoolDetails from "../../components/Schools/SchoolDetails"
 
 // css
 import styles from './SchoolList.module.css'
@@ -42,7 +43,7 @@ const SchoolList = () => {
       <SearchForm handleSchoolSearch={handleSchoolSearch}/>
       <button onClick={refreshList}>Refresh</button>
     <div className={styles.container}>
-      {schools.map(school => (<div className={styles.details} key={school.id}> <Link to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
+      {schools.map(school => <SchoolDetails key={school.id} school={school} />)}
     </div>
     </>
   );
