@@ -27,6 +27,8 @@ const NewService = (props) => {
   return (
     <main>
       <Sidebar />
+        <div className={styles.container}>
+
       <form className={styles.serviceForm}>
         <label htmlFor="title">Title</label>
         <input
@@ -35,7 +37,7 @@ const NewService = (props) => {
           id="title"
           value={formData.title}
           onChange={handleChange}
-        />
+          />
         <label htmlFor="description">Description</label>
         <input
           required
@@ -43,13 +45,13 @@ const NewService = (props) => {
           name="description"
           value={formData.description}
           onChange={handleChange}
-        />
+          />
         <label htmlFor="type">Type</label>
         <select
           name="type"
           value={formData.type}
           onChange={handleChange}
-        >
+          >
           <option value="">Select Type</option>
           <option value="Haircut">Haircut</option>
           <option value="Tutoring">Tutoring</option>
@@ -66,7 +68,7 @@ const NewService = (props) => {
           name="price"
           value={formData.price}
           onChange={handleChange}
-        />
+          />
         <label htmlFor="availability">Availability</label>
         <input
           required
@@ -74,15 +76,16 @@ const NewService = (props) => {
           name="availability"
           value={formData.availability}
           onChange={handleChange}
-        />
+          />
         <select name="schoolId" value={formData.school} onChange={handleChange}>
           <option value="">Select School</option>
           {props.schools.map(school => (
             <option key={school._id} value={school._id}>{school.name}</option>
-          ))}
+            ))}
         </select>
-        <button type="submit" onClick={handleSubmit}>Submit</button>
+        <button className={styles.button30} type="submit" onClick={handleSubmit}>Submit</button>
       </form>
+            </div>
     </main>
   );
 }
