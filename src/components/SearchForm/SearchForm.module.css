@@ -73,7 +73,7 @@ body {
     }
   }
   .input {
-    font-family: 'Inconsolata', monospace;
+    font-family: var(--secondary-text);
     position: absolute;
     margin: auto;
     top: 0;
@@ -129,7 +129,6 @@ body {
     }
   }
 }
-
 
 @media only screen and (min-width: 1024px) {
   .input[type="text"], 

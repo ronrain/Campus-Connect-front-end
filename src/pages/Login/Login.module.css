@@ -47,21 +47,49 @@ input[type="password"]:focus {
   box-shadow: 0 0 15px var(--theme-green);
 }
 
-button {
-  background-color: var(--theme-pink);
-  color: var(--main-text-color);
+.button30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
   cursor: pointer;
-  margin-top: 1.2rem;
+  display: inline-flex;
   font-family: var(--secondary-text);
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
 }
 
-button:hover {
-  background-color: var(--theme-green);
+.button30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }
 
-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
+.button30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
 
 .link a {
@@ -85,7 +113,7 @@ button:disabled {
   }
   input[type="text"], 
   input[type="password"],
-  button,
+  .button30 ,
   .link a {
     font-size: 1.6rem;
   }
@@ -100,7 +128,7 @@ button:disabled {
   }
   input[type="text"], 
   input[type="password"],
-  button,
+  .button30,
   .link a {
     font-size: 1.3rem;
   }
@@ -115,7 +143,7 @@ button:disabled {
   }
   input[type="text"], 
   input[type="password"],
-  button,
+  .button30,
   .link a {
     font-size: 0.9rem;
     padding: 0.4rem 0.8rem;
@@ -125,7 +153,7 @@ button:disabled {
   .label,
   input[type="text"], 
   input[type="password"],
-  button {
+  .button30  {
     margin-left: 1rem;
   }
 }

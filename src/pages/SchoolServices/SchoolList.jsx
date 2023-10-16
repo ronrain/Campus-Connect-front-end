@@ -41,7 +41,9 @@ const SchoolList = () => {
   return (
       <>
           <SearchForm handleSchoolSearch={handleSchoolSearch}/>
+          <div className={styles.button-30}>
           <button onClick={refreshList}>Refresh</button>
+          </div>
           <div className={styles.container}>
               {schools.map(school => <SchoolDetails key={school.id} school={school} />)}
           </div>
