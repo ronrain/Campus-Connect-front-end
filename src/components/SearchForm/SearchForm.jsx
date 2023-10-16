@@ -17,15 +17,17 @@ const SearchForm = (props) => {
   }
 
   return (
-    <form className={styles.container} onSubmit={handleSubmit}>
+    <form action="" className={styles.container} onSubmit={handleSubmit}>
       <input className={styles.input}
         name="query"
         type="text"
         autoComplete="off"
+        pattern='.*\S.*' required
+        placeholder='Search...'
         value={formData.query}
         onChange={handleChange}
       />
-      <button className={styles.button} type="submit">Search</button>  
+        <div className={styles.search}></div>
     </form>
   )
 }
