@@ -15,8 +15,7 @@ const ProfileListings = (props) => {
     const fetchListings = async () => {
       const profileId = props.user.profile
       const serviceData = await serviceService.index()
-      const userService = serviceData.filter((listing) => listing.createdBy !== profileId)
-      
+      const userService = serviceData.filter((listing) => listing.createdBy._id === profileId)
       setServices(userService)
     } 
     fetchListings()
