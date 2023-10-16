@@ -28,25 +28,30 @@ const NewService = (props) => {
     <main>
       <Sidebar />
         <div className={styles.container}>
-
       <form className={styles.serviceForm}>
-        <label htmlFor="title">Title</label>
+      <div className={styles.inputContainer}>
         <input
           type="text"
           name="title"
           id="title"
           value={formData.title}
           onChange={handleChange}
-          />
-        <label htmlFor="description">Description</label>
+          placeholder=" "
+        />
+        <label htmlFor="title" className={styles.label}>Title</label>
+      </div>
+        <div className={styles.inputContainer}>
         <input
           required
           type="text"
           name="description"
           value={formData.description}
           onChange={handleChange}
+          placeholder=" "
           />
-        <label htmlFor="type">Type</label>
+          <label className={styles.label}htmlFor="description">Description</label>
+        </div>
+        <div className={styles.inputContainer}>
         <select
           name="type"
           value={formData.type}
@@ -60,7 +65,9 @@ const NewService = (props) => {
           <option value="DIY">DIY</option>
           <option value="Other">Other</option>
         </select>
-        <label htmlFor="price">Price</label>
+        <label className={styles.label} htmlFor="type">Type</label>
+        </div>
+        <div className={styles.inputContainer}>
         <input
           required
           type="number"
@@ -69,20 +76,27 @@ const NewService = (props) => {
           value={formData.price}
           onChange={handleChange}
           />
-        <label htmlFor="availability">Availability</label>
+          <label htmlFor="price">Price</label>
+          </div>
+          <div className={styles.inputContainer}>
         <input
           required
           type="text"
           name="availability"
           value={formData.availability}
           onChange={handleChange}
+          placeholder=" "
           />
+          <label className={styles.label} htmlFor="availability">Availability</label>
+          </div>
+          <div className={styles.inputContainer}>
         <select name="schoolId" value={formData.school} onChange={handleChange}>
           <option value="">Select School</option>
           {props.schools.map(school => (
             <option key={school._id} value={school._id}>{school.name}</option>
             ))}
         </select>
+        </div>
         <button className={styles.button30} type="submit" onClick={handleSubmit}>Submit</button>
       </form>
             </div>

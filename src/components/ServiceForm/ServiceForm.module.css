@@ -1,29 +1,88 @@
+/* General structure and positioning */
 .container {
-  align-items: center;
   display: flex;
-  justify-content: center;
-  height: 80vh;
+  flex-direction: column;
+  align-items: center;
 }
 
 .serviceForm {
-  background-color: var(--theme-green);
-  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
   box-sizing: border-box;
   padding: 20px;
-  width: 320px;
 }
 
-.formInput:focus ~ .formLabel,
-.formInput:not(:placeholder-shown) ~ .formLabel {
-  transform: translateY(-30px) translateX(10px) scale(0.75);
-  color: #dc2f55;
-  top: -10px;
+.inputContainer {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.label {
+  position: absolute;
+  left: 10px;
+  bottom: 5px; /* Position label at the bottom */
+  font-size: 16px;
+  color: #777;
+  pointer-events: none; /* Make it non-interactive */
+  transition: 0.3s all;
+}
+
+input {
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  font-size: 16px;
+  color: #333;
+  transition: 0.3s all;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+input:focus + .label,
+input:not(:placeholder-shown) + .label {
+  bottom: 100%; /* Move label to the top of input */
   font-size: 12px;
+  color: #007bff;
 }
 
-.formInput:not(:placeholder-shown) ~ .formLabel {
-  color: #808097;
+
+
+/* Other styles remain unchanged... */
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .serviceForm {
+    padding: 15px;
+  }
+
+  .inputContainer {
+    margin-bottom: 15px;
+  }
+
+  .input input {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .label {
+    left: 10px;
+    top: 10px; /* Adjusted position */
+  }
+
+  .input input:focus + .label label,
+  .input input:not(:placeholder-shown) + .label label {
+    top: -15px;  /* Adjusted position */
+    left: 10px;
+    font-size: 11px;
+  }
 }
+
 
 .button30 {
   margin-top: 1rem; 
@@ -37,7 +96,7 @@
   color: #36395A;
   cursor: pointer;
   display: inline-flex;
-  font-family: "JetBrains Mono",monospace;
+  font-family: var(--main-text);
   height: 48px;
   justify-content: center;
   line-height: 1;
@@ -71,16 +130,3 @@
   transform: translateY(2px);
 }
 
-select {
-  background-color: #303245;
-  border-radius: 12px;
-  border: 0;
-  color: #eee;
-  font-size: 18px;
-  height: 50px;
-  margin-top: 40px;
-  padding: 4px 20px;
-  width: 100%;
-  outline: 0;
-  box-sizing: border-box;
-}
