@@ -21,14 +21,14 @@ const ReviewForm = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
+  
+  const stars = [1, 2, 3, 4, 5]
+  
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddReview(formData)
     setFormData({text: '', rating: 0})
   }
-
-  const stars = [1, 2, 3, 4, 5]
-
 
   return (
     <form onSubmit={handleSubmit}>

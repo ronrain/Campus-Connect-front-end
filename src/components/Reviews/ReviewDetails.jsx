@@ -11,7 +11,7 @@ const ReviewDetails = (props) => {
       <p>{review.text}</p>
       <Ratings review={review} />
       {review.author === props.user.profile && 
-      <><button>edit</button></>}
+      <button onClick={() => props.handleDeleteReview(review._id)}>delete</button>}
     </div>)}
     </>
   );

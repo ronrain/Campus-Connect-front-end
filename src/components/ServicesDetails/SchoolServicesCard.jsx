@@ -9,12 +9,14 @@ const SchoolServicesCard = (props) => {
   
   useEffect(() => {
     const calculateAverageRating = () => {
+      if (service.reviews.length > 0) {
       const reviews = service.reviews
       const ratings = reviews.map(review => review.rating)
       const totalRating = ratings.reduce((total, rating) => total + rating, 0)
       const average = totalRating / ratings.length
       const roundedAverage = average.toFixed(1)
       setAverageRating(roundedAverage)
+    } else setAverageRating(0)
     }
     calculateAverageRating()
   }, [])
