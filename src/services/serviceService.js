@@ -32,4 +32,18 @@ async function create(serviceFormData) {
 
 }
 
-export { create, index }
+async function deleteService(serviceId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${serviceId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { create, index, deleteService }
