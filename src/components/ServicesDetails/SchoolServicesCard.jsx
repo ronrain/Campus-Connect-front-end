@@ -21,8 +21,7 @@ const SchoolServicesCard = (props) => {
         <p>Price: {service.price}</p>
       </div>
       <button className='card-btn'><Link to={`/service/${service._id}`}>Book Me</Link></button>
-      <button className='details-btn'>See reviews</button>
-        {true &&
+        {service.createdBy._id &&
           <>
             {/* <Link state={props.service} to={`/blogs/${props.service._id}/edit`}>Edit</Link> */}
             <button onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
