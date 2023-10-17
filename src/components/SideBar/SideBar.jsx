@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "./Sidebar.css"
+import "./SideBar.css"
 
 
 const Sidebar = (props) => {
@@ -26,9 +26,3 @@ const Sidebar = (props) => {
 }
 
 export default Sidebar
-
-
-
-
-
-
