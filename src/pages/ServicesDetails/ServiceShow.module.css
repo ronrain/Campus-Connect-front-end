@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  height: 60vh;
+  gap: 1rem;
+}
+
+.contentContainer, .review {
+  box-sizing: content-box;
+  width: 50%;
+  background-color: white;
+  position: relative;
+  width: fit-content;
+  flex: 1;
+  padding: 1.4rem;
+  border: .2rem solid black;
+}
+
+.contentContainer {
+  
+}
+
