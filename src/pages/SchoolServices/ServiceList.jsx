@@ -21,9 +21,24 @@ const ServiceList = () => {
   }, [])
   console.log(services)
 
+  const handleTypeChange = async (e) => {
+    const newData = await servicesService.index()
+    const filteredServicesData = newData.filter(service => service.type === e.target.value)
+    setServices(filteredServicesData)
+  }
+
   return (
     <>
-    {services.map(service => ( <SchoolServicesCard key={service._id} />
+    <select name="type" onChange={handleTypeChange}>
+      <option value="">Search By Type</option>
+      <option value="Haircut">Haircut</option>
+      <option value="Tutoring">Tutoring</option>
+      <option value="HandWork">HandWork</option>
+      <option value="Cooking">Cooking</option>
+      <option value="DIY">DIY</option>
+      <option value="Other">Other</option>
+    </select>
+    {services.map(service => ( <SchoolServicesCard key={service._id} service={service}/>
     ))}
     </>
   );

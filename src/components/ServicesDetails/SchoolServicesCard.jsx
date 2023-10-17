@@ -1,20 +1,23 @@
 import './SchoolServicesCard.css'
+import logo from '../../assets/logo.jpg'
 
-const SchoolServicesCard = () => {
+const SchoolServicesCard = (props) => {
   return (
     <section className='flex-container'>
     <div className='service-container'>
-      <div className="profile-img"></div>
+      <div className="profile-img" style={{backgroundImage: {logo}}}>
+      </div>
       <h1 className='name'>
-        Maddie
+        {props.service.createdBy.name}
       </h1>
       <div className="description">
-        Maddie is a front end web developer in New York. She has worked in the field for 10 years now. Check out her projects in the links below. She is available for hire as well.
+        {props.service.description}
       </div>
       <div className="social">
-        <p>Service Type: </p>
+        <p>Service Type: {props.service.type}</p>
+        <p>Price: {props.service.price}</p>
       </div>
-      <button className='card-btn'>Hire Me</button>
+      <button className='card-btn'>Book Me</button>
       <footer className='card-footer'>
         <div className="likes">
           <p>Ratings: 1.5K</p>
@@ -27,5 +30,5 @@ const SchoolServicesCard = () => {
     </section>
   );
 }
- 
+
 export default SchoolServicesCard;
