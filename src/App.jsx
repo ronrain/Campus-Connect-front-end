@@ -10,7 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SchoolList from './pages/SchoolServices/SchoolList'
 import ServiceList from './pages/SchoolServices/ServiceList'
-import ProfileListings from './pages/Profiles/ProfileListings'
+import ProfileServices from './pages/Profiles/ProfileServices'
 import ServicesShow from './pages/ServicesDetails/ServicesShow'
 
 // components
@@ -84,10 +84,10 @@ function App() {
           }
         />
         <Route 
-          path='/profile/listings'
+          path='/profile/services'
           element={
             <ProtectedRoute user={user}>
-              <ProfileListings user={user} />
+              <ProfileServices user={user} />
             </ProtectedRoute>
           }      
         />

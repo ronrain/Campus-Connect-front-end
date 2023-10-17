@@ -1,12 +1,15 @@
 import styles from './UserServices.module.css'
 
+
 const UserServices = (props) => {
+
+
   return (
     <div className={styles.servicesContainer} >
-    <p>{props.services.title}</p>
-    <p>{props.services.description}</p>
-    <p>{props.services.type}</p>
-    <button>Delete</button>
+    <p>{props.service.title}</p>
+    <p>{props.service.description}</p>
+    <p>{props.service.type}</p>
+    <button onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
     <button>Edit</button>
     </div>
   );
