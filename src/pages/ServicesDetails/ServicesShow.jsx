@@ -56,7 +56,7 @@ const ServicesShow = (props) => {
     <div className={styles.reviewForm}>
     <ReviewForm handleAddReview={handleAddReview}/>
     {service.reviews.length 
-    ? (<ReviewDetails reviews={service.reviews} user={props.user} handleDeleteReview={handleDeleteReview}/>) 
+    ? (<ReviewDetails reviews={service.reviews} user={props.user} handleDeleteReview={handleDeleteReview} serviceId={serviceId}/>) 
     : <p className={styles.reviewConditional}>Be The First To Review</p>}
     </div>
     </div>
