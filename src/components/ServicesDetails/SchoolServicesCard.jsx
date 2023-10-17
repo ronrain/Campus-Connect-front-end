@@ -1,7 +1,6 @@
 import './SchoolServicesCard.css'
 import logo from '../../assets/logo.jpg'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 
 const SchoolServicesCard = (props) => {
   const service = props.service

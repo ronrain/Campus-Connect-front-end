@@ -43,7 +43,8 @@ const ReviewForm = (props) => {
           </span>
         ))}
       </div>
-      <textarea 
+      <textarea
+        required
         type="text" 
         name="text" 
         id="text-input"
