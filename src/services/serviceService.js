@@ -52,6 +52,12 @@ async function createReview(serviceId, reviewFormData) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(reviewFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 async function deleteService(serviceId) {
   try {
