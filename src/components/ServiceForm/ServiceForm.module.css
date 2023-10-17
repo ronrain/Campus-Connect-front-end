@@ -23,8 +23,8 @@
   position: absolute;
   left: 10px;
   bottom: 5px;
-  font-size: 16px;
-  color: #777;
+  font-size: 1.1rem;
+  color: var(main-text-color);
   pointer-events: none; 
   transition: 0.3s all;
 }
@@ -34,8 +34,8 @@ input {
   padding: 10px 15px;
   box-sizing: border-box;
   border-radius: 5px;
-  border: 1px solid #aaa;
-  font-size: 16px;
+  border: 1px solid var(--theme-green);
+  font-size: 1.1rem;
   color: #333;
   transition: 0.3s all;
 }
@@ -124,5 +124,36 @@ input:not(:placeholder-shown) + .label {
   transform: translateY(2px);
 }
 
+select {
+  text-align: center;
+  width: 100%;         
+  padding: 20px 40px;
+  background: var(--theme-green);
+  color: var(--main-text-color);
+  font-size: 1.1rem;
+  border: none;
+  appearance: none; 
+  cursor: pointer;     
+  position: relative;  
+  z-index: 2;  
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 5px;
+  font-family: var(--main-text);
+}        
+
+select:hover {
+  transform: scale(1.01); 
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.price, option {
+  left: 10px;
+  bottom: 5px;
+  font-size: 1.1rem;
+  color: #777;
+  pointer-events: none; 
+  transition: 0.3s all;
+  color: var(--main-text-color);
+}
 
 
