@@ -79,59 +79,83 @@ const Signup = ({ handleAuthEvt }) => {
 
   return (
     <main className={styles.container}>
+      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
       <h1 className={styles.title}>Sign Up</h1>
       <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
+      <div className={styles.inputContainer}>
+          <input 
+          type="text" 
+          value={name} 
+          name="name" 
+          onChange={handleChange}
+          placeholder=" "
+          />
         <label className={styles.label}>
           Name
-          <input type="text" value={name} name="name" onChange={handleChange} />
         </label>
-        <label className={styles.label}>
-          Email
+        </div>
+        <div className={styles.inputContainer}>
+
           <input
             type="text"
             value={email}
             name="email"
             onChange={handleChange}
+            placeholder=" "
           />
-        </label>
         <label className={styles.label}>
-          Password
+          Email
+        </label>
+        </div>
+        <div className={styles.inputContainer}>
+
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
+            placeholder=" "
           />
-        </label>
         <label className={styles.label}>
-          Confirm Password
+          Password
+        </label>
+        </div>
+        <div className={styles.inputContainer}>
           <input
             type="password"
             value={passwordConf}
             name="passwordConf"
             onChange={handleChange}
+            placeholder=" "
           />
-        </label>
         <label className={styles.label}>
+          Confirm Password
+        </label>
+        </div>
+        <div className={styles.inputContainer}>
+        <label className={styles.photo}>
           Upload Photo
+        </label>
           <input 
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
             ref={imgInputRef}
+            // placeholder=" "
           />
-        </label>
+        </div>
         <div>
           <div className={styles.link}>
             <Link to="/">Cancel</Link>
           </div>
+          <div className={styles.button}>
             <button
-              className={styles.button-30}
+              className={styles.button30}
               disabled={ isFormInvalid() || isSubmitted }
             >
               {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}
             </button>
+            </div>
         </div>
       </form>
     </main>
