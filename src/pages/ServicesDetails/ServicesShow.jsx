@@ -24,6 +24,8 @@ const ServicesShow = () => {
     setService({...service, reviews: [...service.reviews, newReview]})
   }
 
+  if (!service) return <h1>loading</h1>
+
   return (
     <>
     <h1>{service.title}</h1>
