@@ -1,0 +1,53 @@
+:root {
+  --theme-pink: #ff79a6; /* Or use your original pink shade */
+  --theme-shadow: rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    height: 60vh;
+  }
+}
+
+.contentContainer,
+.review {
+  box-sizing: content-box;
+  width: 100%;
+  background-color: white;
+  position: relative;
+  flex: 1;
+  padding: 1.4rem;
+  border: 0.2rem solid var(--theme-pink);
+  box-shadow: 0 4px 12px var(--theme-shadow);
+}
+
+.title, 
+.titleReview {
+  margin-bottom: 1rem;
+  color: var(--theme-pink);
+}
+
+.reviewConditional {
+  font-style: italic;
+  color: gray;
+}
+
+.content h3,
+.content h4 {
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .contentContainer,
+  .review {
+    width: 45%;
+  }
+}

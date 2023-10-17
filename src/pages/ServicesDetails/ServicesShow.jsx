@@ -7,7 +7,7 @@ import ReviewForm from "../../components/Reviews/ReviewForm"
 
 import * as serviceService from '../../services/serviceService';
 
-import styles from './ServiceShow.module.css'
+import styles from './ServicesShow.module.css'
 
 const ServicesShow = (props) => {
   const { serviceId } = useParams()
