@@ -128,7 +128,7 @@ function App() {
         <Route path='/service/:serviceId'
         element={
           <ProtectedRoute user={user}>
-            <ServicesShow />
+            <ServicesShow user={user}/>
           </ProtectedRoute >
         }/>
       </Routes>
