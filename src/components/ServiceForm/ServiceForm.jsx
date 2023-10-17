@@ -29,6 +29,7 @@ const NewService = (props) => {
       <Sidebar />
       <div className={styles.container}>
         <form className={styles.serviceForm}>
+          <div className={styles.header}><h1>Create Service</h1></div>
         <div className={styles.inputContainer}>
           <input
             type="text"
