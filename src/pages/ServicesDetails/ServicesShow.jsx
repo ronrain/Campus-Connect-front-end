@@ -8,8 +8,8 @@ import ReviewForm from "../../components/Reviews/ReviewForm"
 import * as serviceService from '../../services/serviceService';
 
 const ServicesShow = (props) => {
-  const {serviceId} = useParams()
-  const [service, setService] = useState();
+  const { serviceId } = useParams()
+  const [service, setService] = useState(null);
 
   useEffect(() => {
     const fetchService = async () => {
@@ -17,11 +17,17 @@ const ServicesShow = (props) => {
       setService(data)
     }
     fetchService()
-  }, [serviceId])
+  }, [])
+
 
   const handleAddReview = async (reviewFormData) => {
     const newReview = await serviceService.createReview(serviceId, reviewFormData)
-    setService({...service, reviews: [...service.reviews, newReview]})
+    setService({ ...service, reviews: [...service.reviews, newReview] })
+  }
+
+  const handleDeleteReview = async (reviewId) => {
+    await serviceService.deleteReview(serviceId, reviewId)
+    setService({...service, reviews: service.reviews.filter((review) => review._id !== reviewId)})
   }
 
   if (!service) return <h1>loading</h1>
@@ -38,7 +44,7 @@ const ServicesShow = (props) => {
     <br />
     <h2>Reviews</h2>
     <ReviewForm handleAddReview={handleAddReview}/>
-    {service.reviews.length ? (<ReviewDetails reviews={service.reviews} user={props.user}/>) : <p>Be The First To Review</p>}
+    {service.reviews.length ? (<ReviewDetails reviews={service.reviews} user={props.user} handleDeleteReview={handleDeleteReview}/>) : <p>Be The First To Review</p>}
     </>
   );
 }

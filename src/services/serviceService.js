@@ -59,6 +59,20 @@ async function createReview(serviceId, reviewFormData) {
   }
 }
 
+async function deleteReview(serviceId, reviewId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${serviceId}/reviews/${reviewId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+      },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 async function deleteService(serviceId) {
   try {
     const res = await fetch(`${BASE_URL}/${serviceId}`, {
@@ -72,5 +86,5 @@ async function deleteService(serviceId) {
     console.log(error)
   }
 }
-export { create, index, show, createReview, deleteService}
+export { create, index, show, createReview, deleteService, deleteReview}
 
