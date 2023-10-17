@@ -1,4 +1,4 @@
-import './SchoolServicesCard.css'
+import styles from './SchoolServicesCard.module.css'
 import logo from '../../assets/logo.jpg'
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -23,32 +23,36 @@ const SchoolServicesCard = (props) => {
 
 
   return (
-    <section className='flex-container'>
-    <div className='service-container'>
-      <div className="profile-img" style={{backgroundImage: {logo}}}>
+    <section className={styles.flexContainer}>
+    <div className={styles.serviceContainer}>
+      <div className={styles.profileImg} style={{backgroundImage: {logo}}}>
       </div>
-      <h1 className='name'>
+      <h1 className={styles.name}>
         {service.createdBy.name}
       </h1>
-      <div className="description">
+      <div className={styles.description}>
         {service.description}
       </div>
-      <div className="social">
+      <div className={styles.social}>
         <p>Type: {service.type}</p>
         <p>Price: {service.price}</p>
       </div>
-      <button className='card-btn'><Link to={`/service/${service._id}`}>Book Me</Link></button>
+      <button className={styles.cardBtn}><Link to={`/service/${service._id}`}>Book Me</Link></button>
         {service.createdBy._id &&
           <>
             {/* <Link state={props.service} to={`/blogs/${props.service._id}/edit`}>Edit</Link> */}
-            <button onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
+            <div className={styles.button}>
+            <button 
+            className={styles.button30}
+            onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
+            </div>
           </>
         }
-      <footer className='card-footer'>
-        <div className="likes">
+      <footer className={styles.cardFooter}>
+        <div className={styles.likes}>
           <p>Ratings: {averageRating}</p>
         </div>
-        <div className="projects">
+        <div className={styles.projects}>
           <p>Bookings:</p>
         </div>
       </footer>
