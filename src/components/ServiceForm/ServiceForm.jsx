@@ -52,6 +52,7 @@ const NewService = (props) => {
           <label className={styles.label}htmlFor="description">Description</label>
         </div>
         <div className={styles.inputContainer}>
+        {/* <label className={styles.label} htmlFor="type">Type</label> */}
         <select
           name="type"
           value={formData.type}
@@ -65,9 +66,9 @@ const NewService = (props) => {
           <option value="DIY">DIY</option>
           <option value="Other">Other</option>
         </select>
-        <label className={styles.label} htmlFor="type">Type</label>
         </div>
         <div className={styles.inputContainer}>
+        <label htmlFor="price">Price</label>
         <input
           required
           type="number"
@@ -76,7 +77,6 @@ const NewService = (props) => {
           value={formData.price}
           onChange={handleChange}
           />
-          <label htmlFor="price">Price</label>
           </div>
           <div className={styles.inputContainer}>
         <input

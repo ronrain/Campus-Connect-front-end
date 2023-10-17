@@ -1,8 +1,8 @@
-/* General structure and positioning */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-family: var(--main-text);
 }
 
 .serviceForm {
@@ -14,17 +14,18 @@
 
 .inputContainer {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
+  margin-top: 1.9rem;
   width: 100%;
 }
 
 .label {
   position: absolute;
   left: 10px;
-  bottom: 5px; /* Position label at the bottom */
+  bottom: 5px;
   font-size: 16px;
   color: #777;
-  pointer-events: none; /* Make it non-interactive */
+  pointer-events: none; 
   transition: 0.3s all;
 }
 
@@ -40,22 +41,16 @@ input {
 }
 
 input:focus {
-  border-color: #007bff;
+  border-color: var(--theme-green);
 }
 
 input:focus + .label,
 input:not(:placeholder-shown) + .label {
-  bottom: 100%; /* Move label to the top of input */
-  font-size: 12px;
-  color: #007bff;
+  bottom: 115%; 
+  font-size: 1rem;
+  color: var(--theme-pink);
 }
 
-
-
-/* Other styles remain unchanged... */
-
-
-/* Responsiveness */
 @media (max-width: 768px) {
   .serviceForm {
     padding: 15px;
@@ -72,17 +67,16 @@ input:not(:placeholder-shown) + .label {
 
   .label {
     left: 10px;
-    top: 10px; /* Adjusted position */
+    top: 10px; 
   }
 
   .input input:focus + .label label,
   .input input:not(:placeholder-shown) + .label label {
-    top: -15px;  /* Adjusted position */
+    top: -15px; 
     left: 10px;
     font-size: 11px;
   }
 }
-
 
 .button30 {
   margin-top: 1rem; 
@@ -129,4 +123,6 @@ input:not(:placeholder-shown) + .label {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
+
+
 
