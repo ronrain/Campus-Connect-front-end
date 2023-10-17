@@ -6,6 +6,8 @@ const UserServices = (props) => {
     <p>{props.services.title}</p>
     <p>{props.services.description}</p>
     <p>{props.services.type}</p>
+    <button>Delete</button>
+    <button>Edit</button>
     </div>
   );
 }
