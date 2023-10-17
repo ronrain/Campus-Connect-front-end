@@ -28,6 +28,7 @@ const ReviewForm = (props) => {
     e.preventDefault()
     props.handleAddReview(formData)
     setFormData({text: '', rating: 0})
+    setRating(0)
   }
 
   return (
