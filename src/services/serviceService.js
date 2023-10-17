@@ -86,5 +86,22 @@ async function deleteService(serviceId) {
     console.log(error)
   }
 }
-export { create, index, show, createReview, deleteService, deleteReview}
+
+const updateReview = async (serviceId, reviewId, reviewFormData) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${serviceId}/reviews/${reviewId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { create, index, show, createReview, deleteService, deleteReview, updateReview}
 

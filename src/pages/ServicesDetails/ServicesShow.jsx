@@ -44,7 +44,7 @@ const ServicesShow = (props) => {
     <br />
     <h2>Reviews</h2>
     <ReviewForm handleAddReview={handleAddReview}/>
-    {service.reviews.length ? (<ReviewDetails reviews={service.reviews} user={props.user} handleDeleteReview={handleDeleteReview}/>) : <p>Be The First To Review</p>}
+    {service.reviews.length ? (<ReviewDetails reviews={service.reviews} user={props.user} handleDeleteReview={handleDeleteReview} serviceId={serviceId}/>) : <p>Be The First To Review</p>}
     </>
   );
 }
