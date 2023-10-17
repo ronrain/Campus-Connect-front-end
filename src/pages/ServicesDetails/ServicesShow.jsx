@@ -7,7 +7,7 @@ import ReviewForm from "../../components/Reviews/ReviewForm"
 
 import * as serviceService from '../../services/serviceService';
 
-const ServicesShow = () => {
+const ServicesShow = (props) => {
   const {serviceId} = useParams()
   const [service, setService] = useState();
 
@@ -38,7 +38,7 @@ const ServicesShow = () => {
     <br />
     <h2>Reviews</h2>
     <ReviewForm handleAddReview={handleAddReview}/>
-    {service.reviews.length ? (<ReviewDetails reviews={service.reviews} />) : <p>Be The First To Review</p>}
+    {service.reviews.length ? (<ReviewDetails reviews={service.reviews} user={props.user}/>) : <p>Be The First To Review</p>}
     </>
   );
 }
