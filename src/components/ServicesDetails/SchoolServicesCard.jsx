@@ -2,6 +2,7 @@ import './SchoolServicesCard.css'
 import logo from '../../assets/logo.jpg'
 
 const SchoolServicesCard = (props) => {
+
   return (
     <section className='flex-container'>
     <div className='service-container'>
@@ -13,11 +14,28 @@ const SchoolServicesCard = (props) => {
       <div className="description">
         {props.service.description}
       </div>
-      <div className="social">
-        <p>Service Type: {props.service.type}</p>
-        <p>Price: {props.service.price}</p>
-      </div>
-      <button className='card-btn'>Book Me</button>
+        <div className="social">
+          <p>Service Type: {props.service.type}</p>
+          <p>Price: {props.service.price}</p>
+        </div>
+
+
+        <button className='card-btn'>Book Me</button>
+
+        {true &&
+          <>
+            {/* <Link state={props.service} to={`/blogs/${props.service._id}/edit`}>Edit</Link> */}
+            <button onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
+          </>
+        }
+
+        {/* {props.service.createdBy._id === logedInUser._id &&
+          <>
+          <button className='card-btn'>Book Me</button>
+            <Link state={props.service} to={`/blogs/${props.service._id}/edit`}>Edit</Link>
+            <button onClick={() => props.handleDeleteBlog(props.service._id)}>Delete</button>
+          </>
+        } */}
       <footer className='card-footer'>
         <div className="likes">
           <p>Ratings: 1.5K</p>

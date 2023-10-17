@@ -66,7 +66,6 @@ function App() {
 
   const handleAddService = async (serviceFormData, schoolId) => {
     const newService = await serviceService.create(serviceFormData, schoolId)
-    console.log(schoolId)
     navigate('/')
   }
 
@@ -107,18 +106,24 @@ function App() {
             </ProtectedRoute>
           }
         />
+        
         <Route path="/schools" element={
-        <SchoolList 
-        schools={schools}
-        handleSchoolSearch={handleSchoolSearch}
-        refreshList={refreshList}
+          <SchoolList
+            schools={schools}
+            handleSchoolSearch={handleSchoolSearch}
+            refreshList={refreshList}
+          />} />
+        <Route path="/schools/:schoolId" element={
+        
+        <ServiceList
+          user={user}
         />} />
-        <Route path="/:schoolId" element={<ServiceList />} />
+
         <Route path="service/new" element={
-        <NewService 
-        handleAddService={handleAddService}
-        schools={schools}
-        />} />
+          <NewService
+            handleAddService={handleAddService}
+            schools={schools}
+          />} />
       </Routes>
     </>
   )

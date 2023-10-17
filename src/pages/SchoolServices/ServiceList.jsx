@@ -6,11 +6,25 @@ import * as servicesService from '../../services/serviceService';
 
 import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesCard";
 
-const ServiceList = () => {
+const ServiceList = (props) => {
   const {state} = useLocation()
   const [school, setSchools] = useState(state);
   const [services, setServices] = useState([]);
 
+  const handleDeleteService = async (serviceId) => {
+    await servicesService.deleteService(serviceId)
+    refreshServiceList()
+  }
+
+  const refreshServiceList = () => {
+    const fetchServices = async () => {
+      const services = await servicesService.index()
+      setServices(services);
+      console.log(services)
+    }
+    fetchServices()
+  }
+  
   useEffect(() => {
     const fetchServices = async () => {
       const servicesData = await servicesService.index()
@@ -19,7 +33,6 @@ const ServiceList = () => {
     } 
     fetchServices()
   }, [])
-  console.log(services)
 
   const handleTypeChange = async (e) => {
     const newData = await servicesService.index()
@@ -38,7 +51,13 @@ const ServiceList = () => {
       <option value="DIY">DIY</option>
       <option value="Other">Other</option>
     </select>
-    {services.map(service => ( <SchoolServicesCard key={service._id} service={service}/>
+    {services.map(service => ( 
+      <SchoolServicesCard 
+        key={service._id}
+        service={service}
+        handleDeleteService={handleDeleteService}
+        user={props.user}
+      />
     ))}
     </>
   );
