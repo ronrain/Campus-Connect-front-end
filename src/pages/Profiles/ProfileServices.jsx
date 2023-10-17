@@ -20,11 +20,17 @@ const ProfileListings = (props) => {
     } 
     fetchListings()
   }, [])
+
+  const handleDeleteService = async (serviceId) => {
+    await serviceService.deleteService(serviceId)
+    setServices(services.filter(service => service._id !== serviceId))
+  }
+
   
   return (
     <div>
       <Sidebar />
-      {services.map((service) => <UserServices services={service}/> )}
+      {services.map((service) => <UserServices key={service._id} service={service} handleDeleteService={handleDeleteService}/> )}
     </div>
   );
 }
