@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SchoolList from './pages/SchoolServices/SchoolList'
 import ServiceList from './pages/SchoolServices/ServiceList'
 import ProfileListings from './pages/Profiles/ProfileListings'
+import ServicesShow from './pages/ServicesDetails/ServicesShow'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -120,10 +121,16 @@ function App() {
         />} />
 
         <Route path="service/new" element={
-          <NewService
-            handleAddService={handleAddService}
-            schools={schools}
-          />} />
+        <NewService 
+        handleAddService={handleAddService}
+        schools={schools}
+        />} />
+        <Route path='/service/:serviceId'
+        element={
+          <ProtectedRoute user={user}>
+            <ServicesShow />
+          </ProtectedRoute >
+        }/>
       </Routes>
     </>
   )
