@@ -14,6 +14,17 @@ async function index() {
   }
 }
 
+async function show(serviceId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${serviceId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 async function create(serviceFormData) {
   try {
     const res = await fetch(BASE_URL, {
@@ -32,4 +43,20 @@ async function create(serviceFormData) {
 
 }
 
-export { create, index }
+async function createReview(serviceId, reviewFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${serviceId}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { create, index, show, createReview }

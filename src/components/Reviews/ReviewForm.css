@@ -1,0 +1,10 @@
+.icon {
+  height: 70px;
+  color: black;
+  background-color: aquamarine;
+}
+
+.icon-btn {
+  width: max-content;
+  margin: auto;
+}
