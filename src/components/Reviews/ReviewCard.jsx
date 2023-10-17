@@ -31,6 +31,7 @@ const ReviewCard = (props) => {
     e.preventDefault()
     await serviceService.updateReview(serviceId, reviewId, formData )
     setFormData({text: '', rating: 0})
+    setEditMode(false)
   }
 
 
