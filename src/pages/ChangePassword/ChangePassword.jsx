@@ -45,43 +45,51 @@ const ChangePassword = ({ handleAuthEvt }) => {
     <>
     <Sidebar />
     <main className={styles.container}>
+      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
       <h1 className={styles.title}>Change Password</h1>
       <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Current Password
+      <div className={styles.inputContainer}>
           <input
             type="password"
             value={password}
             name="password"
             onChange={handleChange}
+            placeholder=" "
           />
-        </label>
         <label className={styles.label}>
-          New Password
+          Current Password</label>
+        </div>
+        <div className={styles.inputContainer}>
           <input
             type="password"
             value={newPassword}
             name="newPassword"
             onChange={handleChange}
-          />
-        </label>
+            placeholder=" "
+            />
         <label className={styles.label}>
-          Confirm New Password
+          New Password</label>
+            </div>
+            <div className={styles.inputContainer}>
           <input
             type="password"
             value={newPasswordConf}
             name="newPasswordConf"
             onChange={handleChange}
+            placeholder=" "
           />
-        </label>
+        <label className={styles.label}>
+          Confirm New Password</label>
+        </div>
         <div>
           <div className={styles.link}>
             <Link to="/">Cancel</Link>
           </div>
+          <div className={styles.button}>
           <button className={styles.button30} disabled={isFormInvalid()}>
             Change Password
           </button>
+          </div>
         </div>
       </form>
     </main>

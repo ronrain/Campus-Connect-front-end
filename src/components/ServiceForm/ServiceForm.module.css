@@ -24,7 +24,7 @@
   left: 10px;
   bottom: 5px;
   font-size: 1.1rem;
-  color: var(main-text-color);
+  color: var(--main-text-color);
   pointer-events: none; 
   transition: 0.3s all;
 }
