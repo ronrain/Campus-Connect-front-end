@@ -20,10 +20,6 @@ const ProfileListings = (props) => {
     } 
     fetchListings()
   }, [])
-
-  console.log(props.user.profile)
-
-  console.log(services)
   
   return (
     <div>

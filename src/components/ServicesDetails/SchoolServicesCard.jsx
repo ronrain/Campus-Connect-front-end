@@ -22,6 +22,12 @@ const SchoolServicesCard = (props) => {
       </div>
       <button className='card-btn'><Link to={`/service/${service._id}`}>Book Me</Link></button>
       <button className='details-btn'>See reviews</button>
+        {true &&
+          <>
+            {/* <Link state={props.service} to={`/blogs/${props.service._id}/edit`}>Edit</Link> */}
+            <button onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
+          </>
+        }
       <footer className='card-footer'>
         <div className="likes">
           <p>Ratings: 1.5K</p>
