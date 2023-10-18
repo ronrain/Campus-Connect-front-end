@@ -82,8 +82,13 @@ const BookingForm = (props) => {
 
   const uniqueDates = Array.from(new Set(availabilityData.map(item => item.day)))
 
+  const handleReturn = () => {
+    navigate(`/service/${state.service._id}`)
+  }
+
   return (
     <>
+    <button onClick={handleReturn}>Return</button>
       <form onSubmit={handleSubmit}>
       <label>Select Date:</label>
       <select name="selectedDate" value={selectedDate} onChange={handleDateChange}>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import * as bookingService from '../../services/bookingService'
 
@@ -10,7 +11,7 @@ import './BookingList.css'
 const BookingsList = (props) => {
   const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])
-  console.log(serviceId)
+  const navigate = useNavigate()
 
   const fetchAllBookings = async () => {
     const data = await bookingService.index()
@@ -34,10 +35,14 @@ const BookingsList = (props) => {
     fetchAllBookings()
   }
 
+  const handleReturn = () => {
+    navigate('/profile/services')
+  }
 
   return (
     <>
       <Sidebar />
+      <button className="return-btn" onClick={handleReturn}>Return</button>
       <ul className="bookings-container">
       {displayedBookings.map((booking) => (
         <li key={booking._id}>
