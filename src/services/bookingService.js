@@ -47,4 +47,18 @@ async function updateStatus(bookingId, newStatus) {
   }
 }
 
-export {index, create, updateStatus}
+async function deleteBooking(bookingId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${bookingId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export {index, create, updateStatus, deleteBooking} 

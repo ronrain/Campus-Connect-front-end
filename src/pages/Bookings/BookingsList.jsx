@@ -6,23 +6,26 @@ import * as bookingService from '../../services/bookingService'
 const BookingsList = (props) => {
   const [displayedBookings, setDisplayedBookings] = useState([])
 
+  const fetchAllBookings = async () => {
+    const data = await bookingService.index()
+    console.log(data)
+    const newData = data.filter(booking => booking.service.createdBy === props.user.profile )
+    console.log(newData)
+    setDisplayedBookings(newData)
+  }
+
   useEffect(() => {
-    const fetchAllBookings = async () => {
-      const data = await bookingService.index()
-      console.log(data)
-      const newData = data.filter(booking => booking.service.createdBy === props.user.profile )
-      console.log(newData)
-      setDisplayedBookings(newData)
-    }
     fetchAllBookings()
   }, [])
 
   const onAccept = async (bookingId) => {
     await bookingService.updateStatus(bookingId, true)
+    fetchAllBookings()
   }
 
-  const onReject = (bookingId) => {
-
+  const onReject = async (bookingId) => {
+    await bookingService.deleteBooking(bookingId)
+    fetchAllBookings()
   }
 
 
