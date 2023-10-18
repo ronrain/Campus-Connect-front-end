@@ -8,9 +8,9 @@ const SchoolDetails = (props) => {
   return ( 
     <div className={styles.schoolCard}>
       <Link to={`/schools/${props.school._id}`} state={props.school}>
-        <p>{props.school.name}</p>
+        <div className={styles.schoolName}>{props.school.name}</div>
       </Link>
-      <p className={styles.schoolState}>{props.school.state}</p>
+      <div className={styles.schoolState}>{props.school.state}</div>
     </div>
   );
 }

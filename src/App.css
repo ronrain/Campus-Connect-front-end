@@ -15,6 +15,7 @@ html, body {
   --main-text: 'Kanit', sans-serif;
   --secondary-text: 'Fira Sans', sans-serif; 
   --main-text-color: #212121;
+  --secondary-text-color: #31393c;
   --theme-pink: #FF7F7F;
   --theme-green: #81D8D0;
   --background: #E5E4E2;
@@ -67,9 +68,18 @@ p {
 }
 
 a {
-  color: black;
+  color: var(--secondary-text-color);
   font-weight: 600;
   text-decoration: none;
+  padding: 2rem;
+  font-family: var(--main-text);
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  inherits: none;
 }
 
 form {
