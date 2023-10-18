@@ -17,7 +17,13 @@ const BookingsList = (props) => {
     fetchAllBookings()
   }, [])
 
+  const onAccept = async (bookingId) => {
+    await bookingService.updateStatus(bookingId, true)
+  }
 
+  const onReject = (bookingId) => {
+
+  }
 
 
   return (
