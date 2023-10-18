@@ -138,7 +138,6 @@ function App() {
             <ServicesShow user={user}/>
           </ProtectedRoute >
         }/>
-      </Routes>
       <Route 
           path='/service/:serviceId/edit'
           element={
@@ -146,7 +145,8 @@ function App() {
               <EditService handleUpdateService={handleUpdateService} />
             </ProtectedRoute>
           }
-        />
+          />
+      </Routes>
     </>
   )
 }
