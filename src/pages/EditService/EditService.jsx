@@ -1,6 +1,8 @@
 // npm modules
 import { useState } from "react"
 import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 // css
 import styles from './EditService.module.css'
@@ -10,21 +12,30 @@ const EditService = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
   const [editMode, setEditMode] = useState(false)
+  const navigate = useNavigate()
 
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value})
   }
-  
+
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target
+    const updatedAvailabilities = [...formData.availability]
+    updatedAvailabilities[index][name] = value
+    setFormData({ ...formData, availability: updatedAvailabilities })
+  }
+
   const toggleEditMode = () => {
     setEditMode(!editMode)
   }
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.toggleEditMode(formData)
+    props.handleUpdateService(formData)
+    navigate(`/schools/${formData.school}`)
   }
 
-
+console.log(formData.school)
   return (
     <div>
         <form onSubmit={handleSubmit} className={styles.serviceForm}>
@@ -78,17 +89,18 @@ const EditService = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div className={styles.inputContainer}>
-          <input
-            required
-            type="text"
-            name="availability"
-            value={formData.availability}
-            onChange={handleChange}
-            placeholder=" "
-          />
-          <label className={styles.label} htmlFor="availability">Availability</label>
+        {formData.availability.map((availability, index) => (
+        <div key={index}>
+          <label>Day:</label>
+          <input type="text" name="day" value={availability.day} onChange={(e) => handleInputChange(e, index)} required />
+
+          <label>Start Time:</label>
+          <input type="time" name="startTime" value={availability.startTime} onChange={(e) => handleInputChange(e, index)} required />
+
+          <label>End Time:</label>
+          <input type="time" name="endTime" value={availability.endTime} onChange={(e) => handleInputChange(e, index)} required />
         </div>
+        ))}
         <div className={styles.inputContainer}>
           <select name="schoolId" value={formData.school} onChange={handleChange}>
             <option value="">Select School</option>
@@ -98,9 +110,9 @@ const EditService = (props) => {
           </select>
         </div>
         <div>
-          <button type="button" onClick={toggleEditMode}>Edit</button>  
           <button type="button" onClick={toggleEditMode}>Cancel</button>
         </div>
+          <button type="submit" onClick={handleSubmit}>Save</button>  
         </form>
     </div>
   )
