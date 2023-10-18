@@ -2,6 +2,8 @@ import { useState,useEffect } from "react";
 
 import * as bookingService from '../../services/bookingService';
 
+import Sidebar from "../../components/SideBar/SideBar";
+
 const UserBookingsList = (props) => {
   const [displayedBookings, setDisplayedBookings] = useState([])
 
@@ -18,6 +20,7 @@ const UserBookingsList = (props) => {
 
   return (
     <>
+    <Sidebar />
       <ul className="bookings-container">
       {displayedBookings.map((booking) => (
         <li key={booking._id}>
