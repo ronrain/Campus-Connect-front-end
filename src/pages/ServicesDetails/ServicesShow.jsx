@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ReviewDetails from "../../components/Reviews/ReviewDetails"
 import ReviewForm from "../../components/Reviews/ReviewForm"
@@ -67,6 +68,7 @@ const ServicesShow = (props) => {
     : <p className={styles.reviewConditional}>Be The First To Review</p>}
     </div>
     </div>
+      <button><Link to={`/service/${service._id}/booking/new`} state={{service}}>Book this service</Link></button>
     </div>
     </>
   );
