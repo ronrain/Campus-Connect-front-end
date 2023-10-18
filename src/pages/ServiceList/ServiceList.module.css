@@ -1,31 +1,32 @@
 .container {
   display: flex;
+  flex-direction: column;
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
+  padding: 1.8rem;
   background-color: transparent;
   margin-top: 2.8rem;
   width: fit-content;
+  position: relative;
+  z-index: 10;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .title {
-  display: flex;
   text-align: center;
-  justify-content: center;
-  align-items: center;
   font-family: var(--main-text);
   width: fit-content;
   margin-bottom: 2rem;
 }
 
 .selectService {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
   width: auto;
   outline: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .cardContainer {

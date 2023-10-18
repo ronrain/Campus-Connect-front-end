@@ -57,7 +57,6 @@ const ServiceList = (props) => {
     </select>
     </div>
     <div className={styles.cardContainer}>
-      
     {services.map(service => ( 
       <SchoolServicesCard 
       key={service._id}
