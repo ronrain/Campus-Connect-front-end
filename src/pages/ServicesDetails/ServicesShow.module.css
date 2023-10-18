@@ -21,9 +21,10 @@
   position: relative;
   flex: 1;
   padding: 1.4rem;
-  border: 0.2rem double var(--theme-pink); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   transition: transform 0.3s; 
+  border-radius: .7rem;
+  margin-top: auto;
 }
 
 .title:hover, .titleReview:hover {
@@ -36,6 +37,7 @@
   color: var(--main-text-color);
   border-bottom: 2px solid var(--theme-pink); 
   display: inline-block; 
+  font-family: var(--main-text);
 }
 
 .reviewConditional {
@@ -43,8 +45,18 @@
   color: gray;
 }
 
-.content {
+.content, h3, h4 {
   margin-bottom: 1rem;
+  font-family: var(--secondary-text);
+  color: var(--secondary-text-color);
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.2rem;
 }
 
 @media (min-width: 768px) {
