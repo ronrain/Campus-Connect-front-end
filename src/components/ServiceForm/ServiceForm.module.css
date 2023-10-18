@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   font-family: var(--secondary-text);
+  padding-top: 8rem;
 }
 
 .serviceForm {
