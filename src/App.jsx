@@ -132,6 +132,14 @@ function App() {
           </ProtectedRoute >
         }/>
       </Routes>
+      <Route 
+          path='/service/:serviceId/edit'
+          element={
+            <ProtectedRoute user={user}>
+              <EditService handleUpdateBlog={handleUpdateService} />
+            </ProtectedRoute>
+          }
+        />
     </>
   )
 }
