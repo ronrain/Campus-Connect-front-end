@@ -19,7 +19,7 @@ const Sidebar = (props) => {
         <li className={styles.item}><Link to="/profile">Your Profile</Link></li>
         <li className={styles.item}><Link to="/auth/change-password">Change Password</Link></li>
         <li className={styles.item}><Link to='/profile/services' state={props.profile}> Your Services</Link></li>
-        {/* <li className={styles.item}>Your Bookings</li> */}
+        <li className={styles.item}><Link to={'/profile/bookings'}>Your Bookings</Link></li>
         <li className={styles.item}><Link to="/service/new">Create Service</Link></li>
       </ul>
     </div>

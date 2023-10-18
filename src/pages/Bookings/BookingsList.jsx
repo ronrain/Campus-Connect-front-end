@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import * as bookingService from '../../services/bookingService'
 
+import Sidebar from "../../components/SideBar/SideBar";
+
+import './BookingList.css'
+
 const BookingsList = (props) => {
+  const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])
+  console.log(serviceId)
 
   const fetchAllBookings = async () => {
     const data = await bookingService.index()
     console.log(data)
-    const newData = data.filter(booking => booking.service.createdBy === props.user.profile )
+    const newData = data.filter(booking => booking.service._id === serviceId )
     console.log(newData)
     setDisplayedBookings(newData)
   }
@@ -31,7 +37,8 @@ const BookingsList = (props) => {
 
   return (
     <>
-      <ul>
+      <Sidebar />
+      <ul className="bookings-container">
       {displayedBookings.map((booking) => (
         <li key={booking._id}>
           <h1>Date: {booking.date}</h1>

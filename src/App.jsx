@@ -15,6 +15,7 @@ import ServicesShow from './pages/ServicesDetails/ServicesShow'
 import EditService from './pages/EditService/EditService'
 import BookingForm from './pages/Bookings/BookingForm'
 import BookingsList from './pages/Bookings/BookingsList'
+import UserBookingsList from './pages/Bookings/UserBookingsList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -160,6 +161,14 @@ function App() {
         element={
           <ProtectedRoute user={user}>
             <BookingsList user={user}/>
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path='/profile/bookings' 
+        element={
+          <ProtectedRoute user={user}>
+            <UserBookingsList user={user}/>
           </ProtectedRoute>
         }
       />
