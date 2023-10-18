@@ -6,6 +6,8 @@ import * as servicesService from '../../services/serviceService';
 
 import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesCard";
 
+import styles from "./ServiceList.module.css"
+
 const ServiceList = (props) => {
   const {state} = useLocation()
   const [school, setSchools] = useState(state);
@@ -42,7 +44,9 @@ const ServiceList = (props) => {
 
   return (
     <>
-    <select name="type" onChange={handleTypeChange}>
+    <div className={styles.container}>
+    <h1 className={styles.title}>Please select the type of seervice offered by the school from the drop down menu:</h1>
+    <select className={styles.selectService} name="type" onChange={handleTypeChange}>
       <option value="">Search By Type</option>
       <option value="Haircut">Haircut</option>
       <option value="Tutoring">Tutoring</option>
@@ -51,6 +55,7 @@ const ServiceList = (props) => {
       <option value="DIY">DIY</option>
       <option value="Other">Other</option>
     </select>
+    </div>
     {services.map(service => ( 
       <SchoolServicesCard 
         key={service._id}

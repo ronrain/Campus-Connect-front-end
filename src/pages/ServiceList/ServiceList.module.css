@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  background-color: yellow;
+  margin-top: 8rem;
+  width: fit-content;
+}
+
+.title {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--main-text);
+  width: fit-content;
+  margin-bottom: 2rem;
+}
+
+.selectService {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  outline: none;
+}
