@@ -1,117 +1,131 @@
 .flexContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  overflow: hidden;
+  position: relative; 
+  justify-content: space-around;
+  align-items: center;
   font-family: var(--secondary-text);
-  color: #222;
-  width: 800px;
+  box-sizing: border-box;
 }
+
 .serviceContainer {
-  height: 400px;
+  height: 350px;
   width: 350px;
   padding: 20px;
   border-radius: 5px;
   background: #fffffb;
   position: relative;
-  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   margin: 0 auto;
   margin-top: 70px;
-  .profileImg {
-    height: 100px;
-    width: 100px;
-    background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: -25px;
-    left: -25px;
-    border-radius: 50%;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-  }
-  .name {
-    font-family: var(--main-text);
-    text-align: center;
-    margin-bottom: 20px;
-    color: #ffc145;
-  }
-  .description{
-    margin-bottom: 20px;
-  }
-  .social {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--main-text-color);
-    width: calc(100% - 40px);
-    margin: 0 auto;
-    a {
-      text-align: center;
-      border: solid 2px #ff6b6c;
-      width: 75px;
-      padding: 5px 0;
-      border-radius: 5px;
-      &:hover {
-        background: #ff6b6c;
-        color: white;
-        cursor: pointer;
-      }
-    }
-  }
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  .cardBtn {
-    width: 80%;
-    height: 80px;
-    font-size: 2rem;
-    margin: 30px 10% 0 10%;
-    border: none;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
-    border-radius: 5px;
-    background: linear-gradient(45deg, #ff6b6c, #ffc145, #ffc145, #ff6b6c);
-    background-size: 300% 300%;
-    outline: none;
-    transition: all 200ms ease-in-out;
-    &:hover{
-      box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
-      transform: translateY(2px);
-      -webkit-animation: gradientBG 1.5s ease-in-out forwards;
-      animation: gradientBG 1.5s ease-in-out forwards;
-      cursor: pointer;
-    }
-    &:active {
-      box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-      transform: translateY(4px);
-    }
-  }
-  .cardFooter {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--theme-green);
-    color: var(--main-text-color);
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    height: 30px;
-    padding: 0 20px;
-    margin-left: -20px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    div {
-      display: flex;
-      .fa-heart {
-        color: #ff6b6c;
-      }
-      p:first-child{
-        margin-right: 10px;
-        border-right: 4px solid white;
-        padding-right: 10px;
-      }
-    }
-  }
+.serviceContainer .profileImg {
+  height: 100px;
+  width: 100px;
+  background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.serviceContainer .name {
+  font-family: var(--main-text);
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffc145;
+  font-size: 1.5rem;
+}
+
+.serviceContainer .description {
+  margin-bottom: 20px;
+}
+
+.serviceContainer .social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--main-text-color);
+  width: calc(100% - 40px);
+  margin: 0 auto;
+}
+
+.serviceContainer .social a {
+  text-align: center;
+  border: solid 2px #ff6b6c;
+  width: 75px;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.serviceContainer .social a:hover {
+  background: #ff6b6c;
+  color: white;
+  cursor: pointer;
+}
+
+.serviceContainer .cardBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+  height: 50px;
+  font-size: 1.5rem;
+  margin: 30px 10% 0 10%;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  border-radius: 5px;
+  background: linear-gradient(45deg, #ff6b6c, #ffc145, #ffc145, #ff6b6c);
+  background-size: 300% 300%;
+  outline: none;
+  transition: all 200ms ease-in-out;
+}
+
+.serviceContainer .cardBtn:hover {
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+  transform: translateY(2px);
+  animation: gradientBG 1.5s ease-in-out forwards;
+}
+
+.serviceContainer .cardBtn:active {
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  transform: translateY(4px);
+}
+
+.serviceContainer .cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--theme-green);
+  color: var(--main-text-color);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 30px;
+  padding: 0 20px;
+  margin-left: -20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.serviceContainer .cardFooter p:first-child {
+  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .button30 {
-  margin-top: 1rem; 
+  margin-top: 1rem;
   appearance: none;
   background-color: #FCFCFD;
   border-radius: 4px;
@@ -131,10 +145,6 @@
   text-decoration: none;
   transition: box-shadow .15s,transform .15s;
   user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow,transform;
   font-size: 1.1rem;
 }
 
@@ -152,24 +162,6 @@
   transform: translateY(2px);
 }
 
-.button {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-@-webkit-keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-  100% {
-  background-position: 0% 50%;
-  }
-}
 @keyframes gradientBG {
   0% {
     background-position: 0% 50%;
@@ -177,7 +169,9 @@
   100% {
     background-position: 100% 50%;
   }
-  100% {
-    background-position: 0% 50%;
-  }
+}
+
+.description {
+  padding-top: 25px;
+  padding-bottom: 15px;
 }

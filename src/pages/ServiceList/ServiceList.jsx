@@ -45,7 +45,7 @@ const ServiceList = (props) => {
   return (
     <>
     <div className={styles.container}>
-    <h1 className={styles.title}>Please select the type of seervice offered by the school from the drop down menu:</h1>
+    <h1 className={styles.title}>Please select the type of service offered by the school from the drop down menu:</h1>
     <select className={styles.selectService} name="type" onChange={handleTypeChange}>
       <option value="">Search By Type</option>
       <option value="Haircut">Haircut</option>

@@ -69,6 +69,7 @@ const ReviewCard = (props) => {
       {props.review.author === props.user.profile && 
         <div>
           <button onClick={() => props.handleDeleteReview(props.review._id)}>Delete</button>
+          {" "}
           <button onClick={toggleEditMode}>Edit</button>  
         </div>}
     </div>) }

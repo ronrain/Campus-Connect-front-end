@@ -98,7 +98,8 @@ const EditService = (props) => {
           </select>
         </div>
         <div>
-          <button type="button" onClick={toggleEditMode}>Edit</button>  
+          <button type="button" onClick={toggleEditMode}>Edit</button> 
+          {" "} 
           <button type="button" onClick={toggleEditMode}>Cancel</button>
         </div>
         </form>

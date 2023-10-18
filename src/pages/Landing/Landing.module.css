@@ -1,11 +1,10 @@
-/* Global settings for the landing page */
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  font-family: 'Arial', sans-serif; /* Adjust as per your preference */
+  font-family: var(--secondary-text); 
   color: #333;
   line-height: 1.6;
 }
@@ -21,29 +20,27 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
-/* Logo section */
 .logoLanding {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 91vh; /* Adjust based on your design */
+  height: 91vh; 
   margin-bottom: 2rem;
 }
 
 .logoLanding img {
-  max-width: 100%; /* This will ensure the image is responsive and doesn't overflow */
+  max-width: 100%; 
   height: auto;
 }
 
-/* About section */
 .about {
   width: 100%;
-  max-width: 1200px; /* Can adjust based on your design */
+  max-width: 1200px; 
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 2rem;
   margin-bottom: 2rem;
-  border-radius: 5px; /* Optional, gives a slightly rounded corner */
+  border-radius: 5px; 
 }
 
 .about header {
@@ -57,11 +54,10 @@ h3 {
 
 .about article p {
   font-size: 1rem;
-  text-align: justify; /* This can give a more uniform block of text, optional */
+  text-align: justify;
   margin-bottom: 1rem;
 }
 
-/* Footer */
 .footer {
   width: 100%;
   background-color: #2a2a2a;
