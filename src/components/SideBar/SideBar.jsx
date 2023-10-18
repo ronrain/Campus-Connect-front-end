@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import "./SideBar.css"
+
+import styles from './SideBar.module.css'
 
 
 const Sidebar = (props) => {
@@ -12,15 +13,16 @@ const Sidebar = (props) => {
 
   return (
     <>
-      <button className='sidebar-button' onClick={toggleSidebar}>Toggle Sidebar</button>
-      <ul className={`sidebar ${isOpen ? 'open' : ''}`}>
-        <li className='sidebar-item'><Link to="/profile">Your Profile</Link></li>
-        <li className='sidebar-item'><Link to="/auth/change-password">Change Password</Link></li>
-        <li className='sidebar-item'><Link to='/profile/services' state={props.profile}> Your Services</Link></li>
-        <li className='sidebar-item'>Your Bookings</li>
-        <li className='sidebar-item'><Link to="/service/new">Create Service</Link></li>
-        {/* Add more menu items as needed */}
+    <div className={styles.containerBar}>
+      <button className={styles.sidebarButton} onClick={toggleSidebar}>Toggle Sidebar</button>
+      <ul className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+        <li className={styles.item}><Link to="/profile">Your Profile</Link></li>
+        <li className={styles.item}><Link to="/auth/change-password">Change Password</Link></li>
+        <li className={styles.item}><Link to='/profile/services' state={props.profile}> Your Services</Link></li>
+        {/* <li className={styles.item}>Your Bookings</li> */}
+        <li className={styles.item}><Link to="/service/new">Create Service</Link></li>
       </ul>
+    </div>
     </>
   )
 }
