@@ -17,22 +17,22 @@ const Landing = ({ user }) => {
         </header>
         <article>
           <p>
-            Welcome to Campus Connect – the premier marketplace tailored for students, by students.
+            Welcome to Campus Connect the premier marketplace tailored for students, by students.
 
             Born from the vision of creating a close-knit student community that thrives on collaboration, we recognized the vast pool of talent and skills that exist within campuses across the USA. Why look far when the service you need is just a dorm room away?
 
-            Whether you're an artist looking to showcase your work, a tech genius fixing gadgets, a tutor with knowledge to share, or even someone with a knack for assembling furniture – Campus Connect is your platform to offer and discover a diverse range of services, right within your campus walls.
+            Whether you're an artist looking to showcase your work, a tech genius fixing gadgets, a tutor with knowledge to share, or even someone with a knack for assembling furniture Campus Connect is your platform to offer and discover a diverse range of services, right within your campus walls.
 
-            Our mission? To empower students to leverage their unique abilities, foster connections, and support one another through commerce. Every transaction you make supports a fellow student’s passion, funds a dream, or simply helps make college life a bit more manageable.
+            Our mission? To empower students to leverage their unique abilities, foster connections, and support one another through commerce. Every transaction you make supports a fellow student's passion, funds a dream, or simply helps make college life a bit more manageable.
 
-            So, if you’re keen on transforming the way you view your campus community, join us in making Campus Connect the heartbeat of student enterprise in the USA. Together, let's redefine what it means to be a student entrepreneur!
+            So, if you're keen on transforming the way you view your campus community, join us in making Campus Connect the heartbeat of student enterprise in the USA. Together, let's redefine what it means to be a student entrepreneur!
           </p>
         </article>
       </section>
 
       <section className={styles.about}>
         <header>
-          <h3>HOO WE ARE</h3>
+          <h3>WHO WE ARE</h3>
           <h1>The Team</h1>
         </header>
         <article>
@@ -41,7 +41,7 @@ const Landing = ({ user }) => {
 
             We're not just your average tech enthusiasts. Each of us embarked on this journey driven by the belief that every student holds a unique potential that deserves a platform. With countless hours spent coding in dorm rooms, brainstorming in coffee shops, and fine-tuning our platform on library benches, we've transformed our tech-savvy aspirations into a reality.
 
-            Beyond our love for all things digital, we're bound together by a vision: to see students across the USA collaborating, thriving, and realizing their entrepreneurial spirit. It's more than just a platform for us – it's a movement. A movement that empowers, supports, and celebrates the incredible tapestry of talents and services that every campus offers.
+            Beyond our love for all things digital, we're bound together by a vision: to see students across the USA collaborating, thriving, and realizing their entrepreneurial spirit. It's more than just a platform for us it's a movement. A movement that empowers, supports, and celebrates the incredible tapestry of talents and services that every campus offers.
 
             So, when you're navigating through Campus Connect, remember you're not just using a platform, you're experiencing the culmination of countless sleepless nights, fueled by caffeine and passion, all dedicated to elevating the student experience.
 
