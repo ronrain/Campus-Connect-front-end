@@ -23,12 +23,13 @@ const SchoolServicesCard = (props) => {
 
 
   return (
-    <div className={styles.flexContainer}>
     <div className={styles.serviceContainer}>
+      <div className={styles.profileHeader}>
       <div className={styles.profileImg} style={{backgroundImage: {logo}}}>
       </div>
       <div className={styles.name}>
         {service.createdBy.name}
+      </div>
       </div>
       <div className={styles.description}>
         {service.description}
@@ -58,7 +59,6 @@ const SchoolServicesCard = (props) => {
           <p>Bookings:</p>
         </div>
       </footer>
-    </div>
     </div>
   );
 }

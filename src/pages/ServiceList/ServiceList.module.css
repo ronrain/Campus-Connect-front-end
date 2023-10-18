@@ -27,3 +27,14 @@
   width: auto;
   outline: none;
 }
+
+.cardContainer {
+  display: flex ;
+  flex-wrap: wrap ;
+  overflow: hidden;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--secondary-text);
+  box-sizing: border-box;
+  width: 100vw;
+}

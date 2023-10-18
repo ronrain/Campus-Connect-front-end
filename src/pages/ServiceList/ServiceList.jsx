@@ -56,14 +56,17 @@ const ServiceList = (props) => {
       <option value="Other">Other</option>
     </select>
     </div>
+    <div className={styles.cardContainer}>
+      
     {services.map(service => ( 
       <SchoolServicesCard 
-        key={service._id}
-        service={service}
-        handleDeleteService={handleDeleteService}
-        user={props.user}
+      key={service._id}
+      service={service}
+      handleDeleteService={handleDeleteService}
+      user={props.user}
       />
-    ))}
+      ))}
+      </div>
     </>
   );
 }
