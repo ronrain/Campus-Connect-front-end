@@ -50,7 +50,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--main-text-color);
+  font-family: var(--secondary-text);
+  color: black;
+  font-weight: 900;
   width: calc(100% - 40px);
   margin: 0 auto;
   margin-bottom: 20px
@@ -107,6 +109,7 @@
   text-align: center;
   background: var(--theme-green);
   color: var(--main-text-color);
+  font-weight: 900;
   width: 100%;
   bottom: 0;
   height: 30px;
