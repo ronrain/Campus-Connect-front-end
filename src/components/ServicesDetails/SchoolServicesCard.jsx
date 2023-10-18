@@ -25,6 +25,7 @@ const SchoolServicesCard = (props) => {
   return (
     <div className={styles.serviceContainer}>
       <div className={styles.profileHeader}>
+
       <div className={styles.profileImg} style={{backgroundImage: {logo}}}>
       </div>
       <div className={styles.name}>
