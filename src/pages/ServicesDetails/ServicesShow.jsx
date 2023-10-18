@@ -46,7 +46,14 @@ const ServicesShow = (props) => {
       <h3>Type Of Service: {service.type}</h3>
       <h3>Description: {service.description}</h3>
       <h4>Price:{service.price}</h4>
-      <h4>Availability: {service.availability}</h4>
+      <h4>Availability:</h4>
+      {service.availability.map((availability, index) => (
+        <div key={index}>
+          <p><strong>Day:</strong> {availability.day}</p>
+          <p><strong>Start Time:</strong> {availability.startTime}</p>
+          <p><strong>End Time:</strong> {availability.endTime}</p>
+        </div>
+      ))}
     </div>
     </div>
     <div className={styles.review}>
