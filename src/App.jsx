@@ -9,9 +9,10 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import SchoolList from './pages/SchoolServices/SchoolList'
-import ServiceList from './pages/SchoolServices/ServiceList'
+import ServiceList from './pages/ServiceList/ServiceList'
 import ProfileServices from './pages/Profiles/ProfileServices'
 import ServicesShow from './pages/ServicesDetails/ServicesShow'
+import EditService from './pages/EditService/EditService'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -30,7 +31,8 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [services, setServices] = useState([])
   const navigate = useNavigate()
-  const [schools, setSchools] = useState([]);
+  const [schools, setSchools] = useState([])
+  const [editMode, setEditMode] = useState(false)
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -68,6 +70,10 @@ function App() {
   const handleAddService = async (serviceFormData, schoolId) => {
     const newService = await serviceService.create(serviceFormData, schoolId)
     navigate('/')
+  }
+
+  const toggleEditMode = () => {
+    setEditMode(!editMode)
   }
 
   return (
@@ -131,6 +137,14 @@ function App() {
             <ServicesShow user={user}/>
           </ProtectedRoute >
         }/>
+      <Route 
+          path='/service/:serviceId/edit'
+          element={
+            <ProtectedRoute user={user}>
+              <EditService Service={toggleEditMode} />
+            </ProtectedRoute>
+          }
+          />
       </Routes>
     </>
   )

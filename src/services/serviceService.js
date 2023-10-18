@@ -43,6 +43,23 @@ async function create(serviceFormData) {
 
 }
 
+async function updateService(serviceFormData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${serviceFormData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(serviceFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
 async function createReview(serviceId, reviewFormData) {
   try {
     const res = await fetch(`${BASE_URL}/${serviceId}/reviews`, {
@@ -103,5 +120,4 @@ const updateReview = async (serviceId, reviewId, reviewFormData) => {
   }
 }
 
-export { create, index, show, createReview, deleteService, deleteReview, updateReview}
-
+export { create, index, show, createReview, deleteService, deleteReview, updateReview, updateService}
