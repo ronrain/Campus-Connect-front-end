@@ -13,6 +13,9 @@ import ServiceList from './pages/ServiceList/ServiceList'
 import ProfileServices from './pages/Profiles/ProfileServices'
 import ServicesShow from './pages/ServicesDetails/ServicesShow'
 import EditService from './pages/EditService/EditService'
+import BookingForm from './pages/Bookings/BookingForm'
+import BookingsList from './pages/Bookings/BookingsList'
+import UserBookingsList from './pages/Bookings/UserBookingsList'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -29,7 +32,6 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
-  const [services, setServices] = useState([])
   const navigate = useNavigate()
   const [schools, setSchools] = useState([])
   const [editMode, setEditMode] = useState(false)
@@ -68,12 +70,16 @@ function App() {
   }
 
   const handleAddService = async (serviceFormData, schoolId) => {
-    const newService = await serviceService.create(serviceFormData, schoolId)
+    await serviceService.create(serviceFormData, schoolId)
     navigate('/')
   }
 
   const toggleEditMode = () => {
     setEditMode(!editMode)
+  }
+
+  const handleUpdateService = async (serviceFormData) => {
+    await serviceService.updateService(serviceFormData)
   }
 
   return (
@@ -141,10 +147,37 @@ function App() {
           path='/service/:serviceId/edit'
           element={
             <ProtectedRoute user={user}>
-              <EditService Service={toggleEditMode} />
+              <EditService 
+              Service={toggleEditMode} 
+              schools={schools} 
+              handleUpdateService={handleUpdateService}/>
             </ProtectedRoute>
           }
           />
+      <Route 
+        path='/service/:serviceId/booking/new'
+        element={
+          <ProtectedRoute user={user}>
+            <BookingForm user={user}/>
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path='/profile/services/:serviceId/bookings' 
+        element={
+          <ProtectedRoute user={user}>
+            <BookingsList user={user}/>
+          </ProtectedRoute>
+        }
+      />
+      <Route 
+        path='/profile/bookings' 
+        element={
+          <ProtectedRoute user={user}>
+            <UserBookingsList user={user}/>
+          </ProtectedRoute>
+        }
+      />
       </Routes>
     </>
   )

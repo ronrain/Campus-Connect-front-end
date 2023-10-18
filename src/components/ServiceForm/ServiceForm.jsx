@@ -11,9 +11,18 @@ const NewService = (props) => {
     description: '',
     type: '', 
     price: 0,
-    availability: '',
+    availability: [
+      { day: '', startTime: '', endTime: ''}
+    ],
     schoolId: 0,
   })
+
+  const handleInputChange = (e, index) => {
+    const { name, value } = e.target
+    const updatedAvailabilities = [...formData.availability]
+    updatedAvailabilities[index][name] = value
+    setFormData({ ...formData, availability: updatedAvailabilities })
+  }
   
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -22,6 +31,13 @@ const NewService = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     props.handleAddService(formData)
+  }
+
+  const addAvailability = () => {
+    setFormData({
+      ...formData,
+      availability: [...formData.availability, { day: '', startTime: '', endTime: '' }]
+    })
   }
 
   return (
@@ -79,17 +95,19 @@ const NewService = (props) => {
             onChange={handleChange}
           />
         </div>
-        <div className={styles.inputContainer}>
-          <input
-            required
-            type="text"
-            name="availability"
-            value={formData.availability}
-            onChange={handleChange}
-            placeholder=" "
-          />
-          <label className={styles.label} htmlFor="availability">Availability</label>
+        {formData.availability.map((availability, index) => (
+        <div key={index}>
+          <label>Day:</label>
+          <input type="text" name="day" value={availability.day} onChange={(e) => handleInputChange(e, index)} required />
+
+          <label>Start Time:</label>
+          <input type="time" name="startTime" value={availability.startTime} onChange={(e) => handleInputChange(e, index)} required />
+
+          <label>End Time:</label>
+          <input type="time" name="endTime" value={availability.endTime} onChange={(e) => handleInputChange(e, index)} required />
         </div>
+      ))}
+        <button type="button" onClick={addAvailability}>Add Availability</button>
         <div className={styles.inputContainer}>
           <select name="schoolId" value={formData.school} onChange={handleChange}>
             <option value="">Select School</option>

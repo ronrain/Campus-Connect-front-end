@@ -14,8 +14,8 @@ const ReviewForm = (props) => {
   
   const handleRatingClick = (selectedRating) => {
       setRating(selectedRating)
-      setFormData({...formData, rating: selectedRating });
-    };
+      setFormData({...formData, rating: selectedRating })
+    }
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -53,9 +53,14 @@ const ReviewForm = (props) => {
         placeholder="Add a review"
         onChange={handleChange}
       />
-      <button className="icon-btn" type="submit"><Icon category="Create" /></button>
+      <button 
+        className="icon-btn" 
+        type="submit"
+      >
+        <Icon category="Create" />
+      </button>
     </form>
-  );
+  )
 }
 
 export default ReviewForm;

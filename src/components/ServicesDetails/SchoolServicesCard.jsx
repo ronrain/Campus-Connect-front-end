@@ -43,7 +43,7 @@ const SchoolServicesCard = (props) => {
         {service.createdBy._id.slice(0, -1) === props.user._id.slice(0, -1) &&
           <>
             <div className={styles.button}>
-              <button className={styles.button30}><Link to={`/service/${service._id}/edit`}>Edit</Link></button>
+              <button className={styles.button30}><Link to={`/service/${service._id}/edit`}state={service}>Edit</Link></button>
               {" "}
               <button
                 className={styles.button30}
@@ -61,6 +61,7 @@ const SchoolServicesCard = (props) => {
         </div>
       </footer>
     </div>
+
   );
 }
 
