@@ -6,7 +6,7 @@ import UserServices from "../../components/ServicesDetails/UserServices";
 
 import * as serviceService from "../../services/serviceService";
 
-// import styles from './Profiles.module.css'
+import styles from './Profiles.module.css'
 
 const ProfileListings = (props) => {
   const [services, setServices] = useState([])
@@ -32,8 +32,9 @@ const ProfileListings = (props) => {
   }
 
   return (
-    <div>
+    <div className={styles.serviceCard}>
       <Sidebar />
+      <div className={styles.serviceCardWrap}></div>
       {services.map((service) => 
       <UserServices 
         key={service._id} 
