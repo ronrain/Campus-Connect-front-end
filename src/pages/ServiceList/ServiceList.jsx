@@ -37,9 +37,10 @@ const ServiceList = (props) => {
   }, [])
 
   const handleTypeChange = async (e) => {
-    const newData = await serviceService.index()
-    const filteredServicesData = newData.filter(service => service.type === e.target.value)
-    setServices(filteredServicesData)
+    const servicesData = await serviceService.index()
+      const filterServicesData = servicesData.filter(service => service.school === school._id)
+    const typeServicesData = filterServicesData.filter(service => service.type === e.target.value)
+    setServices(typeServicesData)
   }
 
 
