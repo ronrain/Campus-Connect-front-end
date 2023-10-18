@@ -11,11 +11,13 @@ const UserServices = (props) => {
 
   return (
     <div className={styles.servicesContainer} >
-    <p>{props.service.title}</p>
-    <p>{props.service.description}</p>
-    <p>{props.service.type}</p>
-    <button onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
-    <button onClick={toggleEditMode}>Edit</button> 
+      <div className={styles.title}> 
+        <p>{props.service.title}</p>
+        <p>{props.service.description}</p>
+        <p>{props.service.type}</p>
+      </div>
+    <button className={styles.button30} onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
+    <button className={styles.button30} onClick={toggleEditMode}>Edit</button> 
     </div>
   );
 }
