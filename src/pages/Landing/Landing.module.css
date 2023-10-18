@@ -1,6 +1,73 @@
+/* Global settings for the landing page */
 .container {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  font-family: var(--main-text);
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif; /* Adjust as per your preference */
+  color: #333;
+  line-height: 1.6;
 }
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+/* Logo section */
+.logoLanding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 91vh; /* Adjust based on your design */
+  margin-bottom: 2rem;
+}
+
+.logoLanding img {
+  max-width: 100%; /* This will ensure the image is responsive and doesn't overflow */
+  height: auto;
+}
+
+/* About section */
+.about {
+  width: 100%;
+  max-width: 1200px; /* Can adjust based on your design */
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 5px; /* Optional, gives a slightly rounded corner */
+}
+
+.about header {
+  margin-bottom: 1rem;
+}
+
+.about h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about article p {
+  font-size: 1rem;
+  text-align: justify; /* This can give a more uniform block of text, optional */
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background-color: #2a2a2a;
+  padding: 1rem 0;
+  color: #bdbdbd;
+  text-align: center;
+  font-size: 0.875rem;
+}
+

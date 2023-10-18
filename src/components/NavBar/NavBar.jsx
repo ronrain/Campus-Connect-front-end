@@ -10,7 +10,7 @@ const NavBar = ({ user, handleLogout }) => {
     <nav className={styles.container}>
       {user ?
         <ul>
-          <NavLink to="/"><img src={logo} alt="CampusConnect" className={styles.logo}/></NavLink>
+          <NavLink to="/"><img src={logo} alt="CampusConnectLogo" className={styles.logo}/></NavLink>
           <li>Welcome, {user.name}</li>
           <li><NavLink to="/schools">Schools</NavLink></li>
           <li><NavLink to="/profile">Profiles</NavLink></li>
