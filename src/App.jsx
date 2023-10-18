@@ -79,6 +79,10 @@ function App() {
     setEditMode(!editMode)
   }
 
+  const handleUpdateService = async (serviceFormData) => {
+    await serviceService.updateService(serviceFormData)
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -144,7 +148,10 @@ function App() {
           path='/service/:serviceId/edit'
           element={
             <ProtectedRoute user={user}>
-              <EditService Service={toggleEditMode} schools={schools} />
+              <EditService 
+              Service={toggleEditMode} 
+              schools={schools} 
+              handleUpdateService={handleUpdateService}/>
             </ProtectedRoute>
           }
           />

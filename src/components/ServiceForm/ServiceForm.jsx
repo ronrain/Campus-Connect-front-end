@@ -18,11 +18,11 @@ const NewService = (props) => {
   })
 
   const handleInputChange = (e, index) => {
-    const { name, value } = e.target;
-    const updatedAvailabilities = [...formData.availability];
-    updatedAvailabilities[index][name] = value;
-    setFormData({ ...formData, availability: updatedAvailabilities });
-  };
+    const { name, value } = e.target
+    const updatedAvailabilities = [...formData.availability]
+    updatedAvailabilities[index][name] = value
+    setFormData({ ...formData, availability: updatedAvailabilities })
+  }
   
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
@@ -37,8 +37,8 @@ const NewService = (props) => {
     setFormData({
       ...formData,
       availability: [...formData.availability, { day: '', startTime: '', endTime: '' }]
-    });
-  };
+    })
+  }
 
   return (
     <main>
@@ -95,17 +95,6 @@ const NewService = (props) => {
             onChange={handleChange}
           />
         </div>
-        {/* <div className={styles.inputContainer}>
-          <input
-            required
-            type="text"
-            name="availability"
-            value={formData.availability}
-            onChange={handleChange}
-            placeholder=" "
-          />
-          <label className={styles.label} htmlFor="availability">Availability</label>
-        </div> */}
         {formData.availability.map((availability, index) => (
         <div key={index}>
           <label>Day:</label>

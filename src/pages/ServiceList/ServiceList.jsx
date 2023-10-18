@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import * as servicesService from '../../services/serviceService';
+import * as serviceService from '../../services/serviceService';
 
 import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesCard";
 
@@ -14,13 +14,13 @@ const ServiceList = (props) => {
   const [services, setServices] = useState([]);
 
   const handleDeleteService = async (serviceId) => {
-    await servicesService.deleteService(serviceId)
+    await serviceService.deleteService(serviceId)
     refreshServiceList()
   }
 
   const refreshServiceList = () => {
     const fetchServices = async () => {
-      const services = await servicesService.index()
+      const services = await serviceService.index()
       setServices(services);
       console.log(services)
     }
@@ -29,7 +29,7 @@ const ServiceList = (props) => {
   
   useEffect(() => {
     const fetchServices = async () => {
-      const servicesData = await servicesService.index()
+      const servicesData = await serviceService.index()
       const filterServicesData = servicesData.filter(service => service.school === school._id)
       setServices(filterServicesData)
     } 
@@ -37,10 +37,12 @@ const ServiceList = (props) => {
   }, [])
 
   const handleTypeChange = async (e) => {
-    const newData = await servicesService.index()
+    const newData = await serviceService.index()
     const filteredServicesData = newData.filter(service => service.type === e.target.value)
     setServices(filteredServicesData)
   }
+
+
 
   return (
     <>
