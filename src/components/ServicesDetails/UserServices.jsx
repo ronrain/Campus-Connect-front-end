@@ -17,9 +17,23 @@ const UserServices = (props) => {
         <p>{props.service.description}</p>
         <p>{props.service.type}</p>
       </div>
-    <button className={styles.button30} onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
-    <button className={styles.button30} onClick={toggleEditMode}>Edit</button> 
-    <button><Link to={`/profile/services/${props.service._id}/bookings`}>See Bookings</Link></button>
+      <button 
+        className={styles.button30} 
+        onClick={() => props.handleDeleteService(props.service._id)}
+      >
+        Delete
+      </button>
+      <button 
+        className={styles.button30} 
+        onClick={toggleEditMode}
+      >
+        Edit
+      </button> 
+      <button>
+        <Link to={`/profile/services/${props.service._id}/bookings`}>
+          See Bookings
+        </Link>
+      </button>
     </div>
   );
 }

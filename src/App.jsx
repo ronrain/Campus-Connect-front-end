@@ -32,7 +32,6 @@ import './App.css'
 
 function App() {
   const [user, setUser] = useState(authService.getUser())
-  const [services, setServices] = useState([])
   const navigate = useNavigate()
   const [schools, setSchools] = useState([])
   const [editMode, setEditMode] = useState(false)
@@ -71,7 +70,7 @@ function App() {
   }
 
   const handleAddService = async (serviceFormData, schoolId) => {
-    const newService = await serviceService.create(serviceFormData, schoolId)
+    await serviceService.create(serviceFormData, schoolId)
     navigate('/')
   }
 
