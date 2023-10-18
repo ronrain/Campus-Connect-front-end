@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 
 import Sidebar from "../../components/SideBar/SideBar";
 import UserServices from "../../components/ServicesDetails/UserServices";
 
 import * as serviceService from "../../services/serviceService";
 
-import styles from './Profiles.module.css'
+// import styles from './Profiles.module.css'
 
 const ProfileListings = (props) => {
-  const [services, setServices] = useState([]);
+  const [services, setServices] = useState([])
+  const [editMode, setEditMode] = useState(false)
 
   useEffect(() => {
     const fetchListings = async () => {
@@ -26,11 +27,20 @@ const ProfileListings = (props) => {
     setServices(services.filter(service => service._id !== serviceId))
   }
 
-  
+  const toggleEditMode = () => {
+    setEditMode(!editMode)
+  }
+
   return (
     <div>
       <Sidebar />
-      {services.map((service) => <UserServices key={service._id} service={service} handleDeleteService={handleDeleteService}/> )}
+      {services.map((service) => 
+      <UserServices 
+        key={service._id} 
+        service={service}  
+        handleDeleteService={handleDeleteService}
+        toggleEditMode={toggleEditMode}
+        /> )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom"
 // css
 import styles from './EditService.module.css'
 
+
 const EditService = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
@@ -13,20 +14,21 @@ const EditService = (props) => {
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value})
   }
-
-  const handleSubmit = evt => {
-    evt.preventDefault()
-    props.handleUpdateService(formData)
-  }
-
+  
   const toggleEditMode = () => {
     setEditMode(!editMode)
   }
 
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.toggleEditMode(formData)
+  }
+
+
   return (
     <div>
         <form onSubmit={handleSubmit} className={styles.serviceForm}>
-          <div className={styles.header}><h1>Create Service</h1></div>
+          <div className={styles.header}><h1>Edit Service</h1></div>
         <div className={styles.inputContainer}>
           <input
             type="text"
@@ -96,7 +98,8 @@ const EditService = (props) => {
           </select>
         </div>
         <div>
-          <button onClick={toggleEditMode}>Edit</button>  
+          <button type="button" onClick={toggleEditMode}>Edit</button>  
+          <button type="button" onClick={toggleEditMode}>Cancel</button>
         </div>
         </form>
     </div>

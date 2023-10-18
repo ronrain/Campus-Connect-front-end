@@ -31,7 +31,8 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [services, setServices] = useState([])
   const navigate = useNavigate()
-  const [schools, setSchools] = useState([]);
+  const [schools, setSchools] = useState([])
+  const [editMode, setEditMode] = useState(false)
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -71,10 +72,8 @@ function App() {
     navigate('/')
   }
 
-  const handleUpdateService = async serviceFormData => {
-    const updateService = await serviceService.update(serviceFormData)
-    setServices(services.map((b) => serviceFormData._id === b._id ? updateService : b))
-    navigate('/services')
+  const toggleEditMode = () => {
+    setEditMode(!editMode)
   }
 
   return (
@@ -142,7 +141,7 @@ function App() {
           path='/service/:serviceId/edit'
           element={
             <ProtectedRoute user={user}>
-              <EditService handleUpdateService={handleUpdateService} />
+              <EditService Service={toggleEditMode} />
             </ProtectedRoute>
           }
           />
