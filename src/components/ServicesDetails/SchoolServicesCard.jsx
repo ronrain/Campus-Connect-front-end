@@ -38,13 +38,14 @@ const SchoolServicesCard = (props) => {
         <p>Price: {service.price}</p>
       </div>
       <button className={styles.cardBtn}><Link to={`/service/${service._id}`}>Book Me</Link></button>
-        {service.createdBy._id &&
+        {service.createdBy._id.slice(0, -1) === props.user._id.slice(0, -1) &&
           <>
-            {/* <Link state={props.service} to={`/blogs/${props.service._id}/edit`}>Edit</Link> */}
             <div className={styles.button}>
-            <button 
-            className={styles.button30}
-            onClick={() => props.handleDeleteService(props.service._id)}>Delete</button>
+              <button className={styles.button30}><Link to={`/service/${service._id}/edit`}>Edit</Link></button>
+              <button
+                className={styles.button30}
+                onClick={() => props.handleDeleteService(props.service._id)}>Delete
+              </button>
             </div>
           </>
         }
