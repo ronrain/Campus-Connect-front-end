@@ -141,7 +141,7 @@ function App() {
           path='/service/:serviceId/edit'
           element={
             <ProtectedRoute user={user}>
-              <EditService Service={toggleEditMode} />
+              <EditService Service={toggleEditMode} schools={schools} />
             </ProtectedRoute>
           }
           />
