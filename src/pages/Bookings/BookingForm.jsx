@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import * as bookingService from '../../services/bookingService'
 
-const BookingForm = (props) => {
+const BookingForm = () => {
   
   const [selectedDate, setSelectedDate] = useState('')
   const [selectedStartTime, setSelectedStartTime] = useState('')
@@ -37,8 +37,6 @@ const BookingForm = (props) => {
       setSelectedEndTime(selectedAvailability.endTime)
       const timeSlots = generateTimeSlots(selectedAvailability.startTime, selectedAvailability.endTime, 60)
       setAvailableTimeSlots(timeSlots)
-  
-      // Combine selected date and time and update the formData state
       const combinedDateTime = `${selectedDate} ${selectedAvailability.startTime}`
       setFormData(prevData => ({
         ...prevData,
@@ -56,8 +54,15 @@ const BookingForm = (props) => {
   }
 
   const handleChange = (evt) => {
-    setFormData({ ...formData, [evt.target.name]: evt.target.value })
-  }
+    setFormData({ ...formData, [evt.target.name]: evt.target.value });
+    if (evt.target.name === 'selectedTime') {
+      const combinedDateTime = `${selectedDate} ${evt.target.value}`;
+      setFormData((prevData) => ({
+        ...prevData,
+        date: combinedDateTime,
+      }));
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -66,7 +71,7 @@ const BookingForm = (props) => {
   }
 
   const generateTimeSlots = (startTime, endTime, interval = 60) => {
-    const timeSlots = [];
+    const timeSlots = []
     const start = new Date(`2000-01-01T${startTime}`)
     const end = new Date(`2000-01-01T${endTime}`)
     const intervalMilliseconds = interval * 60 * 1000
@@ -101,7 +106,7 @@ const BookingForm = (props) => {
       </select>
 
       <label>Select Time:</label>
-      <select name="selectedTime">
+      <select name="selectedTime" onChange={handleChange}>
         <option value="">Select a time</option>
         {availableTimeSlots.map((timeSlot, index) => (
             <option key={index} value={timeSlot}>
