@@ -11,12 +11,12 @@ const ReviewCard = (props) => {
     rating: props.review.rating
   })
 
-  const [rating, setRating] = useState(props.review.rating);
+  const [rating, setRating] = useState(props.review.rating)
 
   
   const handleRatingClick = (selectedRating) => {
       setRating(selectedRating)
-      setFormData({...formData, rating: selectedRating });
+      setFormData({...formData, rating: selectedRating })
     };
 
   const handleChange = (evt) => {
@@ -41,7 +41,7 @@ const ReviewCard = (props) => {
 
   return (
     <>
-    {editMode ? (    <form onSubmit={handleSubmit}>
+    {editMode ? ( <form onSubmit={handleSubmit}>
       <div style={{ fontSize: '2rem' }}>
         {stars.map((star) => (
           <span
@@ -61,15 +61,33 @@ const ReviewCard = (props) => {
         value={formData.text}
         onChange={handleChange}
       />
-      <button className="icon-btn" type="submit">Save</button>
-      <button type="button" onClick={toggleEditMode}>Cancel</button>
+      <button 
+        className="icon-btn" 
+        type="submit"
+      >
+        Save
+      </button>
+      <button 
+        type="button" 
+        onClick={toggleEditMode}
+      >
+        Cancel
+      </button>
     </form>) : (<div className="review-container" key={props.review._id}>
       <p>{props.review.text}</p>
       <Ratings review={props.review} />
       {props.review.author === props.user.profile && 
         <div>
-          <button onClick={() => props.handleDeleteReview(props.review._id)}>Delete</button>
-          <button onClick={toggleEditMode}>Edit</button>  
+          <button 
+            onClick={() => props.handleDeleteReview(props.review._id)}
+          >
+            Delete
+          </button>
+          <button 
+            onClick={toggleEditMode}
+          >
+            Edit
+          </button>  
         </div>}
     </div>) }
 

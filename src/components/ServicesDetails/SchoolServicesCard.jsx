@@ -59,7 +59,7 @@ const SchoolServicesCard = (props) => {
       </footer>
     </div>
     </section>
-  );
+  )
 }
 
 export default SchoolServicesCard;
