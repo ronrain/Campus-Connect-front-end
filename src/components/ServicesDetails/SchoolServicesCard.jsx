@@ -23,13 +23,15 @@ const SchoolServicesCard = (props) => {
 
 
   return (
-    <section className={styles.flexContainer}>
     <div className={styles.serviceContainer}>
+      <div className={styles.profileHeader}>
+
       <div className={styles.profileImg} style={{backgroundImage: {logo}}}>
       </div>
-      <h1 className={styles.name}>
+      <div className={styles.name}>
         {service.createdBy.name}
-      </h1>
+      </div>
+      </div>
       <div className={styles.description}>
         {service.description}
       </div>
@@ -42,6 +44,7 @@ const SchoolServicesCard = (props) => {
           <>
             <div className={styles.button}>
               <button className={styles.button30}><Link to={`/service/${service._id}/edit`}state={service}>Edit</Link></button>
+              {" "}
               <button
                 className={styles.button30}
                 onClick={() => props.handleDeleteService(props.service._id)}>Delete
@@ -58,8 +61,8 @@ const SchoolServicesCard = (props) => {
         </div>
       </footer>
     </div>
-    </section>
-  )
+
+  );
 }
 
 export default SchoolServicesCard;

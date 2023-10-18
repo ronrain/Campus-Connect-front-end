@@ -1,10 +1,37 @@
 .icon {
   height: 70px;
   color: black;
-  background-color: aquamarine;
+  background-color: var(--theme-green);
 }
 
 .icon-btn {
   width: max-content;
   margin: auto;
+  border: none;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  display: flex;
+  max-width: 31.25rem;
+  border-radius: 0.3125rem;
+  flex-direction: column;
+  background-color: white;
+  padding: 1.3125rem 1.3125rem 1.75rem 1.3125rem;
+}
+
+span {
+  margin: auto;
+}
+
+textarea {
+  width: auto;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  margin-top:1rem;
+}
+

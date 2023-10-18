@@ -83,6 +83,7 @@ const ReviewCard = (props) => {
           >
             Delete
           </button>
+            {" "}
           <button 
             onClick={toggleEditMode}
           >

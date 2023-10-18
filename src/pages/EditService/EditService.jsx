@@ -111,6 +111,7 @@ console.log(formData.school)
         </div>
         <div>
           <button type="button" onClick={toggleEditMode}>Cancel</button>
+          {" "} 
         </div>
           <button type="submit" onClick={handleSubmit}>Save</button>  
         </form>

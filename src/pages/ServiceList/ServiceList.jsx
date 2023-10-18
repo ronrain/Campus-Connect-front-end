@@ -47,7 +47,7 @@ const ServiceList = (props) => {
 
   return (
     <>
-    <div className={styles.container} >
+    <div className={styles.container}>
     <h1 className={styles.title}>Please select the type of service offered by the school from the drop down menu:</h1>
     <select className={styles.selectService} name="type" onChange={handleTypeChange}>
       <option value="">Search By Type</option>
@@ -59,14 +59,16 @@ const ServiceList = (props) => {
       <option value="Other">Other</option>
     </select>
     </div>
+    <div className={styles.cardContainer}>
     {services.map(service => ( 
       <SchoolServicesCard 
-        key={service._id}
-        service={service}
-        handleDeleteService={handleDeleteService}
-        user={props.user}
+      key={service._id}
+      service={service}
+      handleDeleteService={handleDeleteService}
+      user={props.user}
       />
-    ))}
+      ))}
+      </div>
     </>
   );
 }
