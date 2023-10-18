@@ -12,6 +12,7 @@ import SchoolList from './pages/SchoolServices/SchoolList'
 import ServiceList from './pages/SchoolServices/ServiceList'
 import ProfileServices from './pages/Profiles/ProfileServices'
 import ServicesShow from './pages/ServicesDetails/ServicesShow'
+import EditService from './pages/EditService/EditService'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -68,6 +69,12 @@ function App() {
   const handleAddService = async (serviceFormData, schoolId) => {
     const newService = await serviceService.create(serviceFormData, schoolId)
     navigate('/')
+  }
+
+  const handleUpdateService = async serviceFormData => {
+    const updateService = await serviceService.update(serviceFormData)
+    setServices(services.map((b) => serviceFormData._id === b._id ? updateService : b))
+    navigate('/services')
   }
 
   return (
@@ -136,7 +143,7 @@ function App() {
           path='/service/:serviceId/edit'
           element={
             <ProtectedRoute user={user}>
-              <EditService handleUpdateBlog={handleUpdateService} />
+              <EditService handleUpdateService={handleUpdateService} />
             </ProtectedRoute>
           }
         />

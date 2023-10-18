@@ -14,13 +14,18 @@ const EditService = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value})
   }
 
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.handleUpdateService(formData)
+  }
+
   const toggleEditMode = () => {
     setEditMode(!editMode)
   }
 
   return (
     <div>
-        <form className={styles.serviceForm}>
+        <form onSubmit={handleSubmit} className={styles.serviceForm}>
           <div className={styles.header}><h1>Create Service</h1></div>
         <div className={styles.inputContainer}>
           <input
