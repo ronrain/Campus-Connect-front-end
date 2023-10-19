@@ -12,20 +12,20 @@ const UserServices = (props) => {
 
   return (
     <div className={styles.servicesContainer} >
-        <h2 className={styles.title}>{props.service.title.toUpperCase()}</h2>
+      <h2 className={styles.title}>{props.service.title.toUpperCase()}</h2>
+      <hr />
+        <p className={styles.about}>{props.service.description.toUpperCase()}</p>
+        <p className={styles.about}>Type: {props.service.type}</p>
+        <p className={styles.about}>Price: ${props.service.price}</p>
         <hr />
-          <p className={styles.about}>{props.service.description.toUpperCase()}</p>
-          <p className={styles.about}>Type: {props.service.type}</p>
-          <p className={styles.about}>Price: ${props.service.price}</p>
-          <hr />
-          <h4>Availability: </h4>
-          {props.service.availability.map((availability, index) => (
-            <div key={index}>
-              <p><strong>Day:</strong> {availability.day}</p>
-              <p><strong>Start Time:</strong> {availability.startTime}</p>
-              <p><strong>End Time:</strong> {availability.endTime}</p>
-            </div>
-          ))}
+        <h4>Availability: </h4>
+        {props.service.availability.map((availability, index) => (
+          <div key={index}>
+            <p><strong>Day:</strong> {availability.day}</p>
+            <p><strong>Start Time:</strong> {availability.startTime}</p>
+            <p><strong>End Time:</strong> {availability.endTime}</p>
+          </div>
+        ))}
       <div className={styles.buttons}>
       <button className={`${styles.button30} ${styles.seeBookings}`}>
         <Link className={styles.seeBookings} to={`/profile/services/${props.service._id}/bookings`}>

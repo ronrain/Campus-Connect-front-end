@@ -13,9 +13,9 @@ const ReviewForm = (props) => {
 
   
   const handleRatingClick = (selectedRating) => {
-      setRating(selectedRating)
-      setFormData({...formData, rating: selectedRating })
-    }
+    setRating(selectedRating)
+    setFormData({...formData, rating: selectedRating })
+  }
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })

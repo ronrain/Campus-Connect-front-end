@@ -79,7 +79,7 @@ const NewService = (props) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label className={styles.label}htmlFor="description">Description</label>
+          <label htmlFor="description" className={styles.label}>Description</label>
         </div>
         <div className={styles.inputContainer}>
           <select
