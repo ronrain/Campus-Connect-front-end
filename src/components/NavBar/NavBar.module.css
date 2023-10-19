@@ -62,11 +62,7 @@
 
 .logo {
   height: 70px;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  margin-top: 0px;
 }
 
 .name {
