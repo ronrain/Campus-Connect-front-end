@@ -11,6 +11,12 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 5rem;
 }
 
 .inputContainer {
@@ -21,16 +27,15 @@
 }
 
 .label {
-  position: absolute;
   left: 10px;
   bottom: 5px;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: var(--main-text-color);
   pointer-events: none; 
   transition: 0.3s all;
 }
 
-input {
+.editInput {
   width: 100%;
   padding: 10px 15px;
   box-sizing: border-box;
@@ -42,15 +47,8 @@ input {
   outline: none;
 }
 
-input:focus {
+.editInput:focus {
   border-color: var(--theme-green);
-}
-
-input:focus + .label,
-input:not(:placeholder-shown) + .label {
-  bottom: 115%; 
-  font-size: 1rem;
-  color: var(--theme-pink);
 }
 
 @media (max-width: 768px) {
@@ -62,7 +60,7 @@ input:not(:placeholder-shown) + .label {
     margin-bottom: 15px;
   }
 
-  .input input {
+  .input {
     padding: 10px;
     font-size: 14px;
   }
@@ -70,13 +68,6 @@ input:not(:placeholder-shown) + .label {
   .label {
     left: 10px;
     top: 10px; 
-  }
-
-  .input input:focus + .label label,
-  .input input:not(:placeholder-shown) + .label label {
-    top: -15px; 
-    left: 10px;
-    font-size: 11px;
   }
 }
 
@@ -141,21 +132,13 @@ select {
   transition: transform 0.2s, box-shadow 0.2s;
   border-radius: 5px;
   font-family: var(--secondary-text);
+  outline: none;
 }        
 
 select:hover {
   transform: scale(1.01); 
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-}
-
-.price, option {
-  left: 10px;
-  bottom: 5px;
-  font-size: 1.1rem;
-  color: #777;
-  pointer-events: none; 
-  transition: 0.3s all;
-  color: var(--main-text-color);
+  outline: none;
 }
 
 .header {
