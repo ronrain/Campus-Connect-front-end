@@ -31,18 +31,21 @@ const ProfileListings = (props) => {
     setEditMode(!editMode)
   }
 
+
   return (
-    <div className={styles.serviceCard}>
+    <>
       <Sidebar />
-      <div className={styles.serviceCardWrap}></div>
-      {services.map((service) => 
-      <UserServices 
-        key={service._id} 
-        service={service}  
-        handleDeleteService={handleDeleteService}
-        toggleEditMode={toggleEditMode}
-        /> )}
-    </div>
+      <div className={styles.serviceCard}>
+        <div className={styles.serviceCardWrap}></div>
+        {services.map((service) => 
+        <UserServices 
+          key={service._id} 
+          service={service}  
+          handleDeleteService={handleDeleteService}
+          toggleEditMode={toggleEditMode}
+          /> )}
+      </div>
+    </>
   );
 }
 export default ProfileListings; 
