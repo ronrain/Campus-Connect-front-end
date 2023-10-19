@@ -120,22 +120,22 @@ const BookingForm = () => {
           ))}
       </select>
       <div className={styles.inputContainer}>
+        <label className={styles.label} htmlFor="">Describe Your Request</label>
         <input
         type="text" 
         name='request'
         onChange={handleChange}
         placeholder=" "
         />
-      <label className={styles.label} htmlFor="">Describe Your Request</label>
       </div>
       <div className={styles.inputContainer}>
+        <label className={styles.label} htmlFor="">Your Contact Info</label>
         <input
         type="text" 
         name='contactinfo'
         onChange={handleChange}
         placeholder=" "
         />
-      <label className={styles.label} htmlFor="">Your Contact Info</label>
       </div>
       <button className={styles.button30} type="submit">Submit</button>
     </form>
