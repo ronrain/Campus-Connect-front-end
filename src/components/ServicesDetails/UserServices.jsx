@@ -27,12 +27,7 @@ const UserServices = (props) => {
         Delete
       </button>
       {" "}
-      <button 
-        className={styles.button30} 
-        onClick={toggleEditMode}
-      >
-        Edit
-      </button> 
+      <button className={styles.button30}><Link to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
       <button className={`${styles.button30} ${styles.seeBookings}`}>
         <Link to={`/profile/services/${props.service._id}/bookings`}>
           See Bookings

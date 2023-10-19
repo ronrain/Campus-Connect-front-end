@@ -180,7 +180,7 @@ function App() {
         }
       />
       <Route 
-        path='/profile/myProfile' 
+        path='/myProfile' 
         element={
           <ProtectedRoute user={user}>
             <MyProfile user={user}/>
