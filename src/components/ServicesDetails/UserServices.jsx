@@ -32,7 +32,7 @@ const UserServices = (props) => {
       >
         Edit
       </button> 
-      <button>
+      <button className={styles.button30}>
         <Link to={`/profile/services/${props.service._id}/bookings`}>
           See Bookings
         </Link>

@@ -63,12 +63,6 @@
   border-radius: 5px;
 }
 
-.serviceContainer .social:hover {
-  background: #ff6b6c;
-  color: white;
-  cursor: pointer;
-}
-
 .serviceContainer .cardBtn {
   display: flex;
   justify-content: center;

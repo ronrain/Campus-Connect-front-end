@@ -6,7 +6,7 @@ import * as bookingService from '../../services/bookingService'
 
 import Sidebar from "../../components/SideBar/SideBar";
 
-import './BookingList.css'
+// import './BookingList.css'
 
 const BookingsList = (props) => {
   const { serviceId } = useParams()
