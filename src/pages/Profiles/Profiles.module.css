@@ -44,3 +44,36 @@
   align-items: center;
 }
 
+.linkTotal {
+  font-size: 1.3rem;
+  font-family: var(--secondary-text);
+  color: var(--secondary-text-color);
+}
+
+.linkTotal {
+  text-decoration: none;
+  font-family: var(--secondary-text);
+  color: var(--secondary-text-color);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.linkTotal:before { 
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  bottom: 0;
+  left: 0;
+  background-color: var(--theme-pink);
+  visibility: hidden;
+  transition: all 0.3s;
+}
+
+.linkTotal:hover:before {
+  visibility: visible;
+  width: 100%;
+}

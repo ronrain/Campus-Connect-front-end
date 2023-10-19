@@ -35,7 +35,7 @@
   background-color: var(--theme-green);
 }
 
-.sidebarButton {
+.sidebarTitle {
   background-color: #555;
   color: #fff;
   cursor: pointer;
@@ -48,7 +48,7 @@
   left: 0;
   z-index: 2;
   font-family: var(--main-text); 
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .sidebarButton:hover {

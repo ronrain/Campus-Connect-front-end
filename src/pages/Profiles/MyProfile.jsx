@@ -45,7 +45,7 @@ const MyProfile = (props) => {
       <div className={styles.contentContainer}>
         <div className={styles.title}>
           <h1>Total Services: {myServices.length}</h1>
-          <Link to={'/profile/services'}>view all Services</Link>
+          <Link className={styles.linkTotal} to={'/profile/services'}>View All Services</Link>
         </div>
         </div>
     </div>
@@ -53,7 +53,7 @@ const MyProfile = (props) => {
       <div className={styles.contentContainer}>
         <div className={styles.title}>
           <h1>Total Bookings: {myBookings.length}</h1>
-          <Link to={'/profile/bookings'}>view all Bookings</Link>
+          <Link className={styles.linkTotal} to={'/profile/bookings'}>View All Bookings</Link>
         </div>
         </div>
     </div>

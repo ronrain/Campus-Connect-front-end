@@ -8,7 +8,7 @@ const Sidebar = (props) => {
   return (
     <>
     <div className={styles.containerBar}>
-      <div className={styles.sidebarButton}>Toggle Sidebar</div>
+      <div className={styles.sidebarTitle}>Sidebar</div>
       <ul className={styles.sidebar}>
         <li className={styles.item}><Link className={styles.itemLink} to="/myProfile">Your Profile</Link></li>
         <li className={styles.item}><Link className={styles.itemLink} to="/auth/change-password">Change Password</Link></li>
