@@ -37,13 +37,6 @@ function App() {
   const [schools, setSchools] = useState([])
   const [editMode, setEditMode] = useState(false)
 
-  useEffect(() => {
-    const fetchSchools = async () => {
-      const schools = await schoolService.getAllSchools()
-      setSchools(schools);
-    }
-    fetchSchools()
-  }, [])
 
   const handleSchoolSearch = formData => {
     const filteredSchoolResults = schools.filter(school => (

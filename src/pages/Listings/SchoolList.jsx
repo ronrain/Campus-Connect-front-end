@@ -10,8 +10,6 @@ import styles from './SchoolList.module.css'
 
 const SchoolList = () => {
   const [schools, setSchools] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchResults, setSearchResults] = useState([])
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -25,7 +23,6 @@ const SchoolList = () => {
     const filteredSchoolResults = schools.filter(school => (
       school.name.toLowerCase().includes(formData.query.toLowerCase()) 
     ))
-    setSearchResults(filteredSchoolResults)
     setSchools(filteredSchoolResults)
   }
 
