@@ -46,7 +46,7 @@ const NewService = (props) => {
       <Sidebar />
       <div className={styles.container}>
         <form className={styles.serviceForm}>
-          <div className={styles.header}><h1>Create Service</h1></div>
+          <div className={styles.header}>Create Service</div>
         <div className={styles.inputContainer}>
           <input
             type="text"
@@ -118,7 +118,7 @@ const NewService = (props) => {
           <input type="time" name="endTime" value={availability.endTime} onChange={(e) => handleInputChange(e, index)} required />
         </div>
       ))}
-        <button type="button" onClick={addAvailability}>Add Availability</button>
+        <button className={styles.button30} type="button" onClick={addAvailability}>Add Availability</button>
         <div className={styles.inputContainer}>
           <select name="schoolId" value={formData.school} onChange={handleChange}>
             <option value="">Select School</option>

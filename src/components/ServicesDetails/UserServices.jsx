@@ -14,10 +14,11 @@ const UserServices = (props) => {
     <div className={styles.servicesContainer} >
       <div className={styles.title}> 
         <p>{props.service.title}</p>
-        <p>{props.service.description}</p>
-        <p>{props.service.type}</p>
+        <div className={styles.about}>
+          <p>{props.service.description}</p>
+          <p>{props.service.type}</p>
+        </div>
       </div>
-
       <div className={styles.buttons}>
       <button 
         className={styles.button30} 
@@ -27,7 +28,7 @@ const UserServices = (props) => {
       </button>
       {" "}
       <button className={styles.button30}><Link to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
-      <button className={styles.button30}>
+      <button className={`${styles.button30} ${styles.seeBookings}`}>
         <Link to={`/profile/services/${props.service._id}/bookings`}>
           See Bookings
         </Link>
