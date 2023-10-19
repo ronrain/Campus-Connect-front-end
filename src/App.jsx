@@ -13,7 +13,7 @@ import ServiceList from './pages/ServiceList/ServiceList'
 import ProfileServices from './pages/Profiles/ProfileServices'
 import ServicesShow from './pages/ServicesDetails/ServicesShow'
 import EditService from './pages/EditService/EditService'
-import BookingForm from './pages/Bookings/BookingForm'
+import BookingForm from './pages/Bookings/BookingForm/BookingForm'
 import BookingsList from './pages/Bookings/BookingsList'
 import UserBookingsList from './pages/Bookings/UserBookingsList'
 

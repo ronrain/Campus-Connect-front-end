@@ -2,7 +2,9 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-import * as bookingService from '../../services/bookingService'
+import * as bookingService from '../../../services/bookingService'
+
+import styles from './BookingForm.module.css'
 
 const BookingForm = () => {
   
@@ -93,10 +95,12 @@ const BookingForm = () => {
 
   return (
     <>
-    <button onClick={handleReturn}>Return</button>
-      <form onSubmit={handleSubmit}>
-      <label>Select Date:</label>
-      <select name="selectedDate" value={selectedDate} onChange={handleDateChange}>
+    <div className={styles.buttonContainer}>
+    <button className={styles.button30}onClick={handleReturn}>Return</button>
+    </div>
+      <form className={styles.form} onSubmit={handleSubmit}>
+      <label className={styles.label}>Select Date:</label>
+      <select className={styles.select} name="selectedDate" value={selectedDate} onChange={handleDateChange}>
         <option value="">Select a date</option>
         {uniqueDates.map((day, index) => (
           <option key={index} value={day}>
@@ -105,8 +109,8 @@ const BookingForm = () => {
         ))}
       </select>
 
-      <label>Select Time:</label>
-      <select name="selectedTime" onChange={handleChange}>
+      <label className={styles.label}>Select Time:</label>
+      <select className={styles.select} name="selectedTime" onChange={handleChange}>
         <option value="">Select a time</option>
         {availableTimeSlots.map((timeSlot, index) => (
             <option key={index} value={timeSlot}>
@@ -114,13 +118,16 @@ const BookingForm = () => {
             </option>
           ))}
       </select>
-      <label htmlFor="">Describe Your Request</label>
-      <input 
-      type="text" 
-      name='request'
-      onChange={handleChange}
-      />
-      <button type="submit">Submit</button>
+      <div className={styles.inputContainer}>
+        <input
+        type="text" 
+        name='request'
+        onChange={handleChange}
+        placeholder=" "
+        />
+      <label className={styles.label} htmlFor="">Describe Your Request</label>
+      </div>
+      <button className={styles.button30} type="submit">Submit</button>
     </form>
     </>
   );

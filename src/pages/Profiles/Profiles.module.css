@@ -2,9 +2,11 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: flex-start;
   text-align: center;
   transition: margin-left 0.6s ease; 
+  margin-top: 4rem;
 }
 
 .serviceCardWrap {
