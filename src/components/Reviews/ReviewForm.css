@@ -1,5 +1,5 @@
 .icon {
-  height: 70px;
+  height: 60px;
   color: black;
   background-color: var(--theme-green);
 }
@@ -8,6 +8,7 @@
   width: max-content;
   margin: auto;
   border: none;
+  margin-top: 15px;
 }
 
 form {

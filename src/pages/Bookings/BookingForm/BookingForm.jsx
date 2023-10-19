@@ -101,7 +101,13 @@ const BookingForm = () => {
     </div>
       <form className={styles.form} onSubmit={handleSubmit}>
       <label className={styles.label}>Select Date:</label>
-      <select className={styles.select} name="selectedDate" value={selectedDate} onChange={handleDateChange}>
+      <select 
+        required
+        className={styles.select} 
+        name="selectedDate" 
+        value={selectedDate} 
+        onChange={handleDateChange}
+      >
         <option value="">Select a date</option>
         {uniqueDates.map((day, index) => (
           <option key={index} value={day}>
@@ -111,7 +117,12 @@ const BookingForm = () => {
       </select>
 
       <label className={styles.label}>Select Time:</label>
-      <select className={styles.select} name="selectedTime" onChange={handleChange}>
+      <select 
+        required
+        className={styles.select} 
+        name="selectedTime" 
+        onChange={handleChange}
+      >
         <option value="">Select a time</option>
         {availableTimeSlots.map((timeSlot, index) => (
             <option key={index} value={timeSlot}>
@@ -122,21 +133,23 @@ const BookingForm = () => {
       <div className={styles.inputContainer}>
         <label className={styles.label} htmlFor="">Describe Your Request</label>
         <input
-        type="text" 
-        name='request'
-        className={styles.inputField}
-        onChange={handleChange}
-        placeholder=" "
+          required
+          type="text" 
+          name='request'
+          className={styles.inputField}
+          onChange={handleChange}
+          placeholder=" "
         />
       </div>
       <div className={styles.inputContainer}>
         <label className={styles.label} htmlFor="">Your Contact Info</label>
         <input
-        type="text" 
-        name='contactinfo'
-        className={styles.inputField}
-        onChange={handleChange}
-        placeholder=" "
+          required
+          type="text" 
+          name='contactinfo'
+          className={styles.inputField}
+          onChange={handleChange}
+          placeholder=" "
         />
       </div>
       <button className={styles.button30} type="submit">Submit</button>
