@@ -11,12 +11,13 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+  margin: auto;
 }
 
 .inputContainer {
   position: relative;
   margin-bottom: 1rem;
-  margin-top: 1.9rem;
+  margin-top: 1rem;
   width: 100%;
 }
 

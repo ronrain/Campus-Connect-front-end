@@ -97,20 +97,23 @@ const NewService = (props) => {
           />
         </div>
         <div className={styles.inputContainer}>
-          <label className={styles.contactinfo} htmlFor="contactinfo">Contact Info: </label>
           <input
             required
             type="text"
             name="contactinfo"
             value={formData.contactinfo}
+            placeholder=" "
             onChange={handleChange}
           />
+          <label className={styles.label}  htmlFor="contactinfo">Contact Info </label>
         </div>
         {formData.availability.map((availability, index) => (
         <div key={index}>
-          <label>Day:</label>
-          <input type="text" name="day" value={availability.day} onChange={(e) => handleInputChange(e, index)} required />
+          <div className={styles.inputContainer}>
 
+          <input type="text" name="day" placeholder=" " value={availability.day} onChange={(e) => handleInputChange(e, index)} required />
+          <label className={styles.label}>Day</label>
+          </div>
           <label>Start Time:</label>
           <input type="time" name="startTime" value={availability.startTime} onChange={(e) => handleInputChange(e, index)} required />
 
