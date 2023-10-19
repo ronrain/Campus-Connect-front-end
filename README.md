@@ -88,6 +88,7 @@ We've got some exciting plans for CampusConnect's future:
 ## Attributions
 - [CSS Button Animator](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom)
 - [CSS Box-Shadow](https://getcssscan.com/css-box-shadow-examples)
+- [Favicon Generator](https://favicon.io/favicon-generator/)
 
 ## Join the CampusConnect Community 🤝
 
