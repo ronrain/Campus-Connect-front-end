@@ -12,14 +12,15 @@ const UserServices = (props) => {
 
   return (
     <div className={styles.servicesContainer} >
-      <div className={styles.title}> 
-        <p>{props.service.title}</p>
-        <div className={styles.about}>
-          <p>{props.service.description}</p>
-          <p>{props.service.type}</p>
-        </div>
-      </div>
+        <p className={styles.title}>{props.service.title}</p>
+          <p className={styles.about}>{props.service.description}</p>
+          <p className={styles.about}>{props.service.type}</p>
       <div className={styles.buttons}>
+      <button className={`${styles.button30} ${styles.seeBookings}`}>
+        <Link className={styles.seeBookings} to={`/profile/services/${props.service._id}/bookings`}>
+          See Bookings
+        </Link>
+      </button>
       <button 
         className={styles.button30} 
         onClick={() => props.handleDeleteService(props.service._id)}
@@ -27,12 +28,7 @@ const UserServices = (props) => {
         Delete
       </button>
       {" "}
-      <button className={styles.button30}><Link to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
-      <button className={`${styles.button30} ${styles.seeBookings}`}>
-        <Link to={`/profile/services/${props.service._id}/bookings`}>
-          See Bookings
-        </Link>
-      </button>
+      <button className={styles.button30}><Link className={styles.edit} to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
     </div>
     </div>
   );
