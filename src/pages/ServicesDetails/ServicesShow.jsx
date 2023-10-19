@@ -55,7 +55,6 @@ const ServicesShow = (props) => {
               <p><strong>End Time:</strong> {availability.endTime}</p>
             </div>
           ))}
-                  <button><Link to={`/service/${service._id}/booking/new`} state={{service}}>Book this service</Link></button>
         </div>
       </div>
       <div className={styles.review}>
@@ -69,6 +68,7 @@ const ServicesShow = (props) => {
             : <p className={styles.reviewConditional}>Be The First To Review</p>}
         </div>
       </div>
+        <button><Link to={`/service/${service._id}/booking/new`} state={{service}}>Book this service</Link></button>
     </div>
     </>
   );
