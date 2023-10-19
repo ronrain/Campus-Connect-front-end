@@ -1,8 +1,12 @@
 # Welcome to **CampusConnect** 🎓
 
-![Campus Connect Logo](https://example.com/campus-connect-logo.png)
+![Campus Connect Logo](public/assets/logo.png)
 
 Hey there! Welcome to **CampusConnect**, your go-to platform for connecting with students from colleges across New York City. Whether you're looking to offer your services or book services from your fellow students, CampusConnect has got you covered.
+
+## Deployment Link 🌐
+
+Check out the deployed version of CampusConnect by clicking [here](http://127.0.0.1:5174/profile/bookings).
 
 ## What's CampusConnect All About? 🌟
 
@@ -29,6 +33,14 @@ We believe in trust and community. That's why we have a review system in place. 
 ### Availability Calendar 🗓️
 
 Students offering services can specify when they're available. That way, you can easily find a time that works for you.
+
+## Contributors 🤝
+
+This project thrives thanks to the dedication and expertise of our contributors. Their passion and hard work have been instrumental in bringing our vision to life. Meet the talented individuals behind this endeavor:
+
+- [Walter Guerra](https://github.com/walter0916)
+- [Ronald Rainero](https://github.com/ronrain)
+- [Toni Smith](https://github.com/MrXmit)
 
 ## Technologies Behind CampusConnect 💻
 
@@ -58,9 +70,6 @@ Ready to dive into CampusConnect? Great! Here's how to get started:
 
 3. Fire up the backend server and the frontend app, and you're good to go exploring CampusConnect!
 
-## Deployment Link 🌐
-
-Check out the deployed version of CampusConnect by clicking [here](http://127.0.0.1:5174/profile/bookings).
 
 ## What's in the Pipeline? 🚧
 
@@ -75,6 +84,11 @@ We've got some exciting plans for CampusConnect's future:
 4. **Profile Customization**: Make your profile stand out with your own photos and showcase images related to the services you offer.
 
 5. **Advanced Search Filters**: We're adding more search options, like price ranges and service areas, to help you find exactly what you're looking for.
+
+## Attributions
+- [CSS Button Animator](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom)
+- [CSS Box-Shadow](https://getcssscan.com/css-box-shadow-examples)
+- [Favicon Generator](https://favicon.io/favicon-generator/)
 
 ## Join the CampusConnect Community 🤝
 
