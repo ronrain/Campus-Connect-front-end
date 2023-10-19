@@ -5,22 +5,16 @@ import styles from './SideBar.module.css'
 
 
 const Sidebar = (props) => {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen)
-  }
-
   return (
     <>
     <div className={styles.containerBar}>
-      <button className={styles.sidebarButton} onClick={toggleSidebar}>Toggle Sidebar</button>
-      <ul className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-        <li className={styles.item}><Link to="/myProfile">Your Profile</Link></li>
-        <li className={styles.item}><Link to="/auth/change-password">Change Password</Link></li>
-        <li className={styles.item}><Link to='/profile/services' state={props.profile}> Your Services</Link></li>
-        <li className={styles.item}><Link to={'/profile/bookings'}>Your Bookings</Link></li>
-        <li className={styles.item}><Link to="/service/new">Create Service</Link></li>
+      <div className={styles.sidebarButton}>Toggle Sidebar</div>
+      <ul className={styles.sidebar}>
+        <li className={styles.item}><Link className={styles.itemLink} to="/myProfile">Your Profile</Link></li>
+        <li className={styles.item}><Link className={styles.itemLink} to="/auth/change-password">Change Password</Link></li>
+        <li className={styles.item}><Link className={styles.itemLink} to='/profile/services' state={props.profile}> Your Services</Link></li>
+        <li className={styles.item}><Link className={styles.itemLink} to={'/profile/bookings'}>Your Bookings</Link></li>
+        <li className={styles.item}><Link className={styles.itemLink} to="/service/new">Create Service</Link></li>
       </ul>
     </div>
     </>
