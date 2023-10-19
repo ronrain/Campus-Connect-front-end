@@ -1,5 +1,4 @@
 .servicesContainer {
-  flex-direction: column;
   background-color: white;
   flex: 1;
   justify-content: center;
@@ -10,6 +9,15 @@
   border: .3rem solid var(--theme-green);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
   max-width: fit-content;
+  display: flex ;
+  flex-wrap: wrap ;
+  overflow: hidden;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--secondary-text);
+  box-sizing: border-box;
+  width: 100vw;
+  color: var(--secondary-text-color);
 }
 
 .servicesContainer:focus {
@@ -78,13 +86,13 @@
   transform: translateY(2px);
 }
 
-.button {
+/* .buttons {
   display: inline-flex;
   justify-content: center;
   text-align: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
+} */
 
 a {
   background: transparent;
