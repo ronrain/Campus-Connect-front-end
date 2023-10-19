@@ -23,7 +23,7 @@
 }
 
 .select:hover, .input:hover {
-  border-color: #666;
+  border-color: grey;
 }
 
 .button30 {

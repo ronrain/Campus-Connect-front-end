@@ -12,13 +12,11 @@ const UserServices = (props) => {
 
   return (
     <div className={styles.servicesContainer} >
-      <div className={styles.title}> 
-        <h2>{props.service.title.toUpperCase()}</h2>
+        <h2 className={styles.title}>{props.service.title.toUpperCase()}</h2>
         <hr />
-        <div className={styles.about}>
-          <p>{props.service.description.toUpperCase()}</p>
-          <p>Type: {props.service.type}</p>
-          <p>Price: ${props.service.price}</p>
+          <p className={styles.about}>{props.service.description.toUpperCase()}</p>
+          <p className={styles.about}>Type: {props.service.type}</p>
+          <p className={styles.about}>Price: ${props.service.price}</p>
           <hr />
           <h4>Availability: </h4>
           {props.service.availability.map((availability, index) => (
@@ -28,9 +26,12 @@ const UserServices = (props) => {
               <p><strong>End Time:</strong> {availability.endTime}</p>
             </div>
           ))}
-        </div>
-      </div>
       <div className={styles.buttons}>
+      <button className={`${styles.button30} ${styles.seeBookings}`}>
+        <Link className={styles.seeBookings} to={`/profile/services/${props.service._id}/bookings`}>
+          See Bookings
+        </Link>
+      </button>
       <button 
         className={styles.button30} 
         onClick={() => props.handleDeleteService(props.service._id)}
@@ -38,12 +39,7 @@ const UserServices = (props) => {
         Delete
       </button>
       {" "}
-      <button className={styles.button30}><Link to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
-      <button className={`${styles.button30} ${styles.seeBookings}`}>
-        <Link to={`/profile/services/${props.service._id}/bookings`}>
-          See Bookings
-        </Link>
-      </button>
+      <button className={styles.button30}><Link className={styles.edit} to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
     </div>
     </div>
   );

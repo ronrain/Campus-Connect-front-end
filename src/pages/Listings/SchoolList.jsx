@@ -39,7 +39,7 @@ const SchoolList = () => {
       <SearchForm handleSchoolSearch={handleSchoolSearch}/>
       <button className={styles.button30} onClick={refreshList}>Refresh</button>
     <div className={styles.container}>
-      {schools.map(school => (<div className={styles.details} key={school._id}> <Link to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
+      {schools.map(school => (<div className={styles.details} key={school._id}> <Link className={styles.schoolName} to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
     </div>
     </> 
   );

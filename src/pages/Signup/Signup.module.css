@@ -19,16 +19,18 @@
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }
 
 .label {
   position: absolute;
   left: 10px;
   bottom: 5px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--main-text-color);
   pointer-events: none; 
   transition: 0.3s all;
+  font-family: var(--secondary-text);
 }
 
 .inputContainer {
@@ -39,8 +41,7 @@
   outline: none;
 }
 
-input {
-  width: 100%;
+.input {
   padding: 10px 15px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -51,18 +52,18 @@ input {
   outline: none;
 }
 
-input[type="text"]:focus, 
-input[type="password"]:focus {
+.input[type="text"]:focus, 
+.input[type="password"]:focus {
   border-color: var(--theme-pink);
   box-shadow: 0 0 15px var(--theme-green);
 }
 
-input:focus {
+.input:focus {
   border-color: var(--theme-green);
 }
 
-input:focus + .label,
-input:not(:placeholder-shown) + .label {
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
   bottom: 115%; 
   font-size: 1rem;
   color: var(--theme-pink);
@@ -71,7 +72,8 @@ input:not(:placeholder-shown) + .label {
 .photo {
   display: flex;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  font-family: var(--secondary-text);
 }
 
 @media (max-width: 768px) {
@@ -93,8 +95,8 @@ input:not(:placeholder-shown) + .label {
     top: 10px; 
   }
 
-  .input input:focus + .label label,
-  .input input:not(:placeholder-shown) + .label label {
+  .input:focus + .label label,
+  .input:not(:placeholder-shown) + .label label {
     top: -15px; 
     left: 10px;
     font-size: 11px;
@@ -162,56 +164,3 @@ input:not(:placeholder-shown) + .label {
   color: var(--theme-pink);
 }
 
-@media only screen and (min-width: 1024px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-  .label {
-    font-size: 1.9rem;
-  }
-  input[type="text"], 
-  input[type="password"],
-  .button30 ,
-  .link a {
-    font-size: 1.6rem;
-  }
-}
-
-@media only screen and (max-width: 1023px) and (min-width: 769px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  .label {
-    font-size: 1.6rem;
-  }
-  input[type="text"], 
-  input[type="password"],
-  .button30,
-  .link a {
-    font-size: 1.3rem;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-  .label {
-    font-size: 1.3rem;
-  }
-  input[type="text"], 
-  input[type="password"],
-  .button30,
-  .link a {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-    width: fit-content;
-  }
-  h1,
-  .label,
-  input[type="text"], 
-  input[type="password"],
-  .button30  {
-    margin-left: 1rem;
-  }
-}

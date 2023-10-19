@@ -88,6 +88,7 @@ const Signup = ({ handleAuthEvt }) => {
             value={name} 
             name="name" 
             onChange={handleChange}
+            className={styles.input}
             placeholder=" "
           />
           <label className={styles.label}>Name</label>
@@ -98,6 +99,7 @@ const Signup = ({ handleAuthEvt }) => {
             value={email}
             name="email"
             onChange={handleChange}
+            className={styles.input}
             placeholder=" "
           />
           <label className={styles.label}>Email</label>
@@ -108,6 +110,7 @@ const Signup = ({ handleAuthEvt }) => {
             value={password}
             name="password"
             onChange={handleChange}
+            className={styles.input}
             placeholder=" "
           />
           <label className={styles.label}>Password</label>
@@ -118,6 +121,7 @@ const Signup = ({ handleAuthEvt }) => {
             value={passwordConf}
             name="passwordConf"
             onChange={handleChange}
+            className={styles.input}
             placeholder=" "
           />
           <label className={styles.label}>Confirm Password</label>
@@ -128,6 +132,7 @@ const Signup = ({ handleAuthEvt }) => {
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
+            className={styles.input}
             ref={imgInputRef}
           />
         </div>

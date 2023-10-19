@@ -59,6 +59,7 @@ const BookingsList = (props) => {
               <>
             <h3>Status: Pending </h3>
               <button className={styles.button30} onClick={() => onAccept(booking._id)}>Accept</button>
+              {" "}
               <button className={styles.button30} onClick={() => onReject(booking._id)}>Reject</button>
             </>
           )}

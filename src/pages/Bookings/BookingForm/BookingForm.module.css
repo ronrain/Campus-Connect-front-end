@@ -8,6 +8,7 @@
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-top: 3rem;
 }
 
 .form:hover {
@@ -23,7 +24,7 @@
   transition: 0.3s all;
 }
 
-.select, input[type="text"] {
+.select, .inputField[type="text"] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
@@ -33,13 +34,9 @@
   transition: border-color 0.3s ease;
 }
 
-.select:focus, input[type="text"]:focus {
+.select:focus, .inputField[type="text"]:focus {
   border-color: var(--theme-green);
   outline: none;
-}
-
-.select:hover, input[type="text"]:hover {
-  border-color: #666;
 }
 
 .option {
@@ -52,11 +49,9 @@
   margin-top: 1.9rem;
   width: 100%;
   outline: none;
-  font-family: var(--secondary-text);
 }
 
-input {
-  width: 100%;
+.inputField {
   padding: 10px 15px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -67,18 +62,17 @@ input {
   outline: none;
 }
 
-input[type="text"]:focus, 
-input[type="password"]:focus {
+.inputField[type="text"]:focus {
   border-color: var(--theme-pink);
   box-shadow: 0 0 15px var(--theme-green);
 }
 
-input:focus {
+.inputField:focus {
   border-color: var(--theme-green);
 }
 
-input:focus + .label,
-input:not(:placeholder-shown) + .label {
+.inputField:focus + .label,
+.inputField:not(:placeholder-shown) + .label {
   bottom: 115%; 
   font-size: 1rem;
   color: var(--theme-pink);

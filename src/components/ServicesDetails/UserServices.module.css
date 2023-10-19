@@ -40,8 +40,14 @@
 
 .title {
   font-family: var(--secondary-text);
+  font-family: var(--main-text);
   color: black;
-  font-size: 1.2rem;
+  font-size: 1.9rem;
+}
+
+.about {
+  font-family: var(--secondary-text);
+  font-size: 1.1rem;
 }
 
 .button30 {
@@ -97,12 +103,15 @@
   padding-right: 0.5rem;
 }
 
-a {
-  background: transparent;
-  color: var(--theme-green);
-}
-
 .button30.seeBookings {
   width: 100%; 
   margin-top: 10px; 
+}
+
+.edit, .seeBookings {
+  color: var(--secondary-text-color);
+  font-family: var(--secondary-text);
+  font-weight: normal;
+  padding: 0;
+  font-size: 1.1rem;
 }

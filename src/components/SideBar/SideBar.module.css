@@ -1,14 +1,15 @@
-.containerBar {
+.sidebar .containerBar {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: right;
   align-items: center;
 }
 
 .sidebar {
-  width: 250px;
+  width: 50vw;
+  max-width: 250px;
   height: calc(100vh - 60px); 
-  background-color: #e3dcc2;
+  background-image: url(https://media.istockphoto.com/id/1218737747/vector/learning-online-e-learning-video-call-chat-with-class-distance-education.jpg?s=612x612&w=0&k=20&c=fFFwc3CTP4XtvmruZLiK8EzAbzvAxJL_kw5BsA7z7w8=);
   color: #fff;
   position: fixed;
   top: 60px; 
@@ -34,19 +35,20 @@
   background-color: var(--theme-green);
 }
 
-.sidebarButton {
+.sidebarTitle {
   background-color: #555;
   color: #fff;
   cursor: pointer;
-  padding: 15px 20px;
-  font-size: 18px;
-  width: 250px;
+  padding: .8rem;
+  width: 50vw;
+  max-width: 250px;
   text-align: center; 
   position: fixed; 
   top: 80px; 
   left: 0;
   z-index: 2;
   font-family: var(--main-text); 
+  font-size: 1.7rem;
 }
 
 .sidebarButton:hover {
@@ -66,4 +68,32 @@
   align-items: center;
   margin: auto;
   inherits: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar, .sidebarButton {
+    width: 20vw; 
+  }
+  
+  .item, li, a {
+    font-size: .9rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar, .sidebarButton {
+    width: 30vw;
+  }
+  
+  .item, li, a {
+    font-size: .8rem; 
+  }
+}
+
+.itemLink {
+  color: var(--secondary-text-color);
+  background: rgba(244, 242, 243, 0.8);
+  font-size: 1.4rem;
+  font-family: var(--secondary-text);
+  font-weight: 900;
 }
