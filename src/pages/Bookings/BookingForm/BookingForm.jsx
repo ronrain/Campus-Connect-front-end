@@ -124,6 +124,7 @@ const BookingForm = () => {
         <input
         type="text" 
         name='request'
+        className={styles.inputField}
         onChange={handleChange}
         placeholder=" "
         />
@@ -133,6 +134,7 @@ const BookingForm = () => {
         <input
         type="text" 
         name='contactinfo'
+        className={styles.inputField}
         onChange={handleChange}
         placeholder=" "
         />

@@ -29,6 +29,7 @@
   color: var(--main-text-color);
   pointer-events: none; 
   transition: 0.3s all;
+  font-family: var(--secondary-text);
 }
 
 .inputContainer {
@@ -39,8 +40,7 @@
   outline: none;
 }
 
-input {
-  width: 100%;
+.input {
   padding: 10px 15px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -51,18 +51,18 @@ input {
   outline: none;
 }
 
-input[type="text"]:focus, 
-input[type="password"]:focus {
+.input[type="text"]:focus, 
+.input[type="password"]:focus {
   border-color: var(--theme-pink);
   box-shadow: 0 0 15px var(--theme-green);
 }
 
-input:focus {
+.input:focus {
   border-color: var(--theme-green);
 }
 
-input:focus + .label,
-input:not(:placeholder-shown) + .label {
+.input:focus + .label,
+.input:not(:placeholder-shown) + .label {
   bottom: 115%; 
   font-size: 1rem;
   color: var(--theme-pink);
@@ -93,8 +93,8 @@ input:not(:placeholder-shown) + .label {
     top: 10px; 
   }
 
-  .input input:focus + .label label,
-  .input input:not(:placeholder-shown) + .label label {
+  .input:focus + .label label,
+  .input:not(:placeholder-shown) + .label label {
     top: -15px; 
     left: 10px;
     font-size: 11px;
@@ -162,7 +162,7 @@ input:not(:placeholder-shown) + .label {
   color: var(--theme-pink);
 }
 
-@media only screen and (min-width: 1024px) {
+/* @media only screen and (min-width: 1024px) {
   h1 {
     font-size: 2.8rem;
   }
@@ -214,4 +214,4 @@ input:not(:placeholder-shown) + .label {
   .button30  {
     margin-left: 1rem;
   }
-}
+} */
