@@ -14,6 +14,17 @@ async function index() {
   }
 }
 
+async function fetchServicesByCreator(creatorId) {
+  try {
+    const res = await fetch(`${BASE_URL}/createdBy/${creatorId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
 async function show(serviceId) {
   try {
     const res = await fetch(`${BASE_URL}/${serviceId}`, {
@@ -120,4 +131,4 @@ const updateReview = async (serviceId, reviewId, reviewFormData) => {
   }
 }
 
-export { create, index, show, createReview, deleteService, deleteReview, updateReview, updateService}
+export { create, index, show, createReview, deleteService, deleteReview, updateReview, updateService, fetchServicesByCreator}

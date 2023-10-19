@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import * as bookingService from '../../services/bookingService';
 
 import Sidebar from "../../components/SideBar/SideBar";
+import styles from './BookingList.module.css'
 
 const UserBookingsList = (props) => {
   const [displayedBookings, setDisplayedBookings] = useState([])
@@ -20,22 +21,26 @@ const UserBookingsList = (props) => {
 
   return (
     <>
-    <Sidebar />
+      <Sidebar />
       <ul className="bookings-container">
-      {displayedBookings.map((booking) => (
-        <li key={booking._id}>
-          <h1>Date: {booking.date}</h1>
-          <h1>Customer: {booking.customer.name}</h1>
-          {booking.status ? (
-            <h3>Status: Confirmed</h3>
-          ) : (
-            <h3>Status: Pending </h3>
-          )}
-        </li>
-      ))}
-    </ul>
+        {displayedBookings.map((booking) => (
+          <li key={booking._id}>
+            <div className={styles.container}>
+              <div className={styles.contentContainer}>
+                <h1>Date: {booking.date}</h1>
+                <h1>Customer: {booking.customer.name}</h1>
+                {booking.status ? (
+                  <h3>Status: Confirmed</h3>
+                ) : (
+                  <h3>Status: Pending </h3>
+                )}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </>
   );
-}
+} 
 
 export default UserBookingsList;

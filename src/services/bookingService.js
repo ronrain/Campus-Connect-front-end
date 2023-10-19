@@ -61,4 +61,15 @@ async function deleteBooking(bookingId) {
   }
 }
 
-export {index, create, updateStatus, deleteBooking} 
+async function fetchBookingByCustomer(customerId) {
+  try {
+    const res = await fetch(`${BASE_URL}/customer/${customerId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return await res.json()
+  } catch (err) {
+    throw new Error(err)
+  }
+}
+
+export {index, create, updateStatus, deleteBooking, fetchBookingByCustomer} 

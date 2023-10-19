@@ -45,4 +45,4 @@ const ProfileListings = (props) => {
     </div>
   );
 }
-export default ProfileListings;
+export default ProfileListings; 
