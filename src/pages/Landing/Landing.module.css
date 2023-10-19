@@ -24,7 +24,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 91vh; 
+  height: auto; 
   margin-bottom: 2rem;
 }
 

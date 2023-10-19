@@ -1,6 +1,6 @@
 // css
 import styles from './Landing.module.css'
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo.png'
 
 const Landing = ({ user }) => {
   return (
@@ -9,7 +9,6 @@ const Landing = ({ user }) => {
       <section className={styles.logoLanding}>
         <img src={logo} alt="CampusConnectLogo" />
       </section>
-
       <section className={styles.about}>
         <header>
           <h3>ABOUT US</h3>
