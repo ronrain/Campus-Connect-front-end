@@ -118,7 +118,7 @@ const NewService = (props) => {
           <input type="time" name="endTime" value={availability.endTime} onChange={(e) => handleInputChange(e, index)} required />
         </div>
       ))}
-        <button type="button" onClick={addAvailability}>Add Availability</button>
+        <button className={styles.button30} type="button" onClick={addAvailability}>Add Availability</button>
         <div className={styles.inputContainer}>
           <select name="schoolId" value={formData.school} onChange={handleChange}>
             <option value="">Select School</option>

@@ -2,7 +2,7 @@
   background-color: white;
   flex: 1;
   justify-content: center;
-  margin: 2rem;
+  margin: 2rem auto;
   color: black;
   padding: 1.2rem 1.1rem 1.2rem 1.1rem;
   border-radius: 0.7rem;
@@ -16,8 +16,9 @@
   align-items: center;
   font-family: var(--secondary-text);
   box-sizing: border-box;
-  width: 100vw;
+  width: 60vw;
   color: var(--secondary-text-color);
+  flex-direction: column;
 }
 
 .servicesContainer:focus {
@@ -44,7 +45,7 @@
 }
 
 .button30 {
-  margin-top: 1rem; 
+  margin-top: 0; 
   appearance: none;
   background-color: #FCFCFD;
   border-radius: 4px;
@@ -86,15 +87,22 @@
   transform: translateY(2px);
 }
 
-/* .buttons {
+.buttons {
   display: inline-flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
   text-align: center;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-} */
+}
 
 a {
   background: transparent;
   color: var(--theme-green);
+}
+
+.button30.seeBookings {
+  width: 100%; 
+  margin-top: 10px; 
 }
