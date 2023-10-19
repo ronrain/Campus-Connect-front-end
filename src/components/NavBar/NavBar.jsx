@@ -13,10 +13,8 @@ const NavBar = ({ user, handleLogout }) => {
           <NavLink to="/"><img src={logo} alt="CampusConnectLogo" className={styles.logo}/></NavLink>
           <li>Welcome, {user.name}</li>
           <li><NavLink to="/schools">Schools</NavLink></li>
-          <li><NavLink to="/profile">Profiles</NavLink></li>
+          <li><NavLink to="/myProfile">My Profile</NavLink></li>
           <li><NavLink to="" onClick={handleLogout}>Logout</NavLink></li>
-          {/* <li><NavLink to="/auth/change-password">Change Password</NavLink></li> */}
-          {/* <li><NavLink to="/service/new">Create Service</NavLink></li> */}
         </ul>
       :
         <ul>

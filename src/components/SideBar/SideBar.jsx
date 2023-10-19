@@ -16,7 +16,7 @@ const Sidebar = (props) => {
     <div className={styles.containerBar}>
       <button className={styles.sidebarButton} onClick={toggleSidebar}>Toggle Sidebar</button>
       <ul className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
-        <li className={styles.item}><Link to="/profile/myProfile">Your Profile</Link></li>
+        <li className={styles.item}><Link to="/myProfile">Your Profile</Link></li>
         <li className={styles.item}><Link to="/auth/change-password">Change Password</Link></li>
         <li className={styles.item}><Link to='/profile/services' state={props.profile}> Your Services</Link></li>
         <li className={styles.item}><Link to={'/profile/bookings'}>Your Bookings</Link></li>
