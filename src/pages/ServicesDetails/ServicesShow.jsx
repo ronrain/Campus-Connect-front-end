@@ -56,7 +56,7 @@ const ServicesShow = (props) => {
               <p><strong>End Time:</strong> {availability.endTime}</p>
             </div>
           ))}
-          <button><Link to={`/service/${service._id}/booking/new`} state={{service}}>Book this service</Link></button>
+          <button className={styles.cardBtn}><Link className={styles.bookService} to={`/service/${service._id}/booking/new`} state={{service}}>Book this service</Link></button>
         </div>
       </div>
       <div className={styles.review}>
