@@ -46,7 +46,8 @@ const ServicesShow = (props) => {
           <h3>Offered by: {service.createdBy.name}</h3>
           <h3>Type Of Service: {service.type}</h3>
           <h3>Description: {service.description}</h3>
-          <h4>Price:{service.price}</h4>
+          <h4>Price: {service.price}</h4>
+          <h4>Contact Info: {service.contactinfo}</h4>
           <h4>Availability:</h4>
           {service.availability.map((availability, index) => (
             <div key={index}>

@@ -48,6 +48,7 @@ const BookingsList = (props) => {
         <li key={booking._id}>
           <h1>Date: {booking.date}</h1>
           <h1>Customer: {booking.customer.name}</h1>
+          <h3>Contact info: {booking.contactinfo}</h3>
           {booking.status ? (
             <h3>Status: Confirmed</h3>
           ) : (
