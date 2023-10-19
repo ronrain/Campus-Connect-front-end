@@ -39,7 +39,7 @@ const SchoolServicesCard = (props) => {
         <p>Type: {service.type}</p>
         <p>Price: {service.price}</p>
       </div>
-      <button className={styles.cardBtn}><Link to={`/service/${service._id}`}>Book Me</Link></button>
+      <button className={styles.cardBtn}><Link className={styles.bookMe} to={`/service/${service._id}`}>Book Me</Link></button>
         {service.createdBy._id.slice(0, -1) === props.user._id.slice(0, -1) &&
           <>
             <div className={styles.button}>
