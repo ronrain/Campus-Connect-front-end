@@ -46,6 +46,8 @@ const ReviewForm = (props) => {
       </div>
       <textarea
         required
+        rows={4}
+        cols={40}
         type="text" 
         name="text" 
         id="text-input"

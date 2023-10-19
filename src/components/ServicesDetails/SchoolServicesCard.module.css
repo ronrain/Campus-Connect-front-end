@@ -173,3 +173,7 @@
 .book {
   padding-bottom: .002rem;
 }
+
+.edit {
+  text-decoration: none;
+}
