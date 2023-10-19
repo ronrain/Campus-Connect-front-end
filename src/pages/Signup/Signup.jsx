@@ -83,7 +83,8 @@ const Signup = ({ handleAuthEvt }) => {
         <h1 className={styles.title}>Sign Up</h1>
         <p className={styles.message}>{message}</p>
         <div className={styles.inputContainer}>
-          <input 
+          <input
+            required
             type="text" 
             value={name} 
             name="name" 
@@ -95,6 +96,7 @@ const Signup = ({ handleAuthEvt }) => {
         </div>
         <div className={styles.inputContainer}>
           <input
+            required
             type="text"
             value={email}
             name="email"
@@ -106,6 +108,7 @@ const Signup = ({ handleAuthEvt }) => {
         </div>
         <div className={styles.inputContainer}>
           <input
+            required
             type="password"
             value={password}
             name="password"
@@ -117,6 +120,7 @@ const Signup = ({ handleAuthEvt }) => {
         </div>
         <div className={styles.inputContainer}>
           <input
+            required
             type="password"
             value={passwordConf}
             name="passwordConf"
@@ -128,7 +132,8 @@ const Signup = ({ handleAuthEvt }) => {
         </div>
         <div className={styles.inputContainer}>
           <label className={styles.photo}>Upload Photo</label>
-          <input 
+          <input
+            required
             type="file" 
             name="photo" 
             onChange={handleChangePhoto}
