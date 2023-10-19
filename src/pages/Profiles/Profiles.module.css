@@ -28,8 +28,7 @@
   padding: 2rem;
 }
 
-.contentContainer
-{
+.contentContainer {
   box-sizing: content-box;
   background-color: white;
   position: relative;
@@ -39,5 +38,9 @@
   transition: transform 0.3s; 
   border-radius: .7rem;
   margin-top: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 

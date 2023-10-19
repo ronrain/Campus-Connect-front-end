@@ -1,12 +1,13 @@
 .containerBar {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  text-align: right;
   align-items: center;
 }
 
 .sidebar {
-  width: 250px;
+  width: 50vw;
+  max-width: 250px;
   height: calc(100vh - 60px); 
   background-color: #e3dcc2;
   color: #fff;
@@ -40,7 +41,8 @@
   cursor: pointer;
   padding: 15px 20px;
   font-size: 18px;
-  width: 250px;
+  width: 50vw;
+  max-width: 250px;
   text-align: center; 
   position: fixed; 
   top: 80px; 
@@ -66,4 +68,24 @@
   align-items: center;
   margin: auto;
   inherits: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar, .sidebarButton {
+    width: 20vw; 
+  }
+  
+  .item, li, a {
+    font-size: .9rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar, .sidebarButton {
+    width: 30vw;
+  }
+  
+  .item, li, a {
+    font-size: .8rem; 
+  }
 }
