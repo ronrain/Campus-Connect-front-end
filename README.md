@@ -1,74 +1,83 @@
-# Decoupled MERN Stack with JWT Auth Template - Front End
+# Welcome to **CampusConnect** 🎓
 
-This is the front end of a decoupled MERN Stack app that includes JWT Authentication.
+![Campus Connect Logo](https://example.com/campus-connect-logo.png)
 
-When combined with the back end found [here](https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-back-end), you'll have all you need to build a full stack MERN app!
+Hey there! Welcome to **CampusConnect**, your go-to platform for connecting with students from colleges across New York City. Whether you're looking to offer your services or book services from your fellow students, CampusConnect has got you covered.
 
-Use this to go build things! 🚀
+## What's CampusConnect All About? 🌟
 
-## To Use This Template
+CampusConnect is all about making life easier for college students. It's a place where you can find a wide range of services organized by categories like ✂️ haircut, 📚 tutoring, 🍳 cooking, and more. Plus, you can either offer your own services or book services offered by other students. It's a win-win!
 
-**Replace `<name-of-your-app-here>` (including the `<` and `>`) in the commands below with the name of your app!**
+## What Can You Do on CampusConnect? 💼
 
-```bash
-git clone https://github.com/SEI-Remote/decoupled-mern-jwt-auth-template-front-end <name-of-your-app-here>-front-end
-cd <name-of-your-app-here>-front-end
-code .
-```
+Here are some of the cool features you'll find on CampusConnect:
 
-With the project open in VS Code, open a terminal and run:
+### Service Categories 🗂️
 
-```bash
-rm -rf .git
-```
+You can browse services by categories, making it super easy to find what you need. From academic help to personal services, we've got it all covered.
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
+### Create and Book Services 📅
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+- **Create a Service:** If you've got a skill to offer, you can create a service listing. Tell everyone about your service, set your availability, 💰 price, and location.
 
-Re-initialize a git repository:
+- **Book a Service:** If you're on the hunt for a service, you can easily book services from other students. Check out all the details, see when they're available, and make your booking.
 
-```bash
-git init
-```
+### Leave Reviews 🌟
 
-Create a repo for this project on GitHub and add that remote to your project with:
+We believe in trust and community. That's why we have a review system in place. After using a service, you can leave a review and rating to help others make informed choices.
 
-```bash
-git remote add origin your-repo-URL-here
-```
+### Availability Calendar 🗓️
 
-Run `npm i` to fetch the template's dependencies:
+Students offering services can specify when they're available. That way, you can easily find a time that works for you.
 
-```bash
-npm i
-```
+## Technologies Behind CampusConnect 💻
 
-touch a `.env` file:
+Under the hood, CampusConnect is powered by the MERN stack:
 
-```bash
-touch .env
-```
+- **MongoDB:** Our trusty NoSQL database for data storage.
+- **Express.js:** The backend framework that makes it all work.
+- **React:** The frontend library that brings the user interface to life.
+- **Node.js:** The runtime that powers our server-side development.
 
-Fill it with the following:
+## CRUD Functionality ✏️
 
-```
-VITE_BACK_END_SERVER_URL=http://localhost:3001
-```
+We've got the basics covered with Create, Read, Update, and Delete (CRUD) operations:
 
-> 🚨 DO NOT place secrets in this `.env` file. The contents of this file WILL be exposed to site visitors. We are only using the front-end .env to create variables specific to the environment the application is running in.
+- Create new service listings.
+- Read and search for services based on categories, colleges, and more.
+- Update your service listings.
+- Delete services that you're no longer offering.
 
-Delete this README.md, then make an initial commit:
+## Getting Started 🚀
 
-```bash
-git add .
-git commit -m "initial commit"
-git push origin main
-```
+Ready to dive into CampusConnect? Great! Here's how to get started:
 
-Finally, start up the app with:
-```bash
-npm run dev
-```
+1. Clone the GitHub repositories for our [frontend](https://github.com/walter0916/Campus-Connect-front-end) and [backend](https://github.com/MrXmit/campusConnect-backend).
 
-You're done!
+2. Follow the setup instructions in the respective repositories to configure your development environment.
+
+3. Fire up the backend server and the frontend app, and you're good to go exploring CampusConnect!
+
+## Deployment Link 🌐
+
+Check out the deployed version of CampusConnect by clicking [here](http://127.0.0.1:5174/profile/bookings).
+
+## What's in the Pipeline? 🚧
+
+We've got some exciting plans for CampusConnect's future:
+
+1. **More Schools**: We're expanding to include even more colleges in New York City, so you'll have access to an even broader network of services.
+
+2. **Chat Functionality**: Stay tuned for a chat feature that'll make it easy to communicate directly with service providers.
+
+3. **Email Notifications**: Get automatic email updates and reminders when you book a service.
+
+4. **Profile Customization**: Make your profile stand out with your own photos and showcase images related to the services you offer.
+
+5. **Advanced Search Filters**: We're adding more search options, like price ranges and service areas, to help you find exactly what you're looking for.
+
+## Join the CampusConnect Community 🤝
+
+We're thrilled to have you here, and we're excited to see how CampusConnect grows. If you want to get involved, check out our GitHub repositories and our contribution guidelines. Together, we can make CampusConnect even better!
+
+Thanks for choosing CampusConnect, where students come together to share skills and services. We hope you find it as awesome as we do!
