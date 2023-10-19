@@ -11,6 +11,7 @@ const NewService = (props) => {
     description: '',
     type: '', 
     price: 0,
+    contactinfo: '',
     availability: [
       { day: '', startTime: '', endTime: ''}
     ],
@@ -92,6 +93,16 @@ const NewService = (props) => {
             min={0}
             name="price"
             value={formData.price}
+            onChange={handleChange}
+          />
+        </div>
+        <div className={styles.inputContainer}>
+          <label className={styles.contactinfo} htmlFor="contactinfo">Contact Info: </label>
+          <input
+            required
+            type="text"
+            name="contactinfo"
+            value={formData.contactinfo}
             onChange={handleChange}
           />
         </div>
