@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import Sidebar from "../SideBar/SideBar";
+
+import * as schoolService from "../../services/schoolService";
 
 import styles from "./ServiceForm.module.css";
 
@@ -17,6 +19,15 @@ const NewService = (props) => {
     ],
     schoolId: 0,
   })
+  const [schools, setSchools] = useState([])
+
+  useEffect(() => {
+    const fetchSchools = async () => {
+      const schools = await schoolService.getAllSchools()
+      setSchools(schools);
+    }
+    fetchSchools()
+  }, [])
 
   const handleInputChange = (e, index) => {
     const { name, value } = e.target
@@ -97,20 +108,23 @@ const NewService = (props) => {
           />
         </div>
         <div className={styles.inputContainer}>
-          <label className={styles.contactinfo} htmlFor="contactinfo">Contact Info: </label>
           <input
             required
             type="text"
             name="contactinfo"
             value={formData.contactinfo}
+            placeholder=" "
             onChange={handleChange}
           />
+          <label className={styles.label}  htmlFor="contactinfo">Contact Info </label>
         </div>
         {formData.availability.map((availability, index) => (
         <div key={index}>
-          <label>Day:</label>
-          <input type="text" name="day" value={availability.day} onChange={(e) => handleInputChange(e, index)} required />
+          <div className={styles.inputContainer}>
 
+          <input type="text" name="day" placeholder=" " value={availability.day} onChange={(e) => handleInputChange(e, index)} required />
+          <label className={styles.label}>Day</label>
+          </div>
           <label>Start Time:</label>
           <input type="time" name="startTime" value={availability.startTime} onChange={(e) => handleInputChange(e, index)} required />
 
@@ -122,7 +136,7 @@ const NewService = (props) => {
         <div className={styles.inputContainer}>
           <select name="schoolId" value={formData.school} onChange={handleChange}>
             <option value="">Select School</option>
-            {props.schools.map(school => (
+            {schools.map(school => (
               <option key={school._id} value={school._id}>{school.name}</option>
             ))}
           </select>

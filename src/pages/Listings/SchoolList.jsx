@@ -10,8 +10,6 @@ import styles from './SchoolList.module.css'
 
 const SchoolList = () => {
   const [schools, setSchools] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [searchResults, setSearchResults] = useState([])
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -25,7 +23,6 @@ const SchoolList = () => {
     const filteredSchoolResults = schools.filter(school => (
       school.name.toLowerCase().includes(formData.query.toLowerCase()) 
     ))
-    setSearchResults(filteredSchoolResults)
     setSchools(filteredSchoolResults)
   }
 
@@ -42,9 +39,9 @@ const SchoolList = () => {
       <SearchForm handleSchoolSearch={handleSchoolSearch}/>
       <button className={styles.button30} onClick={refreshList}>Refresh</button>
     <div className={styles.container}>
-      {schools.map(school => (<div className={styles.details} key={school.id}> <Link to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
+      {schools.map(school => (<div className={styles.details} key={school._id}> <Link className={styles.schoolName} to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
     </div>
-    </>
+    </> 
   );
 }
 

@@ -44,23 +44,23 @@ const MyProfile = (props) => {
     <div className={styles.container}> 
       <div className={styles.contentContainer}>
         <div className={styles.title}>
-          <h1>my total Services: {myServices.length}</h1>
-          <Link to={'/profile/services'}>view all Services</Link>
+          <h1>Total Services: {myServices.length}</h1>
+          <Link className={styles.linkTotal} to={'/profile/services'}>View All Services</Link>
         </div>
         </div>
     </div>
     <div className={styles.container}> 
       <div className={styles.contentContainer}>
         <div className={styles.title}>
-          <h1>my total Bookings: {myBookings.length}</h1>
-          <Link to={'/profile/bookings'}>view all Bookings</Link>
+          <h1>Total Bookings: {myBookings.length}</h1>
+          <Link className={styles.linkTotal} to={'/profile/bookings'}>View All Bookings</Link>
         </div>
         </div>
     </div>
     <div className={styles.container}> 
       <div className={styles.contentContainer}>
         <div className={styles.title}>
-          <h1>my Average Rating is: {averageRating}</h1>
+          {averageRating > 0 ? <h1>my Average Rating is: {averageRating}</h1> : <h1>Average Rating: No reviews yet</h1>}
         </div>
         </div>
     </div>
