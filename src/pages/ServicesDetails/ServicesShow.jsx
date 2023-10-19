@@ -49,8 +49,8 @@ const ServicesShow = (props) => {
           <h4>Price: {service.price}</h4>
           <h4>Contact Info: {service.contactinfo}</h4>
           <h4>Availability:</h4>
-          {service.availability.map((availability, index) => (
-            <div key={index}>
+          {service.availability.map((availability) => (
+            <div key={availability._id}>
               <p><strong>Day:</strong> {availability.day}</p>
               <p><strong>Start Time:</strong> {availability.startTime}</p>
               <p><strong>End Time:</strong> {availability.endTime}</p>

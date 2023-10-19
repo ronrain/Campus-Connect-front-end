@@ -1,11 +1,12 @@
 // npm modules
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
 
 // css
 import styles from './EditService.module.css'
+
+import * as schoolService from "../../services/schoolService";
 
 
 const EditService = (props) => {
@@ -13,6 +14,15 @@ const EditService = (props) => {
   const [formData, setFormData] = useState(state)
   const [editMode, setEditMode] = useState(false)
   const navigate = useNavigate()
+  const [schools, setSchools] = useState([])
+
+  useEffect(() => {
+    const fetchSchools = async () => {
+      const schools = await schoolService.getAllSchools()
+      setSchools(schools);
+    }
+    fetchSchools()
+  }, [])
 
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value})

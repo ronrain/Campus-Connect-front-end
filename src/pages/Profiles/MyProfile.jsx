@@ -60,7 +60,7 @@ const MyProfile = (props) => {
     <div className={styles.container}> 
       <div className={styles.contentContainer}>
         <div className={styles.title}>
-          <h1>Average Rating: {averageRating}</h1>
+          {averageRating > 0 ? <h1>my Average Rating is: {averageRating}</h1> : <h1>Average Rating: No reviews yet</h1>}
         </div>
         </div>
     </div>
