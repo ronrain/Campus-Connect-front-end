@@ -13,10 +13,21 @@ const UserServices = (props) => {
   return (
     <div className={styles.servicesContainer} >
       <div className={styles.title}> 
-        <p>{props.service.title}</p>
+        <h2>{props.service.title.toUpperCase()}</h2>
+        <hr />
         <div className={styles.about}>
-          <p>{props.service.description}</p>
-          <p>{props.service.type}</p>
+          <p>{props.service.description.toUpperCase()}</p>
+          <p>Type: {props.service.type}</p>
+          <p>Price: ${props.service.price}</p>
+          <hr />
+          <h4>Availability: </h4>
+          {props.service.availability.map((availability, index) => (
+            <div key={index}>
+              <p><strong>Day:</strong> {availability.day}</p>
+              <p><strong>Start Time:</strong> {availability.startTime}</p>
+              <p><strong>End Time:</strong> {availability.endTime}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className={styles.buttons}>
