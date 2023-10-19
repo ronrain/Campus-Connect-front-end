@@ -10,8 +10,8 @@ const NavBar = ({ user, handleLogout }) => {
     <nav className={styles.container}>
       {user ?
         <ul>
-          <NavLink to="/"><img src={logo} alt="CampusConnectLogo" className={styles.logo}/></NavLink>
-          <li>Welcome, {user.name}</li>
+          <li><NavLink to="/"><img src={logo} alt="CampusConnectLogo" className={styles.logo}/></NavLink></li>
+          <li className={styles.name}>Welcome, {user.name}</li>
           <li><NavLink to="/schools">Schools</NavLink></li>
           <li><NavLink to="/myProfile">My Profile</NavLink></li>
           <li><NavLink to="" onClick={handleLogout}>Logout</NavLink></li>
