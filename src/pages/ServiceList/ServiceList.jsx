@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import * as serviceService from '../../services/serviceService';
@@ -9,9 +8,9 @@ import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesC
 import styles from "./ServiceList.module.css"
 
 const ServiceList = (props) => {
-  const {state} = useLocation()
-  const [school, setSchools] = useState(state);
-  const [services, setServices] = useState([]);
+  const {schoolId} = useParams()
+  const [services, setServices] = useState([])
+console.log(schoolId)
 
   const handleDeleteService = async (serviceId) => {
     await serviceService.deleteService(serviceId)
@@ -29,7 +28,8 @@ const ServiceList = (props) => {
   useEffect(() => {
     const fetchServices = async () => {
       const servicesData = await serviceService.index()
-      const filterServicesData = servicesData.filter(service => service.school === school._id)
+      console.log(servicesData)
+      const filterServicesData = servicesData.filter(service => service.school === schoolId)
       setServices(filterServicesData)
     } 
     fetchServices()
