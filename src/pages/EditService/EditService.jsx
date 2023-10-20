@@ -34,7 +34,7 @@ const EditService = (props) => {
   const handleSubmit = evt => {
     evt.preventDefault()
     props.handleUpdateService(formData)
-    navigate(`/schools/${formData.school}`)
+    navigate(`/schools`)
   }
 
   useEffect(() => {
