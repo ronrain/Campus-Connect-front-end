@@ -6,7 +6,7 @@ import * as schoolService from '../../services/schoolService';
 // css
 import styles from './SchoolList.module.css'
 
-const SchoolList = (props) => {
+const SchoolList = () => {
   const [schools, setSchools] = useState([])
   
   const refreshList = () => {

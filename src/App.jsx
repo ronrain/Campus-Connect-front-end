@@ -33,7 +33,6 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [schools, setSchools] = useState([])
   const [editMode, setEditMode] = useState(false)
 
   const handleLogout = () => {
@@ -98,8 +97,7 @@ function App() {
         />
         
         <Route path="/schools" element={
-          <SchoolList
-          />} />
+          <SchoolList />} />
         <Route path="/schools/:schoolId" element={
         
         <ServiceList
