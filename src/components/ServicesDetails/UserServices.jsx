@@ -38,7 +38,6 @@ const UserServices = (props) => {
       >
         Delete
       </button>
-      {" "}
       <button className={styles.button30}><Link className={styles.edit} to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
     </div>
     </div>
