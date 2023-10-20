@@ -1,8 +1,3 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-import * as schoolService from "../../services/schoolService";
-
 import SearchForm from "../../components/SearchForm/SearchForm"
 import SchoolDetails from "../../components/Schools/SchoolDetails"
 

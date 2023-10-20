@@ -8,8 +8,6 @@ import Sidebar from "../../components/SideBar/SideBar";
 
 import styles from './BookingList.module.css'
 
-// import './BookingList.css'
-
 const BookingsList = (props) => {
   const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])

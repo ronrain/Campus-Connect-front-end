@@ -1,15 +1,8 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
 
 import styles from './UserServices.module.css'
 
 const UserServices = (props) => {
-  const [editMode, setEditMode] = useState(false)
-
-  const toggleEditMode = () => {
-    setEditMode(!editMode)
-  }
-
   return (
     <div className={styles.servicesContainer} >
         <h2 className={styles.title}>{props.service.title.toUpperCase()}</h2>
