@@ -18,7 +18,7 @@ const SchoolList = (props) => {
         <button className={styles.button30} onClick={props.refreshList}>Refresh</button>
       </div>
       <div className={styles.container}>
-        {props.schools.map(school => <SchoolDetails key={school.id} school={school} />)}
+        {props.schools.map(school => <SchoolDetails key={school._id} school={school} />)}
       </div>
     </>
   );
