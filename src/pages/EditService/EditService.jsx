@@ -1,28 +1,20 @@
 // npm modules
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
+import * as schoolService from '../../services/schoolService';
+
 // css
 import styles from './EditService.module.css'
-
-import * as schoolService from "../../services/schoolService";
-
 
 const EditService = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
   const [editMode, setEditMode] = useState(false)
-  const navigate = useNavigate()
   const [schools, setSchools] = useState([])
 
-  useEffect(() => {
-    const fetchSchools = async () => {
-      const schools = await schoolService.getAllSchools()
-      setSchools(schools);
-    }
-    fetchSchools()
-  }, [])
+  const navigate = useNavigate()
 
   const handleChange = evt => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value})
@@ -44,6 +36,14 @@ const EditService = (props) => {
     props.handleUpdateService(formData)
     navigate(`/schools/${formData.school}`)
   }
+
+  useEffect(() => {
+    const fetchSchools = async () => {
+      const data = await schoolService.getAllSchools()
+      setSchools(data);
+    }
+    fetchSchools()
+  }, [])
 
   return (
     <form onSubmit={handleSubmit} className={styles.serviceForm}>
@@ -113,7 +113,7 @@ const EditService = (props) => {
     <div className={styles.inputContainer}>
       <select name="schoolId" value={formData.school} onChange={handleChange}>
         <option value="">Select School</option>
-        {props.schools.map(school => (
+        {schools.map(school => (
           <option key={school._id} value={school._id}>{school.name}</option>
         ))}
       </select>

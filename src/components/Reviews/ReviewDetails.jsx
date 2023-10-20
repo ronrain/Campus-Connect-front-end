@@ -1,6 +1,4 @@
-import { useState } from "react";
 import ReviewCard from "./ReviewCard";
-
 
 const ReviewDetails = (props) => {
 

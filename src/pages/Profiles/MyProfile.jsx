@@ -36,8 +36,6 @@ const MyProfile = (props) => {
     fetchMyBookings()
   }, [])
 
-
-
   return (
     <>
     <Sidebar />

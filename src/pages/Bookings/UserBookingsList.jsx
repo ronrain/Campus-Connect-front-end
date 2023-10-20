@@ -11,9 +11,7 @@ const UserBookingsList = (props) => {
   useEffect(() => {
     const fetchAllBookings = async () => {
       const data = await bookingService.index()
-      console.log(data)
       const newData = data.filter(booking => booking.customer._id === props.user.profile )
-      console.log(newData)
       setDisplayedBookings(newData)
     }
     fetchAllBookings()

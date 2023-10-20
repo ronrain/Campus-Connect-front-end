@@ -8,8 +8,6 @@ import Sidebar from "../../components/SideBar/SideBar";
 
 import styles from './BookingList.module.css'
 
-// import './BookingList.css'
-
 const BookingsList = (props) => {
   const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])
@@ -17,9 +15,7 @@ const BookingsList = (props) => {
 
   const fetchAllBookings = async () => {
     const data = await bookingService.index()
-    console.log(data)
     const newData = data.filter(booking => booking.service._id === serviceId )
-    console.log(newData)
     setDisplayedBookings(newData)
   }
 

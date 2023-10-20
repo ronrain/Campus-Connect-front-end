@@ -44,7 +44,7 @@ const SchoolServicesCard = (props) => {
           <>
             <div className={styles.button}>
               <button className={styles.button30}><Link className={styles.edit} to={`/service/${service._id}/edit`}state={service}>Edit</Link></button>
-              {" "}
+              {" "} 
               <button
                 className={styles.button30}
                 onClick={() => props.handleDeleteService(props.service._id)}>Delete

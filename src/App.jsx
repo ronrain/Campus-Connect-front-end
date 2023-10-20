@@ -26,7 +26,6 @@ import NewService from './components/ServiceForm/ServiceForm'
 // services
 import * as authService from './services/authService'
 import * as serviceService from './services/serviceService'
-import * as schoolService from './services/schoolService'
 
 // styles
 import './App.css'
@@ -34,24 +33,7 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
-  const [schools, setSchools] = useState([])
   const [editMode, setEditMode] = useState(false)
-
-
-  const handleSchoolSearch = formData => {
-    const filteredSchoolResults = schools.filter(school => (
-      school.name.toLowerCase().includes(formData.query.toLowerCase()) 
-    ))
-    setSchools(filteredSchoolResults)
-  }
-
-  const refreshList = () => {
-    const fetchSchools = async () => {
-      const schools = await schoolService.getAllSchools()
-      setSchools(schools);
-    }
-    fetchSchools()
-  }
 
   const handleLogout = () => {
     authService.logout()
@@ -115,11 +97,7 @@ function App() {
         />
         
         <Route path="/schools" element={
-          <SchoolList
-            schools={schools}
-            handleSchoolSearch={handleSchoolSearch}
-            refreshList={refreshList}
-          />} />
+          <SchoolList />} />
         <Route path="/schools/:schoolId" element={
         
         <ServiceList
@@ -129,7 +107,6 @@ function App() {
         <Route path="service/new" element={
         <NewService 
         handleAddService={handleAddService}
-        schools={schools}
         />} />
         <Route path='/service/:serviceId'
         element={
@@ -143,7 +120,6 @@ function App() {
             <ProtectedRoute user={user}>
               <EditService 
               Service={toggleEditMode} 
-              schools={schools} 
               handleUpdateService={handleUpdateService}/>
             </ProtectedRoute>
           }
