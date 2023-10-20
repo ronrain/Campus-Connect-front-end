@@ -1,5 +1,8 @@
 # Welcome to **CampusConnect** 🎓
 
+
+![Campus Connect Logo](src/assets/logo.png)
+
 ![Campus Connect](https://cdn.discordapp.com/attachments/791636167304151071/1164874007787601950/Screenshot_2023-10-20_133035.png?ex=6544cc75&is=65325775&hm=b2d1743b5f11512014add09a0b957200111d9d50598b6837bca560667496b541&)
 
 
@@ -7,10 +10,12 @@ Hey there! Welcome to **CampusConnect**, your go-to platform for connecting with
 
 ## Deployment Link 🌐
 
-Check out the deployed version of CampusConnect by clicking [here](https://campus-connect1.netlify.app/).
+
+Check out the deployed version of CampusConnect by clicking [HERE](https://campus-connect1.netlify.app/).
 
 You can access our back-end API from this URL [here](https://campus-connect-back-end.fly.dev/).
 Curious about our Trello link? Click [here](https://trello.com/b/0Gr3owf1/campus-connect).
+
 
 ## What's CampusConnect All About? 🌟
 
