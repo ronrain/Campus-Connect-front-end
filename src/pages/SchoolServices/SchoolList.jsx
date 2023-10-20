@@ -1,24 +1,45 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-import * as schoolService from "../../services/schoolService";
-
 import SearchForm from "../../components/SearchForm/SearchForm"
 import SchoolDetails from "../../components/Schools/SchoolDetails"
+import * as schoolService from '../../services/schoolService';
 
 // css
 import styles from './SchoolList.module.css'
 
-const SchoolList = (props) => {
+const SchoolList = () => {
+  const [schools, setSchools] = useState([])
+  
+  const refreshList = () => {
+    const fetchSchools = async () => {
+      const schools = await schoolService.getAllSchools()
+      setSchools(schools);
+    }
+    fetchSchools()
+  }
+  
+  const handleSchoolSearch = formData => {
+    const filteredSchoolResults = schools.filter(school => (
+      school.name.toLowerCase().includes(formData.query.toLowerCase()) 
+    ))
+    setSchools(filteredSchoolResults)
+  }
 
+  useEffect(() => {
+    const fetchSchools = async () => {
+      const data = await schoolService.getAllSchools()
+      setSchools(data);
+    }
+    fetchSchools()
+  }, [])
+  
   return (
     <>
-      <SearchForm handleSchoolSearch={props.handleSchoolSearch}/>
+      <SearchForm handleSchoolSearch={handleSchoolSearch} />
       <div className={styles.buttonContainer}>
-        <button className={styles.button30} onClick={props.refreshList}>Refresh</button>
+        <button className={styles.button30} onClick={refreshList}>Refresh</button>
       </div>
       <div className={styles.container}>
-        {props.schools.map(school => <SchoolDetails key={school.id} school={school} />)}
+        {schools.map(school => <SchoolDetails key={school._id} school={school} />)}
       </div>
     </>
   );

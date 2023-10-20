@@ -1,12 +1,21 @@
 # Welcome to **CampusConnect** 🎓
 
+
 ![Campus Connect Logo](src/assets/logo.png)
+
+![Campus Connect](https://cdn.discordapp.com/attachments/791636167304151071/1164874007787601950/Screenshot_2023-10-20_133035.png?ex=6544cc75&is=65325775&hm=b2d1743b5f11512014add09a0b957200111d9d50598b6837bca560667496b541&)
+
 
 Hey there! Welcome to **CampusConnect**, your go-to platform for connecting with students from colleges across New York City. Whether you're looking to offer your services or book services from your fellow students, CampusConnect has got you covered.
 
 ## Deployment Link 🌐
 
+
 Check out the deployed version of CampusConnect by clicking [HERE](https://campus-connect1.netlify.app/).
+
+You can access our back-end API from this URL [here](https://campus-connect-back-end.fly.dev/).
+Curious about our Trello link? Click [here](https://trello.com/b/0Gr3owf1/campus-connect).
+
 
 ## What's CampusConnect All About? 🌟
 
@@ -40,7 +49,7 @@ This project thrives thanks to the dedication and expertise of our contributors.
 
 - [Walter Guerra](https://github.com/walter0916)
 - [Ronald Rainero](https://github.com/ronrain)
-- [Toni Smith](https://github.com/MrXmit)
+- [Toni Smit](https://github.com/MrXmit)
 
 ## Technologies Behind CampusConnect 💻
 
@@ -95,3 +104,5 @@ We've got some exciting plans for CampusConnect's future:
 We're thrilled to have you here, and we're excited to see how CampusConnect grows. If you want to get involved, check out our GitHub repositories and our contribution guidelines. Together, we can make CampusConnect even better!
 
 Thanks for choosing CampusConnect, where students come together to share skills and services. We hope you find it as awesome as we do!
+
+![Campus Connect](https://cdn.discordapp.com/attachments/791636167304151071/1164874344976105493/image.png?ex=6544ccc6&is=653257c6&hm=7d4c880b12c4ac6da1dc9e43d353ae0fa5c699862c46debaef6c391fa78ccb36&)

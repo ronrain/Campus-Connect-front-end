@@ -31,7 +31,6 @@ const ProfileListings = (props) => {
     setEditMode(!editMode)
   }
 
-
   return (
     <>
       <Sidebar />

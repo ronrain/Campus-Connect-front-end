@@ -14,7 +14,7 @@ const SchoolList = () => {
   useEffect(() => {
     const fetchSchools = async () => {
       const schools = await schoolService.getAllSchools()
-      setSchools(schools);
+      setSchools(schools)
     }
     fetchSchools()
   }, [])
@@ -36,13 +36,13 @@ const SchoolList = () => {
 
   return (
     <>
-      <SearchForm handleSchoolSearch={handleSchoolSearch}/>
+      <SearchForm handleSchoolSearch={handleSchoolSearch} />
       <button className={styles.button30} onClick={refreshList}>Refresh</button>
-    <div className={styles.container}>
-      {schools.map(school => (<div className={styles.details} key={school._id}> <Link className={styles.schoolName} to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
-    </div>
+      <div className={styles.container}>
+        {schools.map(school => (<div className={styles.details} key={school._id}> <Link className={styles.schoolName} to={`/${school._id}`}><p>{school.name}</p></Link> <p>{school.state}</p> </div>))}
+      </div>
     </> 
   );
 }
 
-export default SchoolList;
+export default SchoolList; 
