@@ -1,4 +1,4 @@
-.sidebar .containerBar {
+.sidebar .containerBar .sideBarTitle {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,6 @@
   position: fixed;
   top: 60px; 
   left: 0px; 
-  transition: left 0.6s ease, transform 0.6s ease;
   list-style: none; 
   padding-top: 100px;
   z-index: 10;
@@ -46,7 +45,7 @@
   position: fixed; 
   top: 80px; 
   left: 0;
-  z-index: 2;
+  z-index: 12;
   font-family: var(--main-text); 
   font-size: 1.7rem;
 }

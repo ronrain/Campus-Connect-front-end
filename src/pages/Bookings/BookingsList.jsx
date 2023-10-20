@@ -8,8 +8,6 @@ import Sidebar from "../../components/SideBar/SideBar";
 
 import styles from './BookingList.module.css'
 
-// import './BookingList.css'
-
 const BookingsList = (props) => {
   const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])
@@ -17,9 +15,7 @@ const BookingsList = (props) => {
 
   const fetchAllBookings = async () => {
     const data = await bookingService.index()
-    console.log(data)
     const newData = data.filter(booking => booking.service._id === serviceId )
-    console.log(newData)
     setDisplayedBookings(newData)
   }
 
@@ -49,7 +45,6 @@ const BookingsList = (props) => {
       {displayedBookings.map((booking) => (
         <li key={booking._id}>
           <div className={styles.contentContainer}>
-
           <h1>Date: {booking.date}</h1>
           <h1>Customer: {booking.customer.name}</h1>
           <h3>Contact info: {booking.contactinfo}</h3>

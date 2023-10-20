@@ -14,7 +14,6 @@ const BookingForm = () => {
   const [availableTimeSlots, setAvailableTimeSlots] = useState([])
   const {state} = useLocation()
   const availabilityData = state.service.availability
-  console.log(availabilityData)
   const [formData, setFormData] = useState({
     date: '',
     request:'',
