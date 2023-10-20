@@ -17,9 +17,7 @@ const BookingsList = (props) => {
 
   const fetchAllBookings = async () => {
     const data = await bookingService.index()
-    console.log(data)
     const newData = data.filter(booking => booking.service._id === serviceId )
-    console.log(newData)
     setDisplayedBookings(newData)
   }
 

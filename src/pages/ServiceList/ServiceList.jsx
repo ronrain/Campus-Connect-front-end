@@ -22,7 +22,6 @@ const ServiceList = (props) => {
     const fetchServices = async () => {
       const services = await serviceService.index()
       setServices(services);
-      console.log(services)
     }
     fetchServices()
   }
