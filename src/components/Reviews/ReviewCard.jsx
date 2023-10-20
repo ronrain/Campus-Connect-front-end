@@ -75,7 +75,7 @@ const ReviewCard = (props) => {
       >
         Cancel
       </button>
-    </form>) : (<div className="review-container" key={props.review._id}>
+    </form>) : (<div key={props.review._id}>
       <p>{props.review.text}</p>
       <Ratings review={props.review} />
       {props.review.author === props.user.profile && 
