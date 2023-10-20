@@ -98,7 +98,7 @@ We've got some exciting plans for CampusConnect's future:
 - [CSS Button Animator](https://getcssscan.com/css-buttons-examples?ref=beautifulboxshadow-bottom)
 - [CSS Box-Shadow](https://getcssscan.com/css-box-shadow-examples)
 - [Intput Text](https://freefrontend.com/css-input-text/)
-= [Search Bar](https://freefrontend.com/css-search-boxes/)
+- [Search Bar](https://freefrontend.com/css-search-boxes/)
 - [Favicon Generator](https://favicon.io/favicon-generator/)
 
 ## Join the CampusConnect Community 🤝
