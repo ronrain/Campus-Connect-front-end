@@ -26,7 +26,6 @@ import NewService from './components/ServiceForm/ServiceForm'
 // services
 import * as authService from './services/authService'
 import * as serviceService from './services/serviceService'
-import * as schoolService from './services/schoolService'
 
 // styles
 import './App.css'
@@ -36,14 +35,6 @@ function App() {
   const navigate = useNavigate()
   const [schools, setSchools] = useState([])
   const [editMode, setEditMode] = useState(false)
-
-
-  const handleSchoolSearch = formData => {
-    const filteredSchoolResults = schools.filter(school => (
-      school.name.toLowerCase().includes(formData.query.toLowerCase()) 
-    ))
-    setSchools(filteredSchoolResults)
-  }
 
   const handleLogout = () => {
     authService.logout()
@@ -108,7 +99,6 @@ function App() {
         
         <Route path="/schools" element={
           <SchoolList
-            handleSchoolSearch={handleSchoolSearch}
           />} />
         <Route path="/schools/:schoolId" element={
         

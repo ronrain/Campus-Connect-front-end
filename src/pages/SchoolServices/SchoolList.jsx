@@ -16,6 +16,13 @@ const SchoolList = (props) => {
     }
     fetchSchools()
   }
+  
+  const handleSchoolSearch = formData => {
+    const filteredSchoolResults = schools.filter(school => (
+      school.name.toLowerCase().includes(formData.query.toLowerCase()) 
+    ))
+    setSchools(filteredSchoolResults)
+  }
 
   useEffect(() => {
     const fetchSchools = async () => {
@@ -27,7 +34,7 @@ const SchoolList = (props) => {
   
   return (
     <>
-      <SearchForm handleSchoolSearch={props.handleSchoolSearch} />
+      <SearchForm handleSchoolSearch={handleSchoolSearch} />
       <div className={styles.buttonContainer}>
         <button className={styles.button30} onClick={refreshList}>Refresh</button>
       </div>
