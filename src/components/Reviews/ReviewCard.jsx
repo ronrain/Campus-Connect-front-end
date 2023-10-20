@@ -4,6 +4,8 @@ import Ratings from "./Ratings";
 
 import * as serviceService from '../../services/serviceService'
 
+import './ReviewCard.css'
+
 const ReviewCard = (props) => {
   const [editMode, setEditMode] = useState(false)
   const [formData, setFormData] = useState({
@@ -40,7 +42,7 @@ const ReviewCard = (props) => {
   }
 
   return (
-    <>
+    <div className={editMode ? 'edit-form' : 'review-container'} key={props.review._id}>
     {editMode ? ( <form onSubmit={handleSubmit}>
       <div style={{ fontSize: '2rem' }}>
         {stars.map((star) => (
@@ -73,11 +75,11 @@ const ReviewCard = (props) => {
       >
         Cancel
       </button>
-    </form>) : (<div className="review-container" key={props.review._id}>
+    </form>) : (<div key={props.review._id}>
       <p>{props.review.text}</p>
       <Ratings review={props.review} />
       {props.review.author === props.user.profile && 
-        <div>
+        <div className='actions'>
           <button 
             onClick={() => props.handleDeleteReview(props.review._id)}
           >
@@ -91,8 +93,7 @@ const ReviewCard = (props) => {
           </button>  
         </div>}
     </div>) }
-
-    </>
+    </div>
   );
 }
 

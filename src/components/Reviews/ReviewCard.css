@@ -1,0 +1,61 @@
+.review-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.review-container p {
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.actions button {
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.actions button:hover {
+  background-color: #2980b9;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.edit-form .rating {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.edit-form .star {
+  color: #f39c12;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.edit-form textarea {
+  height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.edit-form button[type='submit'] {
+  align-self: flex-start;
+}
