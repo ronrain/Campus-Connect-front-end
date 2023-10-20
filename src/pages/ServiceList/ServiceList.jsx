@@ -10,7 +10,6 @@ import styles from "./ServiceList.module.css"
 const ServiceList = (props) => {
   const {schoolId} = useParams()
   const [services, setServices] = useState([])
-console.log(schoolId)
 
   const handleDeleteService = async (serviceId) => {
     await serviceService.deleteService(serviceId)
@@ -28,7 +27,6 @@ console.log(schoolId)
   useEffect(() => {
     const fetchServices = async () => {
       const servicesData = await serviceService.index()
-      console.log(servicesData)
       const filterServicesData = servicesData.filter(service => service.school === schoolId)
       setServices(filterServicesData)
     } 
@@ -37,7 +35,7 @@ console.log(schoolId)
 
   const handleTypeChange = async (e) => {
     const servicesData = await serviceService.index()
-      const filterServicesData = servicesData.filter(service => service.school === school._id)
+      const filterServicesData = servicesData.filter(service => service.school === schoolId)
     const typeServicesData = filterServicesData.filter(service => service.type === e.target.value)
     setServices(typeServicesData)
   }

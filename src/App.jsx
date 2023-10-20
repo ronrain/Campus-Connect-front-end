@@ -45,14 +45,6 @@ function App() {
     setSchools(filteredSchoolResults)
   }
 
-  const refreshList = () => {
-    const fetchSchools = async () => {
-      const schools = await schoolService.getAllSchools()
-      setSchools(schools);
-    }
-    fetchSchools()
-  }
-
   const handleLogout = () => {
     authService.logout()
     setUser(null)
@@ -116,9 +108,7 @@ function App() {
         
         <Route path="/schools" element={
           <SchoolList
-            schools={schools}
             handleSchoolSearch={handleSchoolSearch}
-            refreshList={refreshList}
           />} />
         <Route path="/schools/:schoolId" element={
         
@@ -129,7 +119,6 @@ function App() {
         <Route path="service/new" element={
         <NewService 
         handleAddService={handleAddService}
-        schools={schools}
         />} />
         <Route path='/service/:serviceId'
         element={
@@ -143,7 +132,6 @@ function App() {
             <ProtectedRoute user={user}>
               <EditService 
               Service={toggleEditMode} 
-              schools={schools} 
               handleUpdateService={handleUpdateService}/>
             </ProtectedRoute>
           }
