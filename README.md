@@ -6,7 +6,7 @@ Hey there! Welcome to **CampusConnect**, your go-to platform for connecting with
 
 ## Deployment Link 🌐
 
-Check out the deployed version of CampusConnect by clicking [here](http://127.0.0.1:5174/profile/bookings).
+Check out the deployed version of CampusConnect by clicking [HERE](https://campus-connect1.netlify.app/).
 
 ## What's CampusConnect All About? 🌟
 
