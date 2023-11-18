@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 import styles from '../../pages/SchoolList/SchoolList.module.css'
 
@@ -11,7 +11,7 @@ const SchoolDetails = (props) => {
       </Link>
       <div className={styles.schoolState}>{props.school.state}</div>
     </div>
-  );
+  )
 }
 
-export default SchoolDetails;
+export default SchoolDetails

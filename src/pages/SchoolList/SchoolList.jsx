@@ -49,7 +49,7 @@ const SchoolList = () => {
         {schools.map(school => <SchoolCard key={school._id} school={school} />)}
       </div>
     </>
-  );
+  )
 }
 
-export default SchoolList;
+export default SchoolList

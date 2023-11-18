@@ -1,18 +1,17 @@
-import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 import ReviewDetails from "../../components/reviews/ReviewDetails"
 import ReviewForm from "../../components/reviews/ReviewForm"
 
-import * as serviceService from '../../services/serviceService';
+import * as serviceService from '../../services/serviceService'
 
 import styles from './ServicesShow.module.css'
 
 const ServicesShow = (props) => {
   const { serviceId } = useParams()
-  const [service, setService] = useState(null);
+  const [service, setService] = useState(null)
 
   useEffect(() => {
     const fetchService = async () => {
@@ -20,7 +19,7 @@ const ServicesShow = (props) => {
       setService(data)
     }
     fetchService()
-  }, [])
+  }, [serviceId])
 
 
   const handleAddReview = async (reviewFormData) => {
@@ -72,7 +71,7 @@ const ServicesShow = (props) => {
       </div>
     </div>
     </>
-  );
+  )
 }
 
-export default ServicesShow;
+export default ServicesShow

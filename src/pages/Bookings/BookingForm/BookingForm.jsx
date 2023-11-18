@@ -154,7 +154,7 @@ const BookingForm = () => {
       <button className={styles.button30} type="submit">Submit</button>
     </form>
     </>
-  );
+  )
 }
 
 export default BookingForm

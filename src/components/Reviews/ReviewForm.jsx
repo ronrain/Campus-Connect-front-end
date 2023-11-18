@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import Icon  from "../Icon/icon";
+import Icon  from "../Icon/icon"
 import './ReviewForm.css'
 
 const ReviewForm = (props) => {
@@ -65,4 +65,4 @@ const ReviewForm = (props) => {
   )
 }
 
-export default ReviewForm;
+export default ReviewForm

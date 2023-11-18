@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-import FullCalendar from "@fullcalendar/react";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import FullCalendar from "@fullcalendar/react"
 import dayGridPlugin from "@fullcalendar/daygrid"
-import { parse, format } from 'date-fns';
+import { parse, format } from 'date-fns'
 
 import * as bookingService from '../../services/bookingService'
 
-import Sidebar from "../../components/SideBar/SideBar";
+import Sidebar from "../../components/SideBar/SideBar"
 
 import styles from './BookingList.module.css'
 
-const BookingsList = (props) => {
+const BookingsList = () => {
   const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])
   const navigate = useNavigate()
@@ -25,7 +25,7 @@ const BookingsList = (props) => {
 
   useEffect(() => {
     fetchAllBookings()
-  }, [])
+  },)
 
   const onAccept = async (bookingId) => {
     await bookingService.updateStatus(bookingId, true)
@@ -71,7 +71,7 @@ const BookingsList = (props) => {
       ))}
     </ul>
     </>
-  );
+  )
 }
 
 export default BookingsList;

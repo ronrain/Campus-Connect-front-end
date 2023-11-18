@@ -1,9 +1,9 @@
-import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom"
+import { useState, useEffect } from "react"
 
-import * as serviceService from '../../services/serviceService';
+import * as serviceService from '../../services/serviceService'
 
-import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesCard";
+import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesCard"
 
 import styles from "./ServiceList.module.css"
 
@@ -31,7 +31,7 @@ const ServiceList = (props) => {
       setServices(filterServicesData)
     } 
     fetchServices()
-  }, [])
+  }, [schoolId])
 
   const handleTypeChange = async (e) => {
     const servicesData = await serviceService.index()
@@ -74,7 +74,7 @@ const ServiceList = (props) => {
       ))}
       </div>
     </>
-  );
+  )
 }
 
-export default ServiceList;
+export default ServiceList

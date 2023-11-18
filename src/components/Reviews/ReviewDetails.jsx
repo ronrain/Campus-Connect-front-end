@@ -6,7 +6,7 @@ const ReviewDetails = (props) => {
     <>
     {props.reviews.map((review) => <ReviewCard key={review._id} review={review} user={props.user} serviceId={props.serviceId} handleDeleteReview={props.handleDeleteReview}/>)}
     </>
-  );
+  )
 }
 
-export default ReviewDetails;
+export default ReviewDetails
