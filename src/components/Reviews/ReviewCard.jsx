@@ -94,7 +94,7 @@ const ReviewCard = (props) => {
         </div>}
     </div>) }
     </div>
-  );
+  )
 }
 
-export default ReviewCard;
+export default ReviewCard

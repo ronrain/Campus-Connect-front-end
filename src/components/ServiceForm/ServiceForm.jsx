@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
-import Sidebar from "../SideBar/SideBar";
+import Sidebar from "../SideBar/SideBar"
 
-import * as schoolService from "../../services/schoolService";
+import * as schoolService from "../../services/schoolService"
 
-import styles from "./ServiceForm.module.css";
+import styles from "./ServiceForm.module.css"
 
 const NewService = (props) => {
   const [formData, setFormData] = useState({
@@ -169,7 +169,7 @@ const NewService = (props) => {
         </form>
       </div>
     </main>
-  );
+  )
 }
 
-export default NewService;
+export default NewService

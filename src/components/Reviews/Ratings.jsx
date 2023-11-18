@@ -16,4 +16,4 @@ const Ratings = (props) => {
   )
 }
 
-export default Ratings;
+export default Ratings

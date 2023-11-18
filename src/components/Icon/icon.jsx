@@ -6,7 +6,7 @@ const Icon = ({category}) => {
   }
   return (
     <img className='icon' src={icons[category]} alt={`A ${category} icon`} />
-  );
+  )
 }
 
-export default Icon;
+export default Icon

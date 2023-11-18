@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Sidebar from "../../components/SideBar/SideBar";
 import UserServices from "../../components/ServicesDetails/UserServices";
 
-import * as serviceService from "../../services/serviceService";
+import * as serviceService from "../../services/serviceService"
 
 import styles from './Profiles.module.css'
 
@@ -20,7 +20,7 @@ const ProfileListings = (props) => {
       setServices(userService)
     } 
     fetchListings()
-  }, [])
+  }, [props.user.profile])
 
   const handleDeleteService = async (serviceId) => {
     await serviceService.deleteService(serviceId)
@@ -45,6 +45,6 @@ const ProfileListings = (props) => {
           /> )}
       </div>
     </>
-  );
+  )
 }
-export default ProfileListings; 
+export default ProfileListings

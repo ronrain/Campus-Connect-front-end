@@ -15,7 +15,7 @@ const UserBookingsList = (props) => {
       setDisplayedBookings(newData)
     }
     fetchAllBookings()
-  }, [])
+  }, [props.user.profile])
 
   return (
     <>
@@ -38,7 +38,7 @@ const UserBookingsList = (props) => {
         ))}
       </ul>
     </>
-  );
+  )
 } 
 
-export default UserBookingsList;
+export default UserBookingsList

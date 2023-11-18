@@ -1,10 +1,10 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect } from "react"
 import { Link } from 'react-router-dom'
 
-import * as bookingService from '../../services/bookingService';
-import * as serviceService from '../../services/serviceService';
+import * as bookingService from '../../services/bookingService'
+import * as serviceService from '../../services/serviceService'
 
-import Sidebar from "../../components/SideBar/SideBar";
+import Sidebar from "../../components/SideBar/SideBar"
 import styles from './Profiles.module.css'
 
 const MyProfile = (props) => {
@@ -34,7 +34,7 @@ const MyProfile = (props) => {
       setMyBookings(myBookings)
     }
     fetchMyBookings()
-  }, [])
+  }, [props.user._id])
 
   return (
     <>
@@ -63,7 +63,7 @@ const MyProfile = (props) => {
         </div>
     </div>
     </>
-  );
+  )
 }
 
-export default MyProfile;
+export default MyProfile
