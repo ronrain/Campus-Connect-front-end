@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState } from "react"
 
-import Ratings from "./Ratings";
+import Ratings from "./Ratings"
 
 import * as serviceService from '../../services/serviceService'
 
