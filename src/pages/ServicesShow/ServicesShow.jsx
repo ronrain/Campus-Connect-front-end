@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-import ReviewDetails from "../../components/Reviews/ReviewDetails"
-import ReviewForm from "../../components/Reviews/ReviewForm"
+import ReviewDetails from "../../components/reviews/ReviewDetails"
+import ReviewForm from "../../components/reviews/ReviewForm"
 
 import * as serviceService from '../../services/serviceService';
 

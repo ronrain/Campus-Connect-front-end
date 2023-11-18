@@ -6,17 +6,16 @@ import { Routes, Route, useNavigate } from 'react-router-dom'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
 import Landing from './pages/Landing/Landing'
-import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
-import SchoolList from './pages/SchoolServices/SchoolList'
+import SchoolList from './pages/SchoolList/SchoolList'
 import ServiceList from './pages/ServiceList/ServiceList'
-import ProfileServices from './pages/Profiles/ProfileServices'
-import ServicesShow from './pages/ServicesDetails/ServicesShow'
+import ProfileServices from './pages/profile/ProfileServices'
+import ServicesShow from './pages/ServicesShow/ServicesShow'
 import EditService from './pages/EditService/EditService'
 import BookingForm from './pages/Bookings/BookingForm/BookingForm'
 import BookingsList from './pages/Bookings/BookingsList'
 import UserBookingsList from './pages/Bookings/UserBookingsList'
-import MyProfile from './pages/Profiles/MyProfile.jsx'
+import MyProfile from './pages/profile/MyProfile.jsx'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -63,14 +62,6 @@ function App() {
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute user={user}>
-              <Profiles user={user} />
-            </ProtectedRoute>
-          }
-        />
         <Route 
           path='/profile/services'
           element={

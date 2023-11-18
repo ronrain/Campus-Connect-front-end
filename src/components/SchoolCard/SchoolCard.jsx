@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import styles from '../../pages/SchoolServices/SchoolList.module.css'
+import styles from '../../pages/SchoolList/SchoolList.module.css'
 
 
 const SchoolDetails = (props) => {

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import styles from './UserServices.module.css'
 
 const UserServices = (props) => {
+  console.log(props.service._id)
   return (
     <div className={styles.servicesContainer} >
       <h2 className={styles.title}>{props.service.title.toUpperCase()}</h2>
