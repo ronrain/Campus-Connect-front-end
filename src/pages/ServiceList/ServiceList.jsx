@@ -44,6 +44,13 @@ const ServiceList = (props) => {
 
   return (
     <>
+      <div className={styles.appbanner}>
+        <div className={styles.bannercontent}>
+          <h1>Welcome to Our Campus Community</h1>
+          <p>Discover and book services tailored for your college life</p>
+          <button className={styles.bannerBtn}>Explore Services</button>
+        </div>
+      </div>
     <div className={styles.container}>
     <h1 className={styles.title}>Please select the type of service offered by the school from the drop down menu:</h1>
     <select className={styles.selectService} name="type" onChange={handleTypeChange}>

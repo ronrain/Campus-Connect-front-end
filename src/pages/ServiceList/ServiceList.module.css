@@ -14,6 +14,7 @@
   background-color: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   overflow: hidden;
+  /* background: linear-gradient(45deg, white, #b4ffff, #b4ffff, white); */
 }
 
 .title {
@@ -40,4 +41,45 @@
   box-sizing: border-box;
   width: 100vw;
   color: var(--secondary-text-color);
+}
+
+.appbanner {
+  background: url("https://i.imgur.com/8AqohIZ.jpg") center/cover no-repeat; /* Adjust 'background.jpg' to your image path */
+  height: 400px; /* Set the height of your banner */
+  color: #ffffff; /* Text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.bannercontent {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.bannerBtn {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.bannerBtn:hover {
+  background-color: #2980b9;
 }

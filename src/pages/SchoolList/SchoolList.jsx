@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SearchForm from "../../components/SearchForm/SearchForm"
-import SchoolDetails from "../../components/Schools/SchoolDetails"
+import SchoolCard from "../../components/SchoolCard/SchoolCard"
 import * as schoolService from '../../services/schoolService';
 
 // css
@@ -34,12 +34,19 @@ const SchoolList = () => {
   
   return (
     <>
+      <div className={styles.appbanner}>
+        <div className={styles.bannercontent}>
+          <h1>Welcome to Our Campus Community</h1>
+          <p>Discover and book services tailored for your college life</p>
+          <button className={styles.bannerBtn}>Explore Services</button>
+        </div>
+      </div>
       <SearchForm handleSchoolSearch={handleSchoolSearch} />
       <div className={styles.buttonContainer}>
         <button className={styles.button30} onClick={refreshList}>Refresh</button>
       </div>
       <div className={styles.container}>
-        {schools.map(school => <SchoolDetails key={school._id} school={school} />)}
+        {schools.map(school => <SchoolCard key={school._id} school={school} />)}
       </div>
     </>
   );

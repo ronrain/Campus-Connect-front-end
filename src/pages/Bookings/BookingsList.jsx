@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid"
+import { parse, format } from 'date-fns';
 
 import * as bookingService from '../../services/bookingService'
 
@@ -12,10 +15,11 @@ const BookingsList = (props) => {
   const { serviceId } = useParams()
   const [displayedBookings, setDisplayedBookings] = useState([])
   const navigate = useNavigate()
-
+  console.log(serviceId)
   const fetchAllBookings = async () => {
     const data = await bookingService.index()
-    const newData = data.filter(booking => booking.service._id === serviceId )
+    console.log(data)
+    const newData = data.filter(booking => booking.service && booking.service._id === serviceId )
     setDisplayedBookings(newData)
   }
 
@@ -41,6 +45,10 @@ const BookingsList = (props) => {
     <>
       <Sidebar />
       <button className="return-btn" onClick={handleReturn}>Return</button>
+      {/* <FullCalendar
+        plugins={[dayGridPlugin]}
+        initialView="dayGridMonth"
+      /> */}
       <ul className={styles.container}>
       {displayedBookings.map((booking) => (
         <li key={booking._id}>

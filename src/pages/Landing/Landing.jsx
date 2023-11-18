@@ -4,6 +4,14 @@ import logo from '../../assets/logo.png'
 
 const Landing = ({ user }) => {
   return (
+    <>
+    <div className={styles.appbanner}>
+      <div className={styles.bannercontent}>
+        <h1>Welcome to Our Campus Community</h1>
+        <p>Discover and book services tailored for your college life</p>
+        <button className={styles.bannerBtn}>Explore Services</button>
+      </div>
+    </div>
     <main className={styles.container}>
       <h1>Welcome to CampusConnect, {user ? user.name : 'friend'}</h1>
       <section className={styles.logoLanding}>
@@ -54,6 +62,7 @@ const Landing = ({ user }) => {
         <p>© 2022 CAMPUS CONNECT INC. RIGHTS RESERVED</p>
       </footer>
     </main>
+    </>
   )
 }
 
