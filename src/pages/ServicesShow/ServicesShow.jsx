@@ -4,8 +4,8 @@ import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
 // components
-import ReviewForm from "../../components/reviews/ReviewForm"
-import ReviewDetails from "../../components/reviews/ReviewDetails"
+import ReviewForm from "../../components/ReviewForm/ReviewForm"
+import ReviewDetails from "../../components/ReviewDetails/ReviewDetails"
 
 // services
 import * as serviceService from '../../services/serviceService'

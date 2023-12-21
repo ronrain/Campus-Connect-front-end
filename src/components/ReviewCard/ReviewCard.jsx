@@ -2,7 +2,7 @@
 import { useState } from "react"
 
 // components 
-import Ratings from "./Ratings"
+import Ratings from "../Ratings/Ratings"
 
 // services
 import * as serviceService from '../../services/serviceService'
