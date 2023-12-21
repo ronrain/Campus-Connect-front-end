@@ -17,6 +17,8 @@ const MyProfile = (props) => {
   const [myServices, setMyServices] = useState([])
   const [averageRating, setAverageRating] = useState([])
 
+  console.log(props.user.profile)
+
   useEffect(() => {
     const fetchMyServices = async () => {
       const myServices = await serviceService.fetchServicesByCreator(props.user.profile)
