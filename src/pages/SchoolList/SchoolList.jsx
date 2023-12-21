@@ -43,7 +43,6 @@ const SchoolList = () => {
         <div className={styles.bannercontent}>
           <h1>Welcome to Our Campus Community</h1>
           <p>Discover and book services tailored for your college life</p>
-          <button className={styles.bannerBtn}>Explore Services</button>
         </div>
       </div>
       <SearchForm handleSchoolSearch={handleSchoolSearch} />
