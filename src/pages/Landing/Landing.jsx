@@ -1,5 +1,7 @@
 // css
 import styles from './Landing.module.css'
+
+// images
 import logo from '../../assets/logo.png'
 
 const Landing = ({ user }) => {

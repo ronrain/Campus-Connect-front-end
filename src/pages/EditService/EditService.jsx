@@ -1,9 +1,10 @@
 // npm modules
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
-import * as schoolService from '../../services/schoolService';
+// services
+import * as schoolService from '../../services/schoolService'
 
 // css
 import styles from './EditService.module.css'
@@ -49,7 +50,7 @@ const EditService = (props) => {
     <form onSubmit={handleSubmit} className={styles.serviceForm}>
       <div className={styles.header}>Edit Service</div>
       <div className={styles.inputContainer}>
-        <label htmlFor="title" className={styles.label}>Title</label>
+        <label className={styles.label}>Title</label>
       <input
         type="text"
         name="title"
@@ -60,7 +61,7 @@ const EditService = (props) => {
       />
     </div>
     <div className={styles.inputContainer}>
-      <label className={styles.label}htmlFor="description">Description</label>
+      <label className={styles.label}>Description</label>
       <input
         required
         type="text"
@@ -87,7 +88,7 @@ const EditService = (props) => {
       </select>
     </div>
     <div className={styles.inputContainer}>
-      <label className={styles.label} htmlFor="price">Price</label>
+      <label className={styles.label} >Price</label>
       <input
         required
         type="number"

@@ -1,10 +1,15 @@
+// npm modules
 import { useState,useEffect } from "react"
 import { Link } from 'react-router-dom'
 
+// services
 import * as bookingService from '../../services/bookingService'
 import * as serviceService from '../../services/serviceService'
 
+// components
 import Sidebar from "../../components/SideBar/SideBar"
+
+// styles
 import styles from './Profiles.module.css'
 
 const MyProfile = (props) => {
@@ -14,7 +19,7 @@ const MyProfile = (props) => {
 
   useEffect(() => {
     const fetchMyServices = async () => {
-      const myServices = await serviceService.fetchServicesByCreator(props.user._id)
+      const myServices = await serviceService.fetchServicesByCreator(props.user.profile)
       setMyServices(myServices)
 
       let averageRating = 0
@@ -24,17 +29,17 @@ const MyProfile = (props) => {
           averageRating += review.rating
           totalRatings++
         })  
-      });
+      })
       setAverageRating((averageRating / totalRatings).toFixed(2))
     }
     fetchMyServices()
 
     const fetchMyBookings = async () => {
-      const myBookings = await bookingService.fetchBookingByCustomer(props.user._id)
+      const myBookings = await bookingService.fetchBookingByCustomer(props.user.profile)
       setMyBookings(myBookings)
     }
     fetchMyBookings()
-  }, [props.user._id])
+  }, [props.user.profile])
 
   return (
     <>

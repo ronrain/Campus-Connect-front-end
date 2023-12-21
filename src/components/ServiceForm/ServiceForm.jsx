@@ -1,9 +1,13 @@
+// npm modules
 import { useState, useEffect } from "react"
 
+// components
 import Sidebar from "../SideBar/SideBar"
 
+// services
 import * as schoolService from "../../services/schoolService"
 
+// styles
 import styles from "./ServiceForm.module.css"
 
 const NewService = (props) => {
@@ -67,7 +71,7 @@ const NewService = (props) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label htmlFor="title" className={styles.label}>Title</label>
+          <label className={styles.label}>Title</label>
         </div>
         <div className={styles.inputContainer}>
           <input
@@ -78,7 +82,7 @@ const NewService = (props) => {
             onChange={handleChange}
             placeholder=" "
           />
-          <label htmlFor="description" className={styles.label}>Description</label>
+          <label className={styles.label}>Description</label>
         </div>
         <div className={styles.inputContainer}>
           <select
@@ -97,7 +101,7 @@ const NewService = (props) => {
           </select>
         </div>
         <div className={styles.inputContainer}>
-          <label className={styles.price} htmlFor="price">Price</label>
+          <label className={styles.price} >Price</label>
           <input
             required
             type="number"
@@ -116,7 +120,7 @@ const NewService = (props) => {
             placeholder=" "
             onChange={handleChange}
           />
-          <label className={styles.label}  htmlFor="contactinfo">Contact Info </label>
+          <label className={styles.label}  >Contact Info </label>
         </div>
         {formData.availability.map((availability, index) => (
         <div key={index}>
@@ -156,7 +160,7 @@ const NewService = (props) => {
           <select 
             required
             name="schoolId" 
-            value={formData.school} 
+            value={formData.schoolId} 
             onChange={handleChange}
           >
             <option value="">Select School</option>

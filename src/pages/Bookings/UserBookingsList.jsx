@@ -1,8 +1,11 @@
-import { useState,useEffect } from "react";
+// npm modules
+import { useState,useEffect } from "react"
 
-import * as bookingService from '../../services/bookingService';
+// components
+import * as bookingService from '../../services/bookingService'
+import Sidebar from "../../components/SideBar/SideBar"
 
-import Sidebar from "../../components/SideBar/SideBar";
+// styles
 import styles from './BookingList.module.css'
 
 const UserBookingsList = (props) => {

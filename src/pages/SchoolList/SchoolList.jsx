@@ -1,7 +1,12 @@
+// npm modules
 import { useState, useEffect } from "react";
+
+// components
 import SearchForm from "../../components/SearchForm/SearchForm"
 import SchoolCard from "../../components/SchoolCard/SchoolCard"
-import * as schoolService from '../../services/schoolService';
+
+// services
+import * as schoolService from '../../services/schoolService'
 
 // css
 import styles from './SchoolList.module.css'
@@ -12,7 +17,7 @@ const SchoolList = () => {
   const refreshList = () => {
     const fetchSchools = async () => {
       const schools = await schoolService.getAllSchools()
-      setSchools(schools);
+      setSchools(schools)
     }
     fetchSchools()
   }
@@ -27,7 +32,7 @@ const SchoolList = () => {
   useEffect(() => {
     const fetchSchools = async () => {
       const data = await schoolService.getAllSchools()
-      setSchools(data);
+      setSchools(data)
     }
     fetchSchools()
   }, [])

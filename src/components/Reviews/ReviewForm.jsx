@@ -1,6 +1,10 @@
+// npm modules
 import { useState } from "react"
 
+// images
 import Icon  from "../Icon/icon"
+
+// css
 import './ReviewForm.css'
 
 const ReviewForm = (props) => {

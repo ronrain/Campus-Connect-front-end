@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+// nom modules
+import { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
+// services
 import * as bookingService from '../../../services/bookingService'
 
+// styles
 import styles from './BookingForm.module.css'
 
 const BookingForm = () => {
@@ -130,7 +133,7 @@ const BookingForm = () => {
           ))}
       </select>
       <div className={styles.inputContainer}>
-        <label className={styles.label} htmlFor="">Describe Your Request</label>
+        <label className={styles.label}>Describe Your Request</label>
         <input
           required
           type="text" 
@@ -141,7 +144,7 @@ const BookingForm = () => {
         />
       </div>
       <div className={styles.inputContainer}>
-        <label className={styles.label} htmlFor="">Your Contact Info</label>
+        <label className={styles.label} >Your Contact Info</label>
         <input
           required
           type="text" 

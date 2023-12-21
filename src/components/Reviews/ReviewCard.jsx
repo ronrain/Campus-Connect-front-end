@@ -1,9 +1,13 @@
+// npm modules
 import { useState } from "react"
 
+// components 
 import Ratings from "./Ratings"
 
+// services
 import * as serviceService from '../../services/serviceService'
 
+// css
 import './ReviewCard.css'
 
 const ReviewCard = (props) => {

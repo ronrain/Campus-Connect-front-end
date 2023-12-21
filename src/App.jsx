@@ -87,13 +87,18 @@ function App() {
           }
         />
         
-        <Route path="/schools" element={
-          <SchoolList />} />
-        <Route path="/schools/:schoolId" element={
-        
-        <ServiceList
-          user={user}
-        />} />
+        <Route 
+          path="/schools" 
+          element={
+            <SchoolList />
+          } 
+        />
+        <Route 
+          path="/schools/:schoolId" 
+          element={
+            <ServiceList user={user}/>
+          } 
+        />
 
         <Route path="service/new" element={
         <NewService 

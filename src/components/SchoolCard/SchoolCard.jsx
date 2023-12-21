@@ -1,5 +1,7 @@
+// npm modules
 import { Link } from "react-router-dom"
 
+// styles
 import styles from '../../pages/SchoolList/SchoolList.module.css'
 
 

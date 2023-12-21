@@ -8,6 +8,7 @@ import * as authService from '../../services/authService'
 // css
 import styles from './ChangePassword.module.css'
 
+// components
 import Sidebar from '../../components/SideBar/SideBar'
 
 const ChangePassword = ({ handleAuthEvt }) => {
