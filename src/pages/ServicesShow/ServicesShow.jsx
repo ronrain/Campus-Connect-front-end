@@ -1,12 +1,16 @@
+// npm modules
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 
+// components
 import ReviewForm from "../../components/reviews/ReviewForm"
 import ReviewDetails from "../../components/reviews/ReviewDetails"
 
+// services
 import * as serviceService from '../../services/serviceService'
 
+// styles
 import styles from './ServicesShow.module.css'
 
 const ServicesShow = (props) => {

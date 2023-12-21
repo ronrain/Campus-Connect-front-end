@@ -1,14 +1,15 @@
+// npm modules
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
-import FullCalendar from "@fullcalendar/react"
-import dayGridPlugin from "@fullcalendar/daygrid"
-import { parse, format } from 'date-fns'
 
+// services
 import * as bookingService from '../../services/bookingService'
 
+// components
 import Sidebar from "../../components/SideBar/SideBar"
 
+// styles
 import styles from './BookingList.module.css'
 
 const BookingsList = () => {
@@ -45,10 +46,6 @@ const BookingsList = () => {
     <>
       <Sidebar />
       <button className="return-btn" onClick={handleReturn}>Return</button>
-      {/* <FullCalendar
-        plugins={[dayGridPlugin]}
-        initialView="dayGridMonth"
-      /> */}
       <ul className={styles.container}>
       {displayedBookings.map((booking) => (
         <li key={booking._id}>
@@ -74,4 +71,4 @@ const BookingsList = () => {
   )
 }
 
-export default BookingsList;
+export default BookingsList

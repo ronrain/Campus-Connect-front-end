@@ -57,6 +57,7 @@ Under the hood, CampusConnect is powered by the MERN stack:
 - **Express.js:** The backend framework that makes it all work.
 - **React:** The frontend library that brings the user interface to life.
 - **Node.js:** The runtime that powers our server-side development.
+- **JWT:** The token-based authentication mechanism 
 
 ## CRUD Functionality ✏️
 
@@ -66,17 +67,6 @@ We've got the basics covered with Create, Read, Update, and Delete (CRUD) operat
 - Read and search for services based on categories, colleges, and more.
 - Update your service listings.
 - Delete services that you're no longer offering.
-
-## Getting Started 🚀
-
-Ready to dive into CampusConnect? Great! Here's how to get started:
-
-1. Clone the GitHub repositories for our [frontend](https://github.com/walter0916/Campus-Connect-front-end) and [backend](https://github.com/MrXmit/campusConnect-backend).
-
-2. Follow the setup instructions in the respective repositories to configure your development environment.
-
-3. Fire up the backend server and the frontend app, and you're good to go exploring CampusConnect!
-
 
 ## What's in the Pipeline? 🚧
 

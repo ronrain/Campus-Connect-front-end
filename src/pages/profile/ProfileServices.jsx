@@ -1,11 +1,14 @@
-import { useState, useEffect } from "react";
-// import { useLocation, useNavigate } from "react-router-dom";
+// npm modules
+import { useState, useEffect } from "react"
 
-import Sidebar from "../../components/SideBar/SideBar";
-import UserServices from "../../components/ServicesDetails/UserServices";
+// components
+import Sidebar from "../../components/SideBar/SideBar"
+import UserServices from "../../components/UserServices/UserServices"
 
+// services
 import * as serviceService from "../../services/serviceService"
 
+// styles
 import styles from './Profiles.module.css'
 
 const ProfileListings = (props) => {

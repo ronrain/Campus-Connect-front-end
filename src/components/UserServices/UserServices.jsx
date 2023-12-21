@@ -1,5 +1,7 @@
+// npm modules
 import { Link } from "react-router-dom"
 
+// styles
 import styles from './UserServices.module.css'
 
 const UserServices = (props) => {
@@ -35,6 +37,6 @@ const UserServices = (props) => {
       <button className={styles.button30}><Link className={styles.edit} to={`/service/${props.service._id}/edit`}state={props.service}>Edit</Link></button>
     </div>
     </div>
-  );
+  )
 }
-export default UserServices;
+export default UserServices

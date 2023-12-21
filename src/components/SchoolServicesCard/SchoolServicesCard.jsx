@@ -1,7 +1,12 @@
+// npm modules
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+
+// styles
 import styles from './SchoolServicesCard.module.css'
+
+// images
 import logo from '../../assets/logo.png'
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 const SchoolServicesCard = (props) => {
   const [averageRating, setAverageRating] = useState(0)
@@ -19,7 +24,7 @@ const SchoolServicesCard = (props) => {
     } else setAverageRating(0)
     }
     calculateAverageRating()
-  }, [])
+  }, [service.reviews])
 
 
   return (
@@ -62,7 +67,7 @@ const SchoolServicesCard = (props) => {
       </footer>
     </div>
 
-  );
+  )
 }
 
-export default SchoolServicesCard;
+export default SchoolServicesCard

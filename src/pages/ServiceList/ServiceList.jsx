@@ -1,10 +1,14 @@
+// npm modules
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 
+// services
 import * as serviceService from '../../services/serviceService'
 
-import SchoolServicesCard from "../../components/ServicesDetails/SchoolServicesCard"
+// components
+import SchoolServicesCard from "../../components/SchoolServicesCard/SchoolServicesCard"
 
+// styles
 import styles from "./ServiceList.module.css"
 
 const ServiceList = (props) => {
@@ -19,7 +23,7 @@ const ServiceList = (props) => {
   const refreshServiceList = () => {
     const fetchServices = async () => {
       const services = await serviceService.index()
-      setServices(services);
+      setServices(services)
     }
     fetchServices()
   }
